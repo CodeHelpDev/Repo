@@ -1,0 +1,208 @@
+#carDekhoLogo {
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    margin-top: -60px;
+  }
+  
+  ion-searchbar {
+    width: 500px;
+    position: relative;
+    left: 400px;
+    bottom: 120px;
+  }
+  
+  #leftnav {
+    position: absolute;
+    right: 160px;
+    bottom: 120px;
+  }
+  
+  ion-icon[name="heart-outline"] {
+    margin-left: 25px;
+    margin-right: 20px;
+  }
+  
+  ion-toolbar {
+    height: 100px;
+  }
+  
+  .navbar {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  ion-label {
+    font-size: medium;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  
+  ion-row {
+    width: 50%;
+    margin-left: 100px;
+  }
+  
+  //  
+  
+  .dropbtn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content ion-text {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .dropdown-content ion-text:hover {
+    background-color: #f1f1f1
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #ffffff;
+  }
+  
+  .nav {
+    margin-left: 80px;
+    background-color: white;
+  }
+  
+  .navbar{
+    background-color: white;
+    width: 100%;
+  }
+  .selectCar {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;  
+  }
+  
+  ion-card {
+    width: 20%;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    height: 350px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+  
+  .mainImg {
+    width: 95%;
+    margin: 0 auto;
+    height: 600px
+  }
+  
+  .brand {
+    width: 100%;
+    border: 0.5px solid black;
+    border-radius: 4px;
+  }
+  
+  .topBorder {
+    border-top: none;
+  }
+  
+  .searchBtn {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .second {
+    display: hidden;
+  }
+  
+  ion-card-title {
+    font-size: x-large;
+    font-weight: bolder;
+  }
+  
+  #open-modal {
+    cursor: pointer;
+  }
+  
+  ion-modal {
+    margin: 0 auto;
+    box-shadow: none;
+  }
+  
+  .modal-main-div{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .modal-right-section{
+    width: 60%;
+  }
+  
+  .modal-heading{
+    font-weight: bold;
+    font-size: 23px; 
+  }
+  ion-text{
+    font-size: small;
+    color: darkslategray;
+  }
+  .right-modal{
+    margin-left: 65px;
+    margin-top: 60px;
+    overflow: hidden;
+  }
+  ion-input{
+    width: 250px;
+  }
+  #city{
+    left: 520px;
+  }
+  ion-icon{
+    cursor: pointer;
+  }
+  ion-modal{
+    width: 70%;
+    box-shadow: none;
+    border: none;
+    
+  }
+  .modal-title{
+    margin: 0 auto;
+    width: 800%;
+    height: 100px;
+
+  }
+  .input{
+    margin: 0 auto;
+  }
+  .cityBtn{
+    margin-left:270px 
+  }
+  
+  .transparent-backdrop {
+    --backdrop-opacity: 0; 
+  }

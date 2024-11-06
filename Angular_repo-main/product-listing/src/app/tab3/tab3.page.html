@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list >
+    <ion-item *ngFor="let val of likedArr;let i=index"  >
+      <ion-img [src]="val.image" [queryParams]="val" routerLink="/tabs/tab2"></ion-img>
+      <div>
+        <ion-icon name="heart" (click)="removeLike(val,i)" [color]="isLiked ? 'danger' : ''" size="large"></ion-icon>
+
+        {{val.title}}
+      </div>
+
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngIf="!likedArr"> No data found</ion-item>
+  </ion-list>
+</ion-content>

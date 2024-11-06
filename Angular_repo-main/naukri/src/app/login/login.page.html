@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-section">
+    <ion-card class="inner-main-section">
+      <ion-card class="main-card">
+        <ion-card class="left-card">
+          <ion-card class="inner-left-card">
+            <ion-label class="left-heading">New to Naukri?</ion-label>
+            <ion-list lines="none" class="left-list">
+              <ion-item class="left-items">
+                <ion-icon slot="start" color="primary" name="checkmark"></ion-icon>
+                <ion-label>One click apply using naukri profile</ion-label>
+              </ion-item>
+              <ion-item class="left-items">
+                <ion-icon slot="start" color="primary" name="checkmark"></ion-icon>
+                Get relevant job recommendations.
+              </ion-item>
+              <ion-item class="left-items">
+                <ion-icon slot="start" color="primary" name="checkmark"></ion-icon>
+                Showcase profile to top companies and consultants.
+              </ion-item>
+              <ion-item class="left-items">
+                <ion-icon slot="start" color="primary" name="checkmark"></ion-icon>
+                Know application status on applied jobs.
+              </ion-item>
+            </ion-list>
+            <ion-button fill="outline" id="registerBtn">Register for Free</ion-button>
+          </ion-card>
+          <ion-img class="login-image" src="../../assets/loginImg.png"></ion-img>
+        </ion-card>
+        <ion-card class="right-card">
+          <ion-card class="inner-right-card">
+            <ion-label class="right-heading">Login</ion-label> <br>
+            <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+              <ion-card class="username-card">
+                <ion-label class="form-label">Email ID / Username</ion-label>
+                <ion-input formControlName="email" placeHolder="Enter Email ID / Username"></ion-input>
+              </ion-card>
+              <ion-card class="password-card">
+                <ion-label class="form-label">Password</ion-label>
+                <ion-input type="password" formControlName="password" placeHolder="Enter Password">
+                  <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+                </ion-input>
+              </ion-card>
+              <ion-card class="login-btn-card">
+                <ion-label class="forget-text">Forget Password ?</ion-label> <br>
+                <ion-button type="submit" class="login-btn" expand="full">Login</ion-button> <br>
+                <ion-text class="otp-text">Use OTP to Login</ion-text>
+              </ion-card>
+            </form>
+          </ion-card>
+        </ion-card>
+      </ion-card>
+    </ion-card>
+  </ion-card>
+</ion-content>

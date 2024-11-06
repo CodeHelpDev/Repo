@@ -1,0 +1,35 @@
+.main-grid{
+    background: black;
+}
+ion-icon[name="notifications-outline"]{
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+ion-icon[name="person-outline"] {
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}   
+.main-grid ion-row ion-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+ion-button{
+    --background: white;
+    --background-activated:white;
+    color: black;
+    text-transform: capitalize;
+}
+ion-badge{
+    position: absolute;
+    top: 0px;
+    left: 166px;
+    border-radius: 50%;
+}
+// ion-toggle{
+//     --handle-background:white;
+    
+// }

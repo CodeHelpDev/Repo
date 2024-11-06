@@ -1,0 +1,82 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="main-card">
+    <ion-card class="left-card">
+      <ion-card class="third-card">
+        <div class="first-div">
+          <div class="second-div">
+            <ion-img class="userIcon userProfile" src="../../assets/userIcon.png"></ion-img><br>
+            <ion-text class="userProfileText" id="profileName">{{loginUser}}</ion-text><br>
+            <ion-text class="userProfileText" id="profileLink">Link Your e-mail or Social Media</ion-text>
+          </div>
+        </div>
+      </ion-card>
+      <ion-list class="profile-list" lines="none">
+        <ion-item routerLink="/ordersx" [ngClass]="URL==='/order' ? 'active' : ''">
+          <ion-icon slot="start" name="albums-outline"></ion-icon>
+          <ion-text>My Orders</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="/likes" [ngClass]="URL==='/likes' ? 'active' : ''">
+          <ion-icon slot="start" name="heart"></ion-icon>
+          <ion-text>Shortlisted Vehicles</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="#">
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+          <ion-text>My Activity</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="/myvehicles">
+          <ion-icon slot="start" name="ellipsis-vertical-outline"></ion-icon>
+          <ion-text>My Vehicle</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="car-outline"></ion-icon>
+          <ion-text>My Garage</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="/profile-setting" [ngClass]="URL=='/profile-setting' ? 'active': ''" >
+          <ion-icon slot="start" name="cog-outline"></ion-icon>
+          <ion-text>Profile Setting</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <button class="logoutBtn" (click)="logOut()">Logout</button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card class="right-card">
+      <ion-label class="shortlisted">Shortlisted</ion-label>
+      <ion-text>Only {{likedCarsLength}} item shortlisted, you can explore more</ion-text>
+      <ion-list lines="none" class="liked-car-list" *ngFor="let likedCar of likedCarsArr">
+        <ion-item>
+
+          <!-- <ion-label>fjtukfukj {{likedCar.title}}</ion-label> -->
+          <ion-card class="list-Card">
+            <ion-card class="flex-card">
+              <ion-card class="inner-card-left">
+                <ion-img class="ion-img" [src]="likedCar.image"></ion-img>
+              </ion-card>
+              <ion-card class="inner-card-right">
+                <ion-label class="car-details">{{likedCar.id}}</ion-label>
+                <ion-label class="car-details">{{likedCar.title}}</ion-label>
+                <ion-label class="car-details">{{likedCar.class}}</ion-label>
+                <ion-text class="checkbtn" routerLink="/details" [queryParams]="likedCar">Check Now 
+                  <ion-icon name="chevron-forward-circle"></ion-icon>
+                </ion-text>
+              </ion-card>
+
+            </ion-card>
+
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-card>
+
+  <app-footer></app-footer>
+</ion-content>

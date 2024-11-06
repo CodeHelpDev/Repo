@@ -1,0 +1,69 @@
+.range{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+ion-range::part(knob) {
+    display: none;
+}
+ion-range{
+    pointer-events: none;
+    --bar-background-active: black;
+}
+.skip-text{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+.heading{
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+    display: flex;
+    letter-spacing: 1px;
+}
+
+ion-item{
+    border: 1px solid black;
+    border-radius: 25px;    
+    margin-block:20px;
+    --background:black;
+    
+}
+
+.main-card{
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: none;    
+}
+ion-list{
+    width: 100%;
+    --background: black;
+    --background:black;
+}
+ion-checkbox{
+    --checkmark-color:black;
+    --backgroud:white;
+    --checkbox-background-checked:white;
+    --border-color-checked:black;
+    color:white; 
+}
+.nxt-lbl{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 700;
+    position: absolute;
+    right: 10px;
+    bottom:0px;
+}

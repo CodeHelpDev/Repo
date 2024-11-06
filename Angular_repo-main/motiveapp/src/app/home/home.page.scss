@@ -1,0 +1,55 @@
+.main-row{
+  width: 100%;
+  margin: 0 auto;
+  
+  
+}
+.main-image{
+  width: 100%;
+  background-size: contain;
+background-repeat: no-repeat;
+height: 680px;
+object-fit: inherit;
+  
+}
+ion-row ion-col:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+
+}
+
+ion-input{
+  --padding-start:10px;
+}
+ion-checkbox{
+  width: 143px;
+}
+ion-list, ion-item{
+  width: 100%;
+}
+.main-list ion-item:nth-child(2),
+.main-list ion-item:nth-child(4){
+  border: 1px solid gray;
+  --background: rgb(247, 243, 243);
+}
+
+ion-item:first-child ion-label{
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+}
+ion-button{
+  width: 100%;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  --background:rgb(245 128 33);
+}
+.forgot-text{
+  color:rgb(245 128 33);
+}

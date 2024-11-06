@@ -1,0 +1,90 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="main-card">
+    <ion-card class="left-card">
+      <ion-card class="third-card">
+        <div class="first-div">
+          <div class="second-div">
+            <ion-img class="userIcon userProfile" src="../../assets/userIcon.png"></ion-img><br>
+            <ion-text class="userProfileText" id="profileName">{{loginUser}}</ion-text><br>
+            <ion-text class="userProfileText" id="profileLink">Link Your e-mail or Social Media</ion-text>
+          </div>
+        </div>
+      </ion-card>
+      <ion-list class="profile-list" lines="none">
+        <ion-item routerLink="/ordersx" [ngClass]="URL==='/ordersx' ? 'active' : ''">
+          <ion-icon slot="start" name="albums-outline"></ion-icon>
+          <ion-text>My Orders</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="/likes" [ngClass]="URL==='/likes' ? 'active' : ''">
+          <ion-icon slot="start" name="heart"></ion-icon>
+          <ion-text>Shortlisted Vehicles</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="/activity">
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+          <ion-text>My Activity</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="/myvehicles">
+          <ion-icon slot="start" name="ellipsis-vertical-outline"></ion-icon>
+          <ion-text>My Vehicle</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="car-outline"></ion-icon>
+          <ion-text>My Garage</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="/profile-setting">
+          <ion-icon slot="start" name="cog-outline"></ion-icon>
+          <ion-text>Profile Setting</ion-text>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <button class="logoutBtn" (click)="logOut()">Logout</button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <!-- ngIf Card -->
+    <ion-card class="right-card" *ngIf="!cartItems">
+      <ion-label class="shortlisted">My Orders</ion-label>
+      <ion-list lines="none" class="liked-car-list">
+        <ion-item>
+          <ion-card class="list-Card">
+            <ion-img class="orders-img" src="../../assets/Orders.svg"></ion-img>
+            <ion-card class="card-center">
+              <ion-text class="No-Orders">No Orders Found</ion-text> <br>
+              <ion-text>No order yet, Start your auto explore journey and many more</ion-text><br>
+              <ion-button class="Browse-btn" color="warning" (click)="browseVehicles()" >Browse Vehicles</ion-button>
+            </ion-card>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+    <!-- ngIf Card -->
+    <ion-card class="right-card" *ngIf="cartItems">
+      <ion-label class="shortlisted">My Orders</ion-label>
+      <ion-list lines="none" class="liked-car-list" *ngFor="let car of cartItems">
+        <ion-item >
+          <ion-card class="list-Card">
+            <ion-img class="orders-img" [src]="car.image"></ion-img>
+            <ion-card class="card-center">
+              <ion-text class="No-Orders"> Car Id : {{car.id}}</ion-text> <br>
+              <ion-text> Class: {{car.class}}</ion-text><br>
+              <ion-text> Title : {{car.title}}</ion-text><br>
+              <ion-text> Start_production : {{car.start_production}}</ion-text><br>
+              <!-- <ion-button class="Browse-btn" color="warning" (click)="browseVehicles()" >Browse Vehicles</ion-button> -->
+            </ion-card>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-card>
+
+  <app-footer></app-footer>
+</ion-content>

@@ -1,0 +1,38 @@
+
+    <ion-card class="hero-left">
+      <ion-card class="left-top">
+        <ion-icon size="large" name="person-circle-outline"></ion-icon> <br>
+        <ion-label class="pr-name">{{(user)?user.name:''}}</ion-label><br>
+        <ion-label class="pr-details">{{(user)?.email}}</ion-label><br>
+        <ion-label class="pr-details"> {{(user)?.workStatus}}</ion-label><br>
+
+        <ion-button class="profile-btn" (click)="openModal()" shape="round">Update profile</ion-button>
+        
+      </ion-card>
+      <ion-card class="left-down">
+        <ion-label class="pr-performance">Profile performance</ion-label>
+       <ion-card class="pr-details-flex">
+
+        <ion-card class="pr-box-1">
+          <ion-label class="pr-box-text">Search apperances</ion-label>
+          <ion-card class="apperances-flex">
+            <ion-label>28</ion-label>
+            <ion-icon size="medium" name="chevron-forward-outline"></ion-icon>
+          </ion-card>
+        </ion-card>
+
+        <ion-card class="pr-box-center"></ion-card>
+        
+        <ion-card class="pr-box-1">
+          <ion-label class="pr-box-text">Recruiter actions</ion-label>
+          <ion-card class="apperances-flex">
+            <ion-label>4</ion-label>
+            <ion-icon size="medium" name="chevron-forward-outline"></ion-icon>
+          </ion-card>
+        </ion-card>
+        
+       </ion-card>
+
+      </ion-card>
+    </ion-card>
+

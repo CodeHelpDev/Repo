@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-menu-button slot="start" color="light" ></ion-menu-button>
+    <ion-title>Firebase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid class="fix-grid">
+      <ion-row>
+        <ion-col size="9">
+          <ion-searchbar placeholder="Filter by |"></ion-searchbar>
+        </ion-col>
+        <ion-col class="ion-text-center ion-padding" size="3">
+          <ion-icon (click)="switchKnobs()" name="options-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isVisible" class=ion-text-center>
+        <ion-col size="1">
+          1
+        </ion-col>
+        <ion-col size="9">
+          <ion-label>Filter by age</ion-label>
+        </ion-col>
+        <ion-col size="2">
+          97
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="isVisible" class=ion-text-center>
+        <ion-col size="1">
+        </ion-col>
+        <ion-col size="9">
+          <ion-range [value]="{ lower: 00, upper: 100 }" [dualKnobs]="true" (ionChange)="onIonChange($event)" labelPlacement="stacked" ></ion-range>
+        </ion-col>
+        <ion-col size="2">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="scroll-grid">
+      <ion-row *ngFor="let val of userDataArray" >
+        <ion-col size="1"></ion-col>
+        <ion-col size="3">
+          <ion-img [src]="val.image"></ion-img>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+        <ion-col size="5">
+          <ion-label>
+            {{val?.firstName}}
+          </ion-label> <br>
+          <ion-text>
+           Age:  {{val?.weight|number: '1.0-0'}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="userDataArray.length===0" class="no-users-grid">
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            No users found for the selected filters.
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

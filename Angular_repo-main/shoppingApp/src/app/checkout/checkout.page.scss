@@ -1,0 +1,94 @@
+ion-icon[name="chevron-back"]{
+    font-size: 20px;
+}
+.heading{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+.address-col{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ion-icon[name="add-outline"]{
+    font-size: 30px;
+    // height: 100px;
+}
+ion-content{
+    --background: rgb(244, 242, 242);
+}
+.address-modal{
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+.address-grid{
+    background: lightgray;
+    height: 200px;
+}
+
+ion-input{
+    --highlight-height:0px;
+    --border-radius:10px;
+    --padding-start:10px;
+    --background: white;
+    --padding-end:10px;
+}
+#address-btn{
+    display: flex;
+    width: 230px;
+    margin: 0 auto;
+}
+.address-grid ion-row{
+    margin-block: 30px;
+}
+ion-icon[name="add"]{
+    font-size: 20px;
+}
+.main-grid ion-row{
+    margin-block: 20px;
+}
+.payment-modal{
+    --background: rgb(252, 238, 238);
+    --border-radius: 25px 25px 0px 0px;
+}
+#addCard{
+    --background: #DB3022;
+    --background-activated:#DB3022 ;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+}
+.card-image{
+    width: 30px;
+}
+.delivery-method-row ion-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+}
+.delivery-method-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.delivery-method-row ion-col ion-img{
+    --box-shadow: none;
+}
+.text-gray{
+    color: rgb(79, 78, 78);
+    font-size: medium;
+}
+#sub-order{
+    --background: #DB3022;
+    --background-activated: #DB3022;
+    display: flex;
+    --border-radius: 25px;
+}

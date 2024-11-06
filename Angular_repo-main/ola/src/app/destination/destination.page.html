@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/tabs/home" text="" slot="start" color="dark"></ion-back-button>
+    <ion-title>Destination</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"> 
+  <ion-card class="main-card">
+    <ion-searchbar *ngIf="!isConfirm" id="searchValue" (keyup.enter)="addDestination()" placeHolder="Your Destination"></ion-searchbar>
+    <ion-button *ngIf="!isConfirm" (click)="addDestination()" id="searchBtn">Search</ion-button>
+    <ion-button *ngIf="isConfirm" (click)="confirm()" id="confirmBtn" >Confirm Ride </ion-button>
+  </ion-card>
+
+  <ion-card *ngIf="currentLocation" class="current-location-card">
+    <ion-label>Your Pickup Loaction :</ion-label>
+    <ion-label>{{currentLocation}}</ion-label>
+  </ion-card>
+
+  <ion-card *ngIf="destination" class="drop-location-card">
+    <ion-label>Your Drop Loaction :</ion-label>
+    <ion-label>{{destination}}</ion-label>
+  </ion-card>
+</ion-content>

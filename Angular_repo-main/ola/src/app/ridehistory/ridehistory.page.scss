@@ -1,0 +1,14 @@
+ion-row:first-child{
+    margin-block: 10px;
+    background-color: rgb(0, 0, 0);
+    font-size: large;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+ion-row:nth-child(even){
+    background-color:lightgreen;
+}
+ion-row{
+    width: 90%;
+    margin: 0 auto;
+}

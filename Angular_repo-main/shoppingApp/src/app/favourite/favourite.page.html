@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-icon slot="end" name="search" class="ion-padding"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col>
+        <ion-label class="heading">Favourites</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="likedProducts.length===0">
+    <ion-row>
+      <ion-col class="ion-text-center" size="12">
+        <ion-label>
+          No Liked Products Found
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="likedProducts.length>0" class="ion-padding">
+    <ion-row *ngFor="let val of likedProducts">
+      <ion-col size="4">
+        <ion-img [src]="val.thumbnail">
+          <ion-icon name="heart"></ion-icon>
+        </ion-img>
+      </ion-col>
+      <ion-col class="details-flex" size="6">
+        <ion-label class="title-name">Brand Name : {{val.title}} </ion-label>
+        <ion-label>
+          <ion-label>
+            Time to Arrive:
+          </ion-label>
+          {{val?.shippingInformation}}</ion-label>
+      </ion-col>
+      <ion-col class="details-flex">
+        <ion-icon color="danger" (click)="onLiked(val)" name="heart"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

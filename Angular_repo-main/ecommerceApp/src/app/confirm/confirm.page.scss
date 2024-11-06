@@ -1,0 +1,17 @@
+.main-heading{
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+ion-row{
+    margin-block: 30px;
+}
+ion-button{
+    z-index: 10;
+    --background: linear-gradient(90deg, rgba(102, 126, 234, 1) 0%, rgba(100, 182, 255, 1) 100%);
+    width: 85%;
+    color: white;
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+}

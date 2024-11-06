@@ -1,0 +1,58 @@
+
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+    <ion-card class="main-card">
+      <form [formGroup]="updateSubCatForm" (ngSubmit)="onSubmit(updateSubCatForm.value)"> 
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-text-center" size="12">
+              <ion-label class="heading">
+                Edit sub category
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3"></ion-col>
+            <ion-col size="6">
+              <ion-grid class="inner-grid ion-padding">
+                <ion-row class="ion-padding">
+                  <ion-col>
+                    <ion-label class="input-label">Title*</ion-label>
+                    <ion-input [readonly]="true" formControlName="title" ></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="ion-padding">
+                  <ion-col>
+                    <ion-label class="input-label">Description*</ion-label>
+                    <ion-input formControlName="description"></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="ion-padding">
+                  <ion-col class="image-col" size="12">
+                    <ion-label class="input-label">Category*</ion-label>
+                    <ion-select formControlName="category">
+                      <ion-select-option [value]="val?.title" *ngFor="let val of categoryData">{{val.title}}</ion-select-option>
+                    </ion-select>                    
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-button  type="Submit" class="submit-btn">
+                      Submit
+                    </ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button (click)="onCancel()" class="cancel-btn">
+                      Cancel
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+            <ion-col size="3"></ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-card>
+  <app-footer></app-footer>
+</ion-content>

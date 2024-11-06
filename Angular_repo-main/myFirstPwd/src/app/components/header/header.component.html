@@ -1,0 +1,78 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-img id="carDekhoLogo" src="../../assets/CarDekhoLogo.png"> </ion-img>
+    <ion-searchbar placeholder="Search Cars eg. Honda Elevate"></ion-searchbar>
+    <div id="leftnav">
+      <ion-label>English</ion-label>
+      <ion-icon size="medium" name="heart-outline" (click)="move()"></ion-icon>
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label id="open-modal"> Login / Register</ion-label>
+    </div>
+  </ion-toolbar>
+  <div class="navbar">
+    <div class="nav">
+      <div class="dropdown">
+        <button class="dropbtn">NEW CARS</button>
+        <div class="dropdown-content">
+          <ion-text (click)="nav()">Deisel Cars</ion-text>
+          <ion-text>CNG & Electric Cars</ion-text>
+          <ion-text>Petrol Cars</ion-text>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">BUY & SELL USED CARS</button>
+        <div class="dropdown-content">
+          <ion-text>CNG & Electric Cars</ion-text>
+          <ion-text>Petrol Cars</ion-text>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">NEWS, REVIEWS & VIDEOS </button>
+        <div class="dropdown-content">
+          <ion-text>CNG & Electric Cars</ion-text>
+          <ion-text>Petrol Cars</ion-text>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">CAR SERVICE</button>
+        <div class="dropdown-content">
+          <ion-text>CNG & Electric Cars</ion-text>
+          <ion-text>Petrol Cars</ion-text>
+        </div>
+      </div>
+
+      <div *ngIf="!city" class="dropdown" id="city" id="city-modal">
+        <ion-icon name="location-outline"></ion-icon>
+        Select City
+        <ion-icon name="caret-down-outline"></ion-icon>
+      </div>
+
+      <div *ngIf="city" class="dropdown" id="city" id="city-modal">
+        <ion-icon name="location-outline"></ion-icon>
+        {{city}}
+        <ion-icon name="caret-down-outline"></ion-icon>
+      </div>
+
+    </div>
+
+    <ion-modal class="transparent-backdrop" backdrop="none" trigger="city-modal">
+      <ng-template>
+        <ion-header class="ion-no-border">
+          <ion-title line="none" class="modal-title">We need your city to customize your experience</ion-title>
+        </ion-header>
+        <ion-content>
+          <form [formGroup]="cityForm" (ngSubmit)="cityDetails(cityForm.value)">
+            <ion-input formControlName="city" class="input" label="Type your city, e.g. Jaipur, New Delhi" labelPlacement="floating"
+              [counter]="true" maxlength="20"></ion-input>
+            <ion-button class="cityBtn" type="submit">Save</ion-button>
+          </form>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+
+  </div>
+</ion-header>

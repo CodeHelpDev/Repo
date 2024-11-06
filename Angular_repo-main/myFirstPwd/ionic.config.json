@@ -1,0 +1,7 @@
+{
+  "name": "myFirstPwd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

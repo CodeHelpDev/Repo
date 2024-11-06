@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+        integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+        }
+        #main {
+            width: 100vw;
+            max-width: 540px;
+            height: 100vh;
+            box-shadow: inset 0 0 10px 4px #1116;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: sans-serif;
+            background: #1c1c46;
+            color: #fff;
+            padding: 8px;
+            text-shadow: 1px 1px 4px #111;
+            margin-bottom: 8px;
+        }
+
+        #msg_area {
+            min-height: 82%;
+            padding: 0 12px;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
+        h3 {
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        #input {
+            height: 7%;
+            min-height: 42px;
+            display: grid;
+            grid-template-columns: 70% 30%;
+            margin: 8px 16px;
+            border-radius: 32px;
+            margin-top: 590px;
+            position: fixed;
+        }
+
+        #text {
+            outline: none;
+            font-size: 20px;
+            background: #ececee;
+            color: #333;
+            border-radius: 32px 0 32px 32px;
+            padding: 0 16px;
+            border: 1px solid #777;
+            border-right: none;
+        }
+
+        #send {
+            outline: none;
+            font-size: 20px;
+            color: #eee;
+            background-color: #1c1f46;
+            border: none;
+            border-radius: 32px;
+            transition-duration: 0.2s;
+        }
+
+        #send:active {
+            font-size: 16px;
+        }
+
+        .left,
+        .right {
+            font-size: 18px;
+            font-family: monospace;
+            display: inline-block;
+            width: auto;
+            max-width: 60%;
+            padding: 14px;
+            word-wrap: break-word;
+            margin: 8px 14px;
+        }
+
+        .left {
+            color: #000;
+            background: #b3bfca;
+            border-radius: 0 16px 16px 16px;
+        }
+
+        .right {
+            color: #fff;
+            background-color: #1c1f46;
+            float: right;
+            border-radius: 16xp 16px 0 16px;
+        }
+
+        .msgCon1,
+        .msgCon2 {
+            width: 100%;
+            display: inline-block;
+        }
+
+        .message-right {
+            float: right;
+            width: 100%;
+            right: 0;
+            margin-right: 0;
+            text-align: right;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body onload="start()">
+    <div id="main">
+        <h2>Chat Bot </h2>
+
+        <div id="msg_area">
+
+            <div id="messages">
+
+            </div>
+            <div id="input">
+                <input type="text" placeholder="New message" id="text">
+                <button id="send">Send <i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+        function getMessages() {
+            var html = ''
+            let data = localStorage.getItem('chat_data');
+            data = JSON.parse(data)
+            console.log(data);
+            
+            for (let index = 0; index < data.length; index++) {
+                var time = moment(data[index].date).fromNow();
+                console.log('time',time)
+                
+                html += '<div class="message-right"><p>' + data[index].message + '</p></div>';
+                html += '<div class="message-right"><p>' +time + '</p></div>';
+            }
+            document.getElementById('messages').innerHTML = html;
+        }
+
+        function start() {  
+            getMessages()
+        }
+        document.getElementById("send").addEventListener("click", async (e) => {
+            e.preventDefault();
+            var req = document.getElementById('text').value;
+            if (req == undefined || req == "") {
+
+            }
+            else {
+                var time = new Date().getTime();
+                var date = new Date().toString('yyyy-MM-d-h-mm-ss');
+                
+                let data = {
+                    date,
+                    message: req
+                }
+                if (localStorage.getItem('chat_data') != null) {
+                    var temp = localStorage.getItem('chat_data');
+                    temp = JSON.parse(temp);
+                    temp.push(data);
+                    localStorage.setItem('chat_data', JSON.stringify(temp));
+                } else {
+                    localStorage.setItem('chat_data', JSON.stringify([data]));
+                }
+                getMessages()
+                document.getElementById('text').value = "";
+            }
+        })
+    </script>
+</body>
+
+</html>

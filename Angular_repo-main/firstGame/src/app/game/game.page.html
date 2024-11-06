@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tic-tac-toe Game</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-label class="play-game" *ngIf="freshPage">Let's Play Game</ion-label> <br>
+    <ion-label class="current-player" *ngIf="!winner && !freshPage && !isdraw">Current Player : {{Player}}</ion-label>
+    <ion-label class="winner-msg" *ngIf="winner">Player {{winner}} won!</ion-label> <br>
+    <ion-label *ngIf="isdraw"> Draw</ion-label> 
+    <ion-button (click)="newGame()" *ngIf="freshPage">Start Game</ion-button>
+
+      <ion-card class="game-card" >
+       <app-board *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)" ></app-board>
+      </ion-card>     
+    </ion-card>
+    
+    <ion-button  (click)="reloadGame()" class="reload" *ngIf="winner || isdraw">
+      <ion-icon size="large"  name="reload-outline"></ion-icon>
+    </ion-button> 
+
+</ion-content>

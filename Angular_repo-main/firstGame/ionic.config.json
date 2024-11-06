@@ -1,0 +1,7 @@
+{
+  "name": "firstGame",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

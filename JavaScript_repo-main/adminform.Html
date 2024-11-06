@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wrapper form {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        #marks-sec {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+        }
+
+        #personalDetails-sec {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+
+        }
+
+        input {
+            margin: 2%;
+
+        }
+
+        #save {
+            width: 20%;
+            height: 2rem;
+            ;
+        }
+    </style>
+</head>
+<script>
+
+
+
+    function validateStudent() {
+        var showList = [];
+        var rollno = document.studentform.rollno.value;
+        var name = document.studentform.name.value;
+        var email = document.studentform.email.value;
+        var mobileno = document.studentform.mobileno.value;
+        var address = document.studentform.address.value;
+
+
+        var formData = document.getElementById('studentform').value;
+        var formData = new FormData(formData);
+        var formData = Object.fromEntries(new FormData(document.querySelector('form')).entries());
+        showList.push(formData);
+        showList = showList.concat(JSON.parse(localStorage.getItem('showList') || '[]'));
+        localStorage.setItem("showList", JSON.stringify(showList));
+
+
+        document.studentform.reset();
+    }
+    function searchStudent(e) {
+
+        var localStorageItem = [];
+        // var searchedEmail = document.studentform.searchEmail.value;
+        
+        var searchedUser = e.value;
+        // var serarchedName= document.studentform.searchName.value;
+        // var searchedUser = document.studentform.searchRollNo.value;
+        localStorageItem = localStorage.getItem('showList');
+        const result = JSON.parse(localStorageItem);
+        // console.log('localStorageItem',result,searchedUser );
+
+        //for Searching Through Roll No in JS 
+        const array = [];
+        result.findIndex(function (item) {
+            console.log('item',item.rollno)
+            if (item.rollno === searchedUser || item.name===searchedUser.toLocaleUpperCase() ||item.name===searchedUser) {
+                array.push(item)
+            }
+        });
+        // console.log('index', array)
+       
+
+
+        var body =document.getElementById('t_body');
+        var html = '';
+        // for (let element in array) {
+        //     console.log('qwertyu',array[element])
+
+        // }
+        array.forEach(element => {
+            html = '<tr>'
+                        +'<td>'+element.rollno+'</td>'
+                        +'<td>'+element.name+'</td>'
+                        +'<td>'+element.email+'</td>'
+                        +'<td>'+element.mobileno+'</td>'
+                        +'<td>'+element.address+'</td>'
+                        +'<td>'+element.hindi+'</td>'
+                        +'<td>'+element.english+'</td>'
+                        +'<td>'+element.sst+'</td>'
+                        +'<td>'+element.science+'</td>'
+                        +'<td>'+element.maths+'</td>'
+                    +'</tr>';
+
+            console.log(element)
+            body.innerHTML=html;
+            // var html =body.append('<tr><td>aaaa</td><td>aaaa</td><td>aaaa</td><td>aaaa</td><td>aaaa</td>/tr>');
+        });
+        ;
+     }
+     
+
+   
+</script>
+
+<body>
+
+    <div id="wrapper">
+        <form action="" method="post" id="studentform" name="studentform">
+            <div id="personalDetails-sec">
+
+                <h2>Students Personal Details</h2>
+                <label for="rollno">Roll No : </label>
+                <input type="text" name="rollno" id="rollno">
+                <label for="name">Name : </label>
+                <input type="text" name="name" id="name" placeholder="Fill Name">
+                <label for="email">Email : </label>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <label for="mobileNo">Mobile No : </label>
+                <input type="text" name="mobileno" id="mobileno" placeholder="Mobile No ">
+                <label for="Address">Address : </label>
+                <textarea name="address" id="address" rows="5" placeholder="Address"></textarea>
+            </div>
+
+            <div id="marks-sec">
+                <h2>Students Marks</h2>
+                <p><b>Note:</b>Fill The Marks of Each Students According to Their Proformance</p>
+
+                <label for="hindi">Hindi: </label>
+                <input type="text" id="hindi" name="hindi">
+
+                <label for="hindi">English: </label>
+                <input type="text" id="english" name="english">
+
+                <label for="hindi">Social Science: </label>
+                <input type="text" id="sst" name="sst">
+
+                <label for="hindi">Science: </label>
+                <input type="text" id="science" name="science">
+
+                <label for="maths">Maths: </label>
+                <input type="text" id="maths" name="maths">
+
+                <input type="button" id="save" value="Save Details" onclick="validateStudent()">
+
+                <label for="searchingByRollNo">By Roll NO :</label>
+                <input type="text" name="searchRollNo" id="searchRollNo" onkeyup="searchStudent(this)">
+
+                <!-- <label for="searchingByName">By Name:</label>
+                <input type="text" name="searchName" id="searchName" onkeyup="searchStudent()">
+
+                <label for="searchingByEmail">By Email:</label> -->
+                <!-- <input type="email" name="searchEmail" id="searchEmail" onkeyup="searchStudent()"> -->
+            </div>
+        </form>
+
+
+        <table id="myTable" >
+                <thead>
+                    <tr>
+                        <th>Roll No </th>
+                        <th>Name </th>
+                        <th>Email </th>
+                        <th>Mobile No </th>
+                        <th>Address </th>
+                        <th>Hindi </th>
+                        <th>English </th>
+                        <th>Social Science </th>
+                        <th>Science </th>
+                        <th>Maths </th>
+
+                    </tr>
+                    
+                </thead>
+                <tbody id="t_body"> 
+                    
+                   
+                </tbody>
+        </table>
+        <button type="button" onclick="myFunction()">Try it</button>
+
+
+
+    </div>
+
+</body>
+
+</html>

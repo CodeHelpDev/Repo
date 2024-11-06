@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    </ion-title>
+      <ion-searchbar (ionInput)="searchFilter($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col size="4">
+      <ion-row *ngFor="let post of posts" >
+        <ion-col>
+          <ion-img [src]="post.thumbnailUrl" routerLink="/tabs/details" [queryParams]="post"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="4">
+      <ion-row  *ngFor="let post of posts" >
+        <ion-col>
+          <ion-img [src]="post.thumbnailUrl" routerLink="/tabs/details" [queryParams]="post" ></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="4">
+      <ion-row  *ngFor="let post of posts">
+        <ion-col >
+          <ion-img [src]="post.thumbnailUrl" routerLink="/tabs/details" [queryParams]="post"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>

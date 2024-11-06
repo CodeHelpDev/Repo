@@ -1,0 +1,51 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-icon class="close-icon" (click)="menuClose()" size="large" name="close"></ion-icon>
+          <ion-card class="user-card">
+            <ion-icon class="user-icon" name="person-circle"></ion-icon>
+            <ion-label class="heading">Johanna Doe</ion-label>
+            <ion-label>Johanna&#64;company.com</ion-label>
+          </ion-card>
+        </ion-list>
+
+        <ion-list lines="none" >
+          <ion-item button (click)="routingFun('/home')" [ngClass]="currentUrl==='/home'?'active-tab':''">
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item button  (click)="routingFun('/reports')" [ngClass]="currentUrl==='/reports'?'active-tab':''">
+            <ion-icon slot="start" name="stats-chart"></ion-icon>
+            <ion-label>Reports</ion-label>
+           
+          </ion-item>
+          <ion-item button (click)="routingFun('/customers')" [ngClass]="currentUrl==='/customers'?'active-tab':''">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>Customers</ion-label>
+           
+          </ion-item>
+          <ion-item button (click)="routingFun('/leads')" [ngClass]="currentUrl==='/leads'?'active-tab':''">
+            <ion-icon slot="start" name="heart"></ion-icon>
+            <ion-label>Leads</ion-label>
+          </ion-item>
+          <ion-item button (click)="routingFun('/products')" [ngClass]="currentUrl==='/products'?'active-tab':''" >
+            <ion-icon slot="start" name="basket"></ion-icon>
+            <ion-label>Products</ion-label>
+          </ion-item>
+          
+        </ion-list>
+        <ion-list class="setting-list" lines="none">
+          <ion-item>
+            <ion-icon slot="start" name="settings-sharp"></ion-icon>
+            <ion-label>Settings</ion-label>
+          </ion-item>
+        </ion-list>
+
+    
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,54 @@
+ion-toolbar{
+    color: white;
+    --background: black;
+}
+ion-content{
+    --background: black;
+}
+.small-heading{
+    color: white;
+    font-size: 20px;
+}
+.heading{
+    color: white;   
+    font-size: 35px;
+}
+.scroll-grid{
+    max-height: 290px;
+    overflow-y: auto;
+}
+.img1{
+    background: url('../../assets/travelimage.jpg');
+    height: 145px;
+    background-size: cover;
+  
+}
+.image-text{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+ion-icon[name="checkmark"]{
+    font-size: 80px;
+    font-weight: bold;
+}
+.pink-shadow{
+    filter: grayscale(1);
+}
+ion-button{
+    --background:  #FF0062;
+    --background-activated: #FF0062;
+    display: flex;
+
+
+}

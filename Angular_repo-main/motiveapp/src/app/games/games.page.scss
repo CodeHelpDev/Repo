@@ -1,0 +1,90 @@
+.tbl-btn:nth-child(even){
+    --background:#ed7c18;
+}
+#event-btn{
+    --background:#ed7c18;
+    text-transform: capitalize;
+}
+.event-row{
+    padding: 20px;
+    box-shadow: 2px 2px 10px gray;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.game-ev-image{
+    height: 200px;    
+}
+#participants-btn{
+    color: gray;
+    text-transform: capitalize;
+    --background: lightgray;
+    --background-activated:lightgray;
+    --border-radius: 25px;    
+}
+.pt-btn-col{
+    padding: 10px;
+}
+.seg-row{
+    margin-bottom: 20px;
+}
+.input-heading{
+    color: black;
+    font-size: larger;
+    font-weight: 600;
+}
+.game-heading-row{
+    padding: 20px;
+}
+.game-heading-row{
+    color: black;
+    font-size: x-large;
+    font-weight: 600;
+}
+ion-select,ion-textarea,ion-input{
+    border: 1px solid gray;
+    --padding-start:10px;
+    margin-top: 2%;
+    --highlight-height:0px;
+    --background:lightgray;
+    border-radius: 2px;
+}
+
+ion-textarea{
+    width: 97%;
+    margin: 0 auto;
+}
+.capabilities-row ion-col{
+    background-color: black;
+    height: 50px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.capabilities-row ion-col ion-label{
+    margin-left: 40px;
+}
+
+.game-scenarios-grid{
+    background: #eae9e9;
+}
+.text-bold{
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+.select-grp{
+    --background: lightgray;
+    --padding-start:20px;
+}
+#edit-btn{
+    --background:white;
+    --background-activated:white;
+    color: black;
+    text-transform: capitalize;
+    --border-radius: 5px;
+    --border-color: black;
+    width: 150px;
+    
+}

@@ -1,0 +1,47 @@
+ion-img{
+    width: 200px;
+    display: flex;
+    margin: 0 auto;
+}
+.heading{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+.price{
+    color: red;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: line-through;
+
+}
+.offer-price{
+    color: green;
+    font-size: 18px;
+    font-weight: 400;
+}
+.rating{
+    color: rgb(208, 0, 255);
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.description{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.ion-text-justify{
+    line-height: 30px;
+}
+.rating-row{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+.highlight {
+    background: yellow;
+    color: red;
+}

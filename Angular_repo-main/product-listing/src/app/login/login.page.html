@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form  [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Email Id" placeholder="Email" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Password" placeholder="Password" type="text" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div>
+      <ion-button type="submit" color="success" [disabled]="!loginForm.valid">
+        Login
+      </ion-button>  
+      <ion-label slot="center" color="tertiary" routerLink="/signup" > Sign up For Shopping</ion-label>
+    </div>
+  </form>
+  <ion-alert [isOpen]="isAlert" header="Login Success" sub-header="" meassage="" [buttons]="['OK']"></ion-alert>
+  <ion-alert [isOpen]="isValidAlert" header="Invalid User" sub-header="InValid User Id or Password" meassage="Go and signup First" [buttons]="['OK']"></ion-alert>
+</ion-content>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        #display {
+            background-color: rgb(183, 250, 255);
+
+        }
+
+        tr,
+        td,
+        th {
+            border: 0px solid black;
+            padding: .5%;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            font-size: large;
+        }
+
+        table {
+            width: 50%;
+            height: 400px;
+        }
+    </style>
+
+    <form action="" name="calculator">
+        <table>
+            <tr>
+                <th colspan="7">
+                    <input type="text" id="display" name="display" value="0" size="25" maxlength="25"
+                        onkeydown="validate()">
+                </th>
+            </tr>
+            <tr>
+                <td><input type="button" value="Rad"> </td>
+                <td><input type="button" value="Deg" disabled> </td>
+                <td><input type="button" value="x!" onclick="getFactorial()"> </td>
+                <td><input type="button" value="(" onclick="addChar(this.form.display, this.value)"> </td>
+                <td><input type="button" value=")" onclick="addChar(this.form.display,this.value)"> </td>
+                <td><input type="button" value="%" onclick="this.form.display.value=eval(this.form.display.value)/100">
+                </td>
+                <td><input type="button" value="CE" onclick="addChar(this.form.display,this.form.display.value=0)">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Inv" id="inverse" onclick=""></td>
+                <td><input type="button" value="sin" onclick="sinClicked()"></td>
+                <td><input type="button" value="In" onclick=""></td>
+                <td><input type="button" value="7" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="8" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="9" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="/" onclick="addChar(this.form.display,this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="&#960;"
+                        onclick="this.form.display.value=(this.form.display.value)*Math.PI"></td>
+                <td><input type="button" value="cos" onclick="cosClicked()"></td>
+                <td><input type="button" value="log" onclick=""></td>
+                <td><input type="button" value="4" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="5" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="6" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="X" onclick="addChar(this.form.display,'*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="e" onclick="setEValue()"></td>
+                <td><input type="button" value="tan" onclick="tanClicked()"></td>
+                <td><input type="button" value="&radic;"
+                        onclick="this.form.display.value=Math.sqrt(this.form.display.value)"></td>
+                <td><input type="button" value="1" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="2" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="3" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="-" onclick="addChar(this.form.display,this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Ans" onclick="lastResult()"></td>
+                <td><input type="button" value="DEL"
+                        onclick="this.form.display.value=this.form.display.value.slice(0,-1)"></td>
+                <td><input type="button" value="XY" onclick=""></td>
+                <td><input type="button" value="0" onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="." onclick="addChar(this.form.display,this.value)"></td>
+                <td><input type="button" value="=" onclick="calculator.display.value=eval(calculator.display.value)">
+                </td>
+                <td><input type="button" value="+" onclick="addChar(this.form.display,this.value)"></td>
+            </tr>
+        </table>
+
+    </form>
+    <script>
+
+        var last_result = '';
+        var e = 2.7182818285;
+
+        function addChar(input, character) {
+            if (input.value == null || input.value == "0") {
+                input.value = character
+            }
+            else {
+                input.value += character;
+            }
+
+
+        }
+
+
+        function sinClicked() {
+            calculator.display.value = Math.sin(calculator.display.value);
+        }
+        function cosClicked() {
+            calculator.display.value = Math.cos(calculator.display.value);
+        }
+        function tanClicked() {
+            calculator.display.value = Math.tan(calculator.display.value);
+        }
+        function lastResult() {
+            last_result = calculator.display.value;
+            calculator.display.value = last_result;
+        }
+
+        function setEValue() {
+            if (calculator.display.value) {
+                var res = e * calculator.display.value;
+                calculator.display.value = res;
+            }
+        }
+        function getFactorial() {
+            const fact = n => !n ? 1 : n * fact(--n);
+            calculator.display.value = fact(calculator.display.value);
+        }
+        function validate() {
+            const reg = new RegExp('^[0-9]+$');
+            const input = calculator.display.value;
+            if (reg.test(input)) {
+                console.log('valid');
+            } else {
+               document.calculator.display.value="";
+                alert("Input is not a valid number.");
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

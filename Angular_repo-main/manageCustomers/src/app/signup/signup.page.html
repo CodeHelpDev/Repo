@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-card class="first-card">
+     <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.value)">
+      <ion-label class="heading">Sign Up</ion-label>
+      <ion-input formControlName="email" labelPlacement="floating" label="Email" placeHolder="Your email address"></ion-input>
+      <ion-input formControlName="password" labelPlacement="floating" label="Password" placeHolder="Your Password"></ion-input>
+
+      <ion-checkbox (ionChange)="checkValue($event)" labelPlacement="end">
+        I agree the <ion-label class="pink-text">Terms of Services </ion-label> and <ion-label class="pink-text"> <br>Privacy Policy</ion-label>
+      </ion-checkbox>
+
+      <ion-button [disabled]="isDisable" type="submit" >Continue</ion-button>
+     </form>
+      <ion-label class="account-text">Have an Account ? <ion-text routerLink="/signin" class="pink-text">Sign In</ion-text></ion-label>
+
+    </ion-card>
+
+
+
+  </ion-card>
+
+ 
+</ion-content>

@@ -1,0 +1,119 @@
+.main-card {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+
+}
+
+.cloudImage {
+    width: 120px;
+    margin: 0 auto;
+}
+
+.content-card {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+}
+
+.heading {
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.second-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    width: 85%;
+    height: 250px;
+    gap: 10px;
+    box-shadow: none;
+
+}
+
+.third-card {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+}
+
+.btnLogo {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.logo-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: fit-content;
+
+}
+
+ion-input {
+    font-size: larger;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    color: black
+}
+
+.signin-btn {
+    width: 95%;
+    margin: 0 auto;
+}
+
+::ng-deep ion-input .label-text {
+    color: rgb(255, 38, 0);
+}
+
+.text-orange {
+    color: rgb(255, 38, 0);
+    font-size: medium;
+    font-weight: 600;
+}
+
+.forget-text {
+    color: gray;
+    font-weight: 600;
+    font-size: medium;
+}
+
+ion-input {
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+
+.signin-btn{
+    --background: var(--ion-orange-btn);
+    --background-activated:var(--ion-orange-btn);
+}
+
+.facebook {
+    --background: var(--ion-darkblue-btn);
+    --background-activated:var(--ion-darkblue-btn);
+}
+.twitter{
+    --background:var(--ion-skyblue-btn)
+    --background-activated:var(--ion-skyblue-btn);
+}
+
+.twitter:focus{
+    --background:var(--ion-skyblue-btn)
+}

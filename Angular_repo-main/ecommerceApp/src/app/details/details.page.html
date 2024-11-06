@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start" color="dark" defaultHref="/"></ion-back-button>
+    <ion-title *ngIf="!isSearchbarVisible">Product Details</ion-title>
+    <ion-searchbar #input [(ngModel)]="searchText" (ionInput)="onSearchChange($event)" id="search" *ngIf="isSearchbarVisible"></ion-searchbar>
+    <ion-icon slot="end" size="large" (click)="searchClicked()" name="search-outline"></ion-icon>
+    <ion-icon class="ion-padding" slot="end" size="large" name="notifications-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+  <ion-grid class="ion-padding" >
+    <ion-row>
+      <ion-col>
+        <ion-img [src]="productDetails?.image"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid id="content" >
+    <ion-row>      
+      <ion-col class="ion-text-center" size="12">
+        <ion-label class="heading" >
+          {{productDetails?.title}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-left" size="6">
+        <ion-label class="offer-price">
+          {{productDetails?.price|currency}}
+        </ion-label>
+      </ion-col>
+      <ion-col class="ion-text-right" size="6">
+        <ion-label class="price">
+          {{(productDetails?.price+20)|currency}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="rating-row flex-row">
+      <ion-col class="ion-text-left" size="6">
+        <ion-label class="rating">
+          Rating :
+          {{((productDetails?.rating?.count)/24)| number: '1.0-0' }}
+        </ion-label>
+      </ion-col>
+      <ion-col class="ion-text-right" size="6">
+        <ion-icon (click)="like(productDetails)" [ngStyle]="productDetails?.isLiked ? {'color':'red'}:{'color':''}"
+          size="large" name="heart"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col class="ion-text-left" size="10">
+        <ion-label class="description">Description</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col class="ion-text-justify" size="10">
+        <ion-label>
+          {{productDetails?.description}}
+        </ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

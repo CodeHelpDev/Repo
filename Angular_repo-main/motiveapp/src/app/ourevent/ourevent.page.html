@@ -1,0 +1,186 @@
+<app-common></app-common>
+<ion-content>
+  <ion-grid>
+    <ion-row class="navrow">
+      <ion-col size="0.5"></ion-col>
+      <ion-col class="event-nav" size="11">
+        <ion-label class="ev-text">
+          <ion-icon routerLink="/home" class="ion-padding" size="large" name="arrow-back"></ion-icon>
+          <ion-label>Our Events</ion-label>
+        </ion-label>
+        <ion-button id="event-btn">New Event</ion-button>
+      </ion-col>
+      <ion-col size="0.5"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-segment [(ngModel)]="segmentValue" value="all">
+          <ion-segment-button (click)="segValue($event)" value="all">All</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="live">Live</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="scheduled">Scheduled</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="chat">Chat</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="archived">Archived</ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="segmentValue!='chat'">
+      <ion-col size="7">
+        <ion-searchbar (ionInput)="serachUser($event)" placeHolder="Search for..."></ion-searchbar>
+      </ion-col>
+      <ion-col size="5"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-spinner *ngIf="result?.length===0" name="lines-sharp-small"></ion-spinner>
+      <ion-col size="12">
+        <ion-row>
+          <ion-col class="tbl-header-col">
+            <!-- Ng If All Start -->
+            <ion-grid *ngIf="segmentValue==='all'">
+              <ion-row class="tbl-header">
+                <ion-col size="1"></ion-col>
+                <ion-col size="7">Name</ion-col>
+                <ion-col size="2">20 Checked In</ion-col>
+                <ion-col size="2">52 Perticipants</ion-col>
+              </ion-row>
+              <ion-row></ion-row>
+              <ion-row class="repeated-col-row" *ngFor="let val of result">
+                <ion-col size="1"></ion-col>
+                <ion-col size="5">{{val.name}}</ion-col>
+                <ion-col size="2">{{val.iso2}}</ion-col>
+                <ion-col size="2">{{val.iso3}}</ion-col>
+                <ion-col size="2">
+                  <ion-button>EXCON View</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>  
+             <!-- Ng If All live -->
+             <ion-grid *ngIf="segmentValue==='live'">
+              <ion-row class="tbl-header">
+                <ion-col size="1"></ion-col>
+                <ion-col size="7">Event Name </ion-col>
+                <ion-col size="2">Date</ion-col>
+                <ion-col size="2">Event Status</ion-col>
+              </ion-row>
+              <ion-row class="repeated-col-row" *ngFor="let val of result?.sort()">
+                <ion-col size="1"></ion-col>
+                <ion-col size="5">{{val.name}}</ion-col>
+                <ion-col size="2">{{val.iso2}}</ion-col>
+                <ion-col size="2">{{val.iso3}}</ion-col>
+                <ion-col size="2">
+                  <ion-button>EXCON View</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid> 
+
+               <!-- Ng If All scheduled -->
+               <ion-grid *ngIf="segmentValue==='scheduled'">
+                <ion-row class="tbl-header">
+                  <ion-col size="1"></ion-col>
+                  <ion-col size="7">Event Name</ion-col>
+                  <ion-col size="2">Date</ion-col>
+                  <ion-col size="2">Event Organizer</ion-col>
+                </ion-row>
+                <ion-row class="repeated-col-row" *ngFor="let val of result?.reverse()">
+                  <ion-col size="1"></ion-col>
+                  <ion-col size="5">{{val.name}}</ion-col>
+                  <ion-col size="2">{{val.iso2}}</ion-col>
+                  <ion-col size="2">{{val.iso3}}</ion-col>
+                  <ion-col size="2">
+                    <ion-button>EXCON View</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid> 
+
+                 <!-- Ng If All archived -->
+             <ion-grid *ngIf="segmentValue==='archived'">
+              <ion-row class="tbl-header">
+                <ion-col size="1"></ion-col>
+                <ion-col size="7">Event Name</ion-col>
+                  <ion-col size="2">Date</ion-col>
+                  <ion-col size="2">Event Status</ion-col>
+              </ion-row>
+              <ion-row class="repeated-col-row" *ngFor="let val of result?.slice(40,50)">
+                <ion-col size="1"></ion-col>
+                <ion-col size="5">{{val.name}}</ion-col>
+                <ion-col size="2">{{val.iso2}}</ion-col>
+                <ion-col size="2">{{val.iso3}}</ion-col>
+                <ion-col size="2">
+                  <ion-button>EXCON View</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid> 
+
+
+          </ion-col>
+        </ion-row>                
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="segmentValue==='chat' && currentUser==='admin'" class="ion-padding cht-grid">
+    <ion-row>
+      <ion-col>
+        <ion-breadcrumbs>
+          <ion-breadcrumb routerLink="/home">Event Name Dashboard</ion-breadcrumb>
+          <ion-breadcrumb routerLink="">Chat Rooms</ion-breadcrumb>          
+        </ion-breadcrumbs>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-padding">
+        <ion-label class="heading">Chat Rooms</ion-label>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-grid class="header-grid">
+          <ion-row class="tbl-header">
+            <ion-col>
+              <ion-label>Room Name</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid class="ion-padding repeated-row-grid">
+          <ion-row>
+            <ion-col size="11">
+              <ion-label>Announcements</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon size="large" color="warning" name="chevron-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="11">
+              <ion-label>Chat Bot</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon size="large" color="warning" name="chevron-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+          <ion-row (click)="gamesChat('teams')">
+            <ion-col size="11">
+              <ion-label>Team Chat</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon size="large" color="warning" name="chevron-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+          <ion-row (click)="gamesChat('chat')">
+            <ion-col size="11">
+              <ion-label>Games Chat</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon size="large" color="warning" name="chevron-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+</ion-content>

@@ -1,0 +1,58 @@
+.range{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+ion-range::part(knob) {
+    display: none;
+}
+ion-range{
+    pointer-events: none;
+    --bar-background-active: black;
+}
+.heading{
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+    display: flex;
+    letter-spacing: 1px;
+    line-height:20px;
+}
+.skip-text{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+ion-datetime{
+    --background:white;
+}
+.main-card{
+    width: 90%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-card{
+    box-shadow: none;
+}
+ion-datetime::part(calendar-day):focus {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 0px 0px 0px 4px rgb(0, 0, 0);
+
+}
+ion-button{
+    display: flex;
+    margin: 0 auto;
+    --background:black;
+    --background-activated:black;
+    --border-radius: 25px;
+    width: 70%;
+    letter-spacing: 1px;
+    
+}

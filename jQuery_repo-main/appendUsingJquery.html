@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $('#addRow').click(function () {
+            //     $('#fir').append(
+            //         '</br><input type="text" id="ans" placeholder="Answer">')
+            // });
+            // var a=0;
+            // $('.addRow_'+a).click(function(){
+            //     console.log('dfghjk',a)
+            //     $('<input type="text" id="ans" placeholder="Answer">').appendTo(".ans_"+a);
+
+
+            // function removeOldRow(){
+
+            // }
+            // })
+            // a++;
+            // $('#removeRow').click(function(){
+            //     $('#fir').remove("#ans");
+            // })
+            // $('#removeRow').on('click',function(){
+            //     $('#fir').find('#ans').remove();
+            // });
+            var i = 0;
+            $('.maindiv_' + i).click(function () {
+                var in_class = i + 1;
+                $('<div class="fir">'
+                    + '<label for="question"> Question : </label> <br><br> ' +
+                    '<input type="text" id="ques" placeholder="Question"><br>' +
+                    '<div class="ans_' + in_class + '"><input type="text" id="ans" placeholder="Answer"></div>' +
+                    '<input type="button" value="+" class="addRow_' + in_class + '" onclick="newRow(' + in_class + ')">  ' +
+                    '<input type="button" value="-" class="removeRow_' + in_class + '" onclick="removeOldRow(' + in_class + ')">' +
+                    '</div>'
+
+                ).appendTo("#second");
+                i++;
+            })
+
+        })
+        function newRow(e) {
+
+            $('<input type="text" id="ans_' + $('.ans_' + e + ' input').length + '" placeholder="Answer">').appendTo(".ans_" + e);
+            console.log('e', e);
+        }
+        function removeOldRow(e) {
+            if ($('.ans_' + e + ' input').length > 1) {
+                $('.ans_' + e + ' input:last ').remove();
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="fir">
+        <label for="question"> Question : </label> <input type="button" value="Add New Row" class="maindiv_0"><br>
+        <input type="text" id="ques" placeholder="Question"><br>
+        <div class="ans_0">
+            <input type="text" id="ans_0" placeholder="Answer">
+        </div>
+
+        <input type="button" value="+" class="addRow_0" onclick="newRow(0)">
+        <input type="button" value="-" class="removeRow_0" onclick="removeOldRow(0)">
+
+    </div>
+
+    <div id="second">
+
+    </div>
+
+</body>
+
+</html>

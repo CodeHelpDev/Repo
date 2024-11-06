@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+ion-title {
+    font-size: 100%;
+}
+
+#fir {
+    margin-top: 60px;
+}
+
+#sec {
+    margin-top: 40px;
+}
+
+#third {
+    margin-top: 15px;
+    font-size: small;
+}
+
+ion-col {
+    text-align: center;
+}
+
+.activeCol {
+    border-bottom: 2px solid black;
+}
+ion-input { 
+    background-color: rgba(255, 255, 255, 0.082);
+    border: 2px solid rgb(208, 194, 194);
+    border-radius: 4px;
+    font-size: 14px;
+    height: 8px;
+    text-align: left;
+    padding: 50px;  
+}
+
+.countryCode {
+    background-color: rgba(255, 255, 255, 0.082);
+    border: 2px solid rgb(208, 194, 194);
+    border-radius: 4px;
+    font-size: 14px;
+    height: 8px;
+}
+
+ion-input[readOnly] {
+    color: blue;
+    text-align: center;
+    font-size: 16px;
+}
+ion-button{
+    margin-top:10px ;
+    width: 100%;
+}
+ion-col[size="12"]{
+    position: absolute;
+    bottom: 0px;
+}
+.pswd{
+    margin-top: 3px;
+}

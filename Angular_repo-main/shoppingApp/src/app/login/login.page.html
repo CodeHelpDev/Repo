@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref="/signup" color="dark"></ion-back-button>
+  </ion-toolbar>
+  <ion-title>Login</ion-title>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-input formControlName="email" label="Email" labelPlacement="floating">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="password" label="Password" labelPlacement="floating">
+        </ion-input>
+      </ion-item>
+      <ion-item routerLink="/forgetpassword" class="login-item">
+        <ion-label slot="end">
+          Forget your Password?
+        </ion-label>
+         <ion-icon slot="end" color="danger" name="arrow-forward-outline"></ion-icon>
+      </ion-item>
+      <ion-item class="login-item">
+         <ion-button [disabled]="!loginForm.valid" type="Submit">Login</ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
+  <ion-card id="main-card">
+    <ion-label>
+      Or Sign up with social account
+    </ion-label>
+    <ion-card>
+      <ion-img src="../../assets/Google.png">
+      </ion-img>
+      <ion-img src="../../assets/Facebook.png">
+      </ion-img>
+    </ion-card>
+  </ion-card>
+  <ion-alert
+[isOpen]="isInvalidUser"
+header="Invalid User"
+message="Invalid Email Id or Password"
+[buttons]="regButton"
+></ion-alert>
+</ion-content>

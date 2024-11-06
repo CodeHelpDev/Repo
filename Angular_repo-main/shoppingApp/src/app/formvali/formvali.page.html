@@ -1,0 +1,210 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-menu-button slot="start" color="light"></ion-menu-button>
+    <ion-title>Forms...</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form>
+    <ion-grid class="main-grid">
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="11">
+          <ion-label class="basicValidation">Basic Validations</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-input (focusout)="checkUserName($event)" label="Username" labelPlacement="floating"></ion-input>
+
+          <ion-label *ngIf="checkName" class="warning" class="ion-padding">
+            <ion-icon *ngIf="checkName" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Username is required.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+
+
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-input (focusout)="checkFname($event)" label="Name" labelPlacement="floating"></ion-input>
+          <ion-label *ngIf="isfname" class="warning" class="ion-padding">
+            <ion-icon *ngIf="isfname" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Name is required.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-input (focusout)="checkLname($event)" label="Last Name" labelPlacement="floating"></ion-input>
+          <ion-label *ngIf="islname" class="warning" class="ion-padding">
+            <ion-icon *ngIf="islname" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Lastname is required.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-input (focusout)="checkEmail($event)" label="Email" labelPlacement="floating"></ion-input>
+          <ion-label *ngIf="isEmail" class="warning" class="ion-padding">
+            <ion-icon *ngIf="isEmail" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Email is required.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-select toggleIcon="caret-down-sharp" interface="popover" label="Gender" labelPlacement="floating">
+            <ion-select-option value="Female">Female</ion-select-option>
+            <ion-select-option value="Male">Male</ion-select-option>
+            <ion-select-option value="Other">Other</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="phone-grid">
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="11">
+          <ion-label class="basicValidation">Phone Validations</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-select justify="start" label="Start" label="Country" labelPlacement="floating">
+            <ion-select-option value="India">India</ion-select-option>
+            <ion-select-option value="China">China</ion-select-option>
+            <ion-select-option value="America">America</ion-select-option>
+            <ion-select-option value="Pakistan">Pakistan</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-input (focusout)="checkPhone($event)" label="Phone"></ion-input>
+          <ion-label *ngIf="isPhone" class="warning" class="ion-padding">
+            <ion-icon *ngIf="isPhone" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Phone is required.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="pasword-grid">
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="11">
+          <ion-label class="basicValidation">Password Validations</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-input (focusout)="checkPassword($event)" label="Password" labelPlacement="floating"></ion-input>
+          <ion-label *ngIf="isPassword" class="warning" class="ion-padding">
+            <ion-icon *ngIf="isPassword" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Password is required..
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-input (focusout)="checkCPassword($event)" label="Comfirm Password" labelPlacement="floating"></ion-input>
+          <ion-label *ngIf="isCPassword" class="warning" class="ion-padding">
+            <ion-icon *ngIf="isCPassword" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Password confirmation is required.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="counter-grid">
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="11">
+          <ion-label class="basicValidation">Counter Validations</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4">
+          <ion-label>Guests</ion-label>
+        </ion-col>
+        <ion-col class="counter-col" size="7">
+          <ion-button fill="outline" (click)="counting('minus')" class="circle-btn">-</ion-button>
+          <ion-label>{{countingNumber}}</ion-label>
+          <ion-button fill="outline" (click)="counting('plus')" class="circle-btn">+</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4">
+          <ion-label>Bedroom</ion-label>
+        </ion-col>
+        <ion-col class="counter-col room-btn-col" size="7">
+          <ion-label>{{countingRoom}}</ion-label>
+          <ion-button fill="outline" (click)="countRoom('minus')" class="room-fir">-</ion-button>
+          <ion-button fill="outline" (click)="countRoom('plus')" class="room-sec">+</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="roomWarning">
+        <ion-col>
+          <ion-label *ngIf="roomWarning" class="warning" class="ion-padding">
+            <ion-icon *ngIf="roomWarning" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              Number must be between: 1 and 5.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="termsGrid">
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="11">
+          <ion-label class="basicValidation">Terms and Conditions</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-checkbox (click)="acceptTerms($event)" [checked]="true" checked labelPlacement="start">I accept terms and ....</ion-checkbox>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="termsWarning">
+        <ion-col class="ion-text-center" size="12">
+          <ion-label *ngIf="termsWarning" class="warning" class="ion-padding">
+            <ion-icon *ngIf="termsWarning" name="information-circle-outline"></ion-icon>
+            <ion-text class="warning">
+              You must accept terms and conditions.
+            </ion-text>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button id="submit-btn" fill="outline">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </form>
+</ion-content>

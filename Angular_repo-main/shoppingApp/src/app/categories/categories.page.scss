@@ -1,0 +1,88 @@
+ion-icon[name="search"]{
+    font-size: 20px;
+}
+ion-segment-button{
+    --indicator-color:#DB3022;
+    --indicator-height:2px;
+    --color-focused	:black;
+    --color-checked:black;
+    color: black;
+    --background-focused:white;
+    --background-checked:white;
+    text-transform: capitalize;
+}
+#women-grid{
+    background: lightgray;
+}
+.scroll-grid{
+    max-height: 450px;
+    overflow-y: auto;
+}
+.back-banner{
+    background: #DB3022;
+    height: 100px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+}
+.back-banner ion-label{
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+ion-row{
+    margin-block: 20px;
+}
+.repated-row{
+    background: white;
+    height: 100px;
+    border-radius: 8px;
+}
+ion-img{
+    height: 90px;
+    margin: 0px;
+    padding: 0px;
+    object-fit: contain;
+    width: 100%;
+}
+.details-col{
+    text-align: left;
+    text-transform: capitalize;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ion-spinner[name="dots"]{
+    font-size: 20px;
+}
+.viewAllItems{
+    --background: #DB3022;
+    --background-activated: #DB3022;
+    --border-radius: 25px;
+    display: flex;
+    width: 270px;
+    margin: 0 auto;
+}
+.choose-text{
+    color: #575353;
+    font-size: 14px;
+}
+.rep-row{
+    border-bottom: 1px solid lightgray;
+}
+ion-spinner[name="bubbles"]{
+    font-size: 20px;
+}
+.kids-category{
+    text-transform: capitalize;
+    color: #252222;
+    font-size: 12px;
+}
+ion-spinner[name="lines-sharp"]{
+    font-size: 20px;
+
+}

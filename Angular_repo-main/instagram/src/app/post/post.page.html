@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="postForm" (ngSubmit)="post(postForm.value)">    
+    <input type="file" (change)="fill($event)" formControlName="postImg" #fileInput style="display: none;">
+    <br>
+
+    <ion-input class="des" formControlName="description" label-placement="floating" placeholder="Description"
+      label="Description" type="address-line3"></ion-input>
+
+      <ion-button (click)="fileInput.click()" fill="clear">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+      </ion-button>
+
+    <ion-button [disabled]="!postForm.valid" type="submit" color="success"> Post</ion-button>
+  </form>
+
+</ion-content>

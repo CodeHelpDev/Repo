@@ -1,0 +1,21 @@
+ion-img{
+    height: 50px;
+    width: 50px;
+    --border-radius: 30px !important;
+}
+ion-col{
+    display: flex;
+    flex-direction: row;
+}
+ion-row{
+    background-color: rgb(241, 234, 234);
+    box-shadow: 4px solid black;
+    padding:5px;
+    align-items: baseline;
+    margin-top:3px;
+}
+ion-text{
+    margin-left:20px;
+    margin-top: 10px;
+    font-weight: bolder;
+}

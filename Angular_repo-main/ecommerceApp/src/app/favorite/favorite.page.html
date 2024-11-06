@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" slot="start" color="dark"></ion-back-button>
+    <ion-title></ion-title>
+    <ion-icon class="ion-padding" slot="end" name="notifications-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col class="heading">Favorite</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col (click)="detailsOpen(val)" *ngFor="let val of likesDataArray" size="6">
+        <ion-img [src]="val?.image"></ion-img>
+        <ion-label class="price">
+          {{val?.price |currency}}
+        </ion-label> <br>
+        <ion-label>
+          {{val?.title}}
+        </ion-label>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

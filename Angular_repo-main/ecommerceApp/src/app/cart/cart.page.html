@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref="/" color="dark"></ion-back-button>
+    <ion-title></ion-title>
+    <ion-icon class="ion-padding" size="large" slot="end" color="dark" name="notifications-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-padding">
+    <ion-row >
+      <ion-col>
+        <ion-label class="heading">Cart</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let val of cartDataArray let i = index" class="prod-row ion-padding"> 
+      <ion-col size="6">
+        <ion-img [src]="val?.image"></ion-img>
+      </ion-col>
+      <ion-col class="details-row" size="6">
+        <ion-label>Price:  {{((val?.price) |  number:'1.0-0') | currency}}</ion-label>
+        <ion-list lines="none" class="qn-list">
+          <ion-item>
+            <ion-button (click)="adjustQuantity('-',i)" slot="start">-</ion-button>
+            <ion-label>{{quantity[i]}}</ion-label>
+            <ion-button (click)="adjustQuantity('+',i)" slot="end">+</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="routeWithData()" id="continue">Continue</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

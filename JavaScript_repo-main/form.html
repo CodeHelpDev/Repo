@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin: 1%;
+        }
+    </style>
+</head>
+<script>
+    function formValidate() {
+        var name = document.reg.name.value;
+        var aadhar = document.reg.aadhar.value;
+        var email = document.reg.email.value;
+        var contact = document.reg.contactno.value;
+
+        //  For Name Regex Validation Only String 
+        let res = /^[a-zA-Z]*$/.test(name);
+        if(res){
+            console.log(name);
+                return true;
+        }else{
+            var error = "Please enter only letters";
+            document.getElementById('name_er').innerHTML = error;
+            
+        }
+        console.log(res);
+        // if (name == null || name == "") {
+        //     if (name) {
+                
+        //     }
+        //     else {
+               
+        //     }
+        // }
+
+        //for Contact No Validation Only Number 
+        var regmm = '^([0|+[0-9]{1,5})?([7-9][0-9]{9})$';
+        var regmob = new RegExp(regmm);
+        if (regmob.test(contact)) {
+            console.log(contact)
+            return true;
+        }
+        else {
+            alert("Enter Contact Number Properly");
+        }
+
+        //for Email Validation Only 
+
+        var em=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+        if (em ==true)
+        {
+            console.log('email'+em);
+            return true;
+        }
+        else{
+            alert("Enter Mail Id Properly");
+        }
+        
+
+        function fileValidate() {
+            var files = document.getElementById('file').files;
+            if (files.length > 0) {
+                if (files[0].type === 'application/pdf') {
+                    console.log('Hey this is pdf file', files[0])
+                } else {
+                    alert('Only accept pdf files'); return false;
+                }
+            } else {
+                alert('Please select any file'); return false;
+            }
+        }
+    }
+
+</script>
+
+<body>
+    <div class="fir">
+        <form action="" method="post" name="reg">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name" id="name">Name: </label>
+                    </td>
+                    <td>
+                        <input type="text" id="name">
+                        
+                        <span style="color:red;" id="name_er"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="class">Class: </label>
+                    </td>
+                    <td>
+                        <input type="class" id="class">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gender">Gender: </label>
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" id="male" value="Male"> <label for="male">Male </label>
+                        <input type="radio" name="gender" id="female" value="Female"><label
+                            for="female">Female</label><br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="contactno">Contact No : </label>
+                    </td>
+                    <td>
+                        <input type="tel" id="contactno" name="contactno">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email: </label></td>
+                    <td><input type="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address: </label></td>
+                    <td><input type="text" id="address"></td>
+                </tr>
+                <tr>
+                    <td><label for="aadhar">Aadhar Card No : </label></td>
+                    <td><input type="text" name="aadhar" id="aadhar" minlength="12" maxlength="12"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="img">Please Upload Your Image</label></td>
+                    <td><input type="file" id="file" accept="application/pdf" onkeydown="return fileValidate()"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="register" onclick="formValidate()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

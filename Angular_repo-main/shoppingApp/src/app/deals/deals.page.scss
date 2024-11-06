@@ -1,0 +1,53 @@
+.claim-btn{
+    --background: #70df70;
+    --background-activated:#70df70;
+}
+ion-img{
+    width: 80px;
+    margin: 0;
+}
+
+ion-col{
+    // margin: 0px;
+    padding: 0px;
+}
+ion-card{
+    margin-block: 20px;
+}
+ion-icon[name="pricetag"]{
+    color: #70df70;
+    font-size: x-large;
+}
+
+ion-grid{
+    width: 90%;
+    margin: 0 auto;
+}
+.description{
+    color: gray;
+    font-size: small;
+    width: 80%;
+}
+ion-row{
+    margin-block: 10px;
+}
+
+.title{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    color:blue;
+    text-decoration: underline;
+}
+.ion-text-bold{
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+ion-card{
+    box-shadow: none;
+
+}
+ion-content{
+    --background: rgb(245, 242, 242);
+}

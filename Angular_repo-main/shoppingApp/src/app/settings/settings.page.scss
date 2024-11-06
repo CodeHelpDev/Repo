@@ -1,0 +1,49 @@
+ion-icon[name="search"]{
+    font-size: 20px;
+}
+ion-icon[name="chevron-back"]{
+    font-size: 20px;
+}
+.main-heading{
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+}
+.sub-heading{
+    font-weight: 600;
+}
+ion-row{
+    margin-block: 10px;
+}
+.toggle-heading{
+    font-size: 14px;
+    font-weight: 200;
+}
+ion-toolbar{
+    --background: lightgray;
+}
+.main-grid{
+    background: lightgray;
+}
+ion-input{
+    --background: white;
+    --padding-start:10px;
+    --padding-end:10px;
+    --border-radius: 10px;
+    --highlight-height:0px;
+}
+ion-modal{
+    --border-radius: 25px 25px 0px 0px;
+    overflow-y: hidden;
+}
+.modal-content{
+    --background: rgb(250, 246, 246);
+}
+#psw-btn{
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    --border-radius: 25px;
+    --background: #DB3022;
+    --background-activated:#DB3022;
+}

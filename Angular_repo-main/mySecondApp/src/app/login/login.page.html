@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login Form </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<!-- // -->
+  <form action="" [formGroup]="loginForm" (ngSubmit)="loginfun(loginForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Email" type="email" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Password" type="text" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" class="primary">Login</ion-button>
+  </form>
+  
+    <ion-alert
+    [isOpen]="isOpen"
+      header="Success"
+      subHeader="User Login Success"
+      [buttons]="['OK']"
+    ></ion-alert>
+</ion-content>

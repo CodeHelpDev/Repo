@@ -1,0 +1,97 @@
+ion-title{
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 400;
+    
+}
+ion-toolbar{
+    height: 80px;
+    --background: rgb(0, 15, 99);
+}
+
+.heading{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+.main-card{
+    margin: 0px;
+    border-radius: 15px 15px 0px 0px;
+    background-color: rgb(255, 255, 255);
+    --overflow: hidden;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+   
+    
+}
+
+.content{
+    --background: rgb(0, 15, 99);
+    --overflow-y: hidden; 
+    overflow: auto;
+}
+.user{
+    font-size: 116px;
+    margin-top: 15px;
+    color: black;
+}
+.blue-card{
+    background: aliceblue;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    min-height: 500px;
+    overflow-y: auto
+} 
+
+.qwik-heading{
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    font-weight: bolder;
+    margin: 40px;
+}
+.blue-card ion-list{
+    width: 100%;
+    background: transparent;
+}
+.blue-card ion-list ion-item{
+    // --background:transparent;
+    border-radius: 25px;
+    margin-block:10px;
+    border: 1px solid rgb(0, 15, 99);
+    
+}
+ion-textarea{
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid rgb(0, 15, 99);
+    height: 100px;
+}
+ion-input,
+ion-textarea{
+    --padding-start:20px;
+}
+.contactus-lbl{
+    --background: transparent;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    width: fit-content;
+    text-align: left;
+}
+ion-button{
+    --background: rgb(0, 8, 255);
+    --background-activated: rgb(0, 8, 255);
+    width: 150px;
+    --border-radius: 25px;
+}

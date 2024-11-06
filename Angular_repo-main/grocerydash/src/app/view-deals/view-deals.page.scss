@@ -1,0 +1,39 @@
+.main-card{
+    min-height: 600px;
+    margin: 0;
+    background: aliceblue;
+}
+.con-col{
+    background: black;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+.con-col ion-label{
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}
+.con-col ion-text{
+    text-transform: capitalize;
+}
+.col-percent{
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+}
+.col-percent ion-label{
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}

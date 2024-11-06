@@ -1,0 +1,161 @@
+.naukri-logo{
+    width: 160px;
+}
+.footer-card{
+    box-shadow: none;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.main-card{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    box-shadow: none;
+    flex-direction: row;
+    border-bottom: 0.5px solid gray;
+}
+.first-card{
+    width: 20%;
+    height: auto;   
+    box-shadow: none;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.sec-card{
+    width: 15%;
+    box-shadow: none;
+    margin: 0px;
+}
+.third-card{
+    box-shadow: none;
+    width: 15%;
+    margin: 0px;
+}
+.fourth-card{
+    box-shadow: none;
+    width: auto;
+    margin: 0px;
+}
+.fifth-card{
+    box-shadow: none;
+    width: 35%;
+    margin: 0px;
+}
+.first-card-heading{
+    color: black;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.connnet-img{
+    width: 20px;
+}
+.connnet-img-card{
+    display: flex;
+    box-shadow: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 15px;
+}
+.footer-items{
+    font-size: 14px;
+    color: black;
+    
+}
+.store-btn{
+    width: 120px;
+    filter: brightness(50%);
+}
+.store-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    box-shadow: none;
+}
+.apply-heading{
+    color: black;
+    font-weight: 600;
+    font-size: large;
+}
+.card-in-fifth{
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 95%;
+}
+.info-main-card{
+    width: 100%;
+    margin-top: 50px;
+    box-shadow: none;
+    height: auto;
+}
+.info-card{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    box-shadow: none;
+    justify-content: space-between;
+}
+.info-card-left{
+    width: 48%;
+    display: flex;
+    box-shadow: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-card-right{
+    width: 48%;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-img{
+   width: 100px;
+}
+.info-left-1{
+    width: auto;
+    box-shadow: none;
+    margin: 0px;
+    padding: 10px;
+}
+.info-left-2{
+    width: auto;
+    margin: 0px;
+    padding: 10px;
+    box-shadow: none;
+}
+.info-right-1{
+    width: auto;
+    box-shadow: none;
+    margin: 0px;
+    padding: 10px;
+    color: gray;
+    font-size: 15px;
+}
+
+.info-right-2{
+    width: 75%;
+    box-shadow: none;
+}
+.sliding-img{
+    width: 150px;
+    height: 150px;
+}
+.flex-slider{
+    display: flex;
+
+    flex-direction: row;
+
+}

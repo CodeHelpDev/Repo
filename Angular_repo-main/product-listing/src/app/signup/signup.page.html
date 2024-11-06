@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Signup Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.value)" > 
+  <ion-list>
+    <ion-item>
+      <ion-input label="Name" type="text" placeholder="Name" formControlName="name" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email" type="email" placeholder="Email" formControlName="email" > </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Mobile No" type="number" placeholder="Mobile No" formControlName="mobileno" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password" type="text" placeholder="Password" formControlName="password" > </ion-input>
+    </ion-item>
+  </ion-list>
+  <div>
+    <ion-button type="Submit" color="primary" [disabled]="!signUpForm.valid">Submit</ion-button>
+  <ion-label slot="center" color="tertiary" routerLink="/login" >Already Registered? Login Now</ion-label>
+  </div>
+  
+</form>
+
+
+<ion-alert
+  [isOpen]="isAlert"
+  header="User Already Registered"
+  subHeader="Go To Login Page"
+  message="Enter Another Email for Signup Again"
+  [buttons]="['OK']"
+  
+></ion-alert>
+
+
+</ion-content>

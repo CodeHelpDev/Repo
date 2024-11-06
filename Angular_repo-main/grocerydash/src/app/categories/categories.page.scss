@@ -1,0 +1,87 @@
+.main-card{
+    height: 600px;
+    margin: 0px;
+    padding: 0px;
+}
+.main-grid{
+    background: aliceblue;
+    margin: 0;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.heading{
+    color: black;    
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.addBtn{
+    --background: black;
+    --background-activated:black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.input-row ion-col ion-input{
+    border: 1px solid black;
+    border-radius: 9px;
+    --padding-start:10px;
+    --highlight-height:0px;
+    width: 268px;
+}
+.input-row ion-col ion-button{
+    color: black;
+    text-transform: capitalize;
+    --border-color: black;
+}
+.input-row ion-col ion-button:hover{
+    --background:black;
+    color: white;
+}
+.inner-grid{
+    background: white;
+}
+.tbl-header ion-col ion-label{
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+}
+.repeated-row{
+    padding: 10px;
+    
+}
+.repeated-row:nth-child(odd){
+    background: rgb(234, 232, 232);
+}
+.repeated-row ion-col ion-label{
+    color: black;
+}
+.repeated-row ion-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // justify-content: center;
+}
+.del-col ion-card{
+    background: red;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    width: 45px; 
+}
+ion-icon[name="trash"],
+ion-icon[name="eye"],
+ion-icon[name="create"]{
+    font-size: 25px;
+    cursor: pointer;
+}
+ion-img{
+    width: 50px;
+}

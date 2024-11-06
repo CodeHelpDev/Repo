@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" text="" color="dark" slot="start"></ion-back-button>
+    <ion-title>Profile</ion-title>
+    <ion-menu-button slot="end" color="dark"></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-card class="profile"></ion-card>
+    <ion-label class="heading">Martina Pollis</ion-label>
+    <ion-text>Goal : Cycle tracking</ion-text>
+    <ion-card class="flex-card">  
+      <ion-card>
+        <ion-label>Period Length</ion-label> 
+          <ion-icon class="big-text" size="large" name="water"></ion-icon>          
+        <ion-label><ion-label class="big-text">6</ion-label> days</ion-label>
+      </ion-card>
+      <ion-card>
+        <ion-label>Cycle Length</ion-label>
+        <ion-label> <ion-label class="big">2</ion-label> days</ion-label>
+      </ion-card>
+    </ion-card>
+    <ion-label class="heading">Settings</ion-label>
+    
+    <ion-row class="row-card">
+      <ion-col size="4">
+        <ion-card class="rounded-card">
+          <ion-icon color="warning" name="star"></ion-icon>
+        </ion-card>
+        <ion-label class="title">Go Premium</ion-label>
+        <ion-card class="rounded-card">
+          <ion-icon name="document-text"></ion-icon>
+        </ion-card>
+        <ion-label class="title">Health Report</ion-label>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card class="rounded-card">
+          <ion-icon name="trophy"></ion-icon>
+        </ion-card>
+        <ion-label class="title">My Goals</ion-label>
+        <ion-card class="rounded-card">
+          <ion-icon name="menu"></ion-icon>
+        </ion-card>
+        <ion-label class="title">Terms and conditions</ion-label>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card class="rounded-card">
+          <ion-icon name="logo-apple-ar"></ion-icon>
+        </ion-card>
+        <ion-label class="title">Subscriptions</ion-label>
+        <ion-card class="rounded-card">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </ion-card>
+        <ion-label class="title">Delete Profile</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+ 
+</ion-content>

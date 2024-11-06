@@ -1,0 +1,65 @@
+.main-card{
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+    background: aliceblue;
+}
+.heading{
+    color: black;    
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.inner-grid{
+    background: white;
+}
+.inner-grid ion-row ion-col{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    gap: 10px;
+}
+.input-row ion-col ion-label {
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(103, 101, 101);
+
+}
+.input-row ion-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ion-input,
+ion-select{
+    border: 1px solid lightgray;
+    --padding-start: 10px;
+    border-radius: 5px;
+    --highlight-height:0px;
+}
+.upload-btn{
+    --background: #1CBCD8;
+    --background-activated:#1CBCD8;
+    color: white;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+ion-img{
+    width: 200px;
+    height: 200px;
+}
+.save-btn{
+    text-transform: capitalize;
+    --border-color: rgb(35, 238, 35);
+    --color:rgb(35, 238, 35);
+}
+.cancel-btn{
+    text-transform: capitalize;
+    --border-color: black;
+    --color:black;
+}
+.btn-row{
+    border-top: 1px solid lightgray;
+}

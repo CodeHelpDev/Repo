@@ -1,0 +1,62 @@
+ion-icon[name="notifications-outline"]{
+    font-size: 30px;
+}
+.heading{
+    font-size: 30px;
+    font-weight: 500;
+}
+.prod-row{
+    box-shadow: 1px 1px 2px rgb(168, 167, 167), -0.1em 0 .1em 0.1em rgb(168, 167, 167);
+    margin-block: 20px;
+}
+.details-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+}
+ion-grid{
+    width: 90%;
+    margin: 0 auto;
+}
+ion-button{
+    --background: transparent;
+    --background-activated:transparent;
+    color: black;
+    font-size: 14px;
+    // --box-shadow: none;
+    --height: 20px;
+    --width: 20px;
+}
+.qn-list ion-item{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    // box-shadow: 1px 1px 2px black,
+    
+}
+#continue{
+    z-index: 10;
+    --background: linear-gradient(90deg, rgba(102, 126, 234, 1) 0%, rgba(100, 182, 255, 1) 100%);
+    width: 85%;
+    color: white;
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+}
+.amount-list{
+    margin-bottom: 20px;
+}
+.amount-list ion-text{
+    color: gray;
+}
+.amount-list ion-item{
+    border-bottom: 1px solid lightgray;
+}
+.sec-grid{
+    max-height: 400px;
+    overflow-y: auto;
+}

@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-card class="content-card">
+      <ion-img class="cloudImage" src="../../assets/cloudImage.png"></ion-img>
+      <ion-text>Company Name</ion-text>
+    </ion-card>
+    <ion-card class="second-card">
+      <ion-label class="heading">Sign In</ion-label>
+      <ion-text>Hi there! Nice to see you again.</ion-text>
+      <ion-input id="email" label-placement="floating" label="Email"></ion-input>
+      <ion-input id="password" label-placement="floating" label="Password"></ion-input>
+      <ion-button class="signin-btn" (click)="loginUser()" expand="block">Sign in</ion-button>
+    </ion-card>
+    <ion-text>or use one of your social profiles</ion-text>
+    <ion-card class="third-card ">
+      <ion-button class="logo-btn">
+        <ion-img class="btnLogo twitter" src="../../assets/twitterLogo.png"></ion-img>
+       <ion-label>Twitter</ion-label>
+      </ion-button>
+      <ion-button class="logo-btn facebook">
+        <ion-img class="btnLogo" src="../../assets/fbLogo.png"></ion-img>
+        <ion-label
+        >Facebook</ion-label>
+      </ion-button>
+      <ion-label class="forget-text">Forget Password?</ion-label>
+      <ion-label routerLink="/signup" class="text-orange">Sign Up</ion-label>
+    </ion-card>
+
+
+
+  </ion-card>
+</ion-content>

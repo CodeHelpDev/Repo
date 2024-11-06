@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+        ">
+    <style>
+        #wrpper {
+            overflow-x: hidden;
+        }
+
+        #fir {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 60px;
+            border-radius: 20px 0px 20px 0px;
+            box-shadow: 4px 4px 4px 5px orangered;
+            padding: 30px;
+        }
+
+        input {
+            margin: 1%;
+        }
+
+        #btnSubmit {
+            width: 100px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        #sec {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 60px;
+            border-radius: 20px 0px 20px 0px;
+            box-shadow: 4px 4px 4px 5px orangered;
+            padding: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" name="signup" id="signup">
+        <div id="fir">
+            Email : <input type="text" id="name" name="name" class="form-control">
+            Password : <input type="text" id="email" name="email" class="form-control">
+
+            <input type="button" value="Save" id="btnSubmit" class="btn btn-success">
+        </div>
+    </form>
+    <div id="sec">
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                $('#sec').empty();
+                var email = $('#name').val();
+                var pswd = $('#email').val();
+
+                if (email && pswd) {
+                    var storeData = JSON.parse(localStorage.getItem('signup'));
+                    if (storeData.find(x => x.email === email) && storeData.find(x => x.password === pswd)) {
+
+                        var html = '';
+                        html += '<div>'
+                            // + '<p>' + name + '</p>'
+                            + '<p>' + email + '</p>'
+                            // + '<p>' + mobileno + '</p>'
+                        '</div>'
+                            $('#sec').append(html);
+                            $("form").trigger("reset"   );
+                    }
+                    else {
+                        $('#sec').html('user not exits');
+                    }
+                }
+
+
+                // $(storeData).each((key, elements) => {
+                //     // const savedEmail = elements.email;
+                //     // const savedPassword = elements.password;
+                //     // console.log('Email',savedEmail);
+                //     console.log('Password',elements);
+
+                //     // if(email===elements.email && pswd==elements.password)
+                //     // {
+                //     //     alert("Login SuccessFully");
+                //     //     var html='';
+                //     //     html+='<div>'
+                //     //         +'<p>'+elements.name+'</p>'
+                //     //         +'<p>'+elements.email+'</p>'   
+                //     //         +'<p>'+elements.mobileno+'</p>'                        
+                //     //         '</div>'
+                //     //         $('#sec').append(html);
+                //     //         return false;
+
+                //     // }
+                //     // else{
+                //     //     alert("Invalid Email Or Password ");
+                //     //     return false;
+                //     // }
+
+                // })
+
+
+
+            })
+        })
+    </script>
+</body>
+
+</html>

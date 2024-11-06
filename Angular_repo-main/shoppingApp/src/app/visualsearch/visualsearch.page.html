@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" color="dark" slot="start"></ion-back-button>
+    <ion-title>Visual Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-card class="main-card">
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label>
+        Search for an outfit by taking a photo or uploading an image
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <video>
+  </video>
+  <ion-card *ngIf="isCapture" class="bottom-card">
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col size="3">
+
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon name="flash"></ion-icon>
+
+        </ion-col>
+        <ion-col  class="red-circle" size="2">
+          <ion-img src="../../assets/Big.png"></ion-img>
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon name="sync"></ion-icon>
+        </ion-col>
+        <ion-col size="3">
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-button *ngIf="!isCapture" id="takePhoto" (click)="clickPhotos($event)">Take A Photo</ion-button>
+  <ion-button *ngIf="!isCapture" fill="outline" (click)="openFileUpload()" id="uploadImage">Upload an image</ion-button>
+  <input (change)="onChange($event)" style="display: none;" type="file" id="fileInput">
+ </ion-card>
+</ion-content>

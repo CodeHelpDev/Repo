@@ -1,0 +1,89 @@
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+  <ion-card class="main-card">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <ion-label class="heading">
+            Add Banner
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3"></ion-col>
+        <ion-col size="6">
+          <form (ngSubmit)="onFormSubmit(addNewBannerForm.value)" [formGroup]="addNewBannerForm">
+            <ion-grid class="inner-grid ion-padding">
+              <ion-row class="input-row ion-padding">
+                <ion-col size="12">
+                  <ion-label class="input-label">Title</ion-label>
+                  <ion-input formControlName="title"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row class="input-row ion-padding">
+                <ion-col size="12">
+                  <ion-label class="input-label">Description</ion-label>
+                  <ion-input formControlName="description"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row class="input-row ion-padding">
+                <ion-col size="12">
+                  <ion-label class="input-label">Banner for</ion-label>
+                  <ion-select (ionChange)="handleChange($event)" formControlName="bannerFor">
+                    <ion-select-option value="category">Category</ion-select-option>
+                    <ion-select-option value="product">Product</ion-select-option>
+                  </ion-select>
+                </ion-col>
+              </ion-row>
+              <ion-row class="input-row ion-padding">
+                <ion-col *ngIf="bannerToggle==='product'" size="12">
+                  <ion-label class="input-label">{{bannerToggle}}</ion-label>
+                  <ion-select formControlName="product">
+                    <ion-select-option *ngFor="let val of toggleArrayData" [value]="val.name || val.title" >{{val.name || val.title}}</ion-select-option>
+                  </ion-select>                  
+                </ion-col>
+
+                <ion-col *ngIf="bannerToggle==='category'" size="12">
+                  <ion-label class="input-label">{{bannerToggle}}</ion-label>
+                  <ion-select formControlName="category">
+                    <ion-select-option *ngFor="let val of toggleArrayData" [value]="val.name || val.title" >{{val.name || val.title}}</ion-select-option>
+                  </ion-select>                  
+                </ion-col>
+
+              </ion-row>
+              <ion-row class="input-row ion-padding">
+                <ion-col size="3">
+                  <ion-label class="input-label">image</ion-label>
+                  <ion-button (click)="openFileUpload()" class="upload-btn">
+                    <ion-icon name="cloud-upload"></ion-icon>
+                    Select File :
+                  </ion-button>
+                  <input (change)="uploadImage($event)" style="display: none;" type="file" id="fileupload">
+                </ion-col>
+                <ion-col size="2"></ion-col>
+                <ion-col size="7">
+                  <ion-img *ngIf="imageUrl" [src]="imageUrl"></ion-img>
+                </ion-col>
+              </ion-row>
+              <ion-row class="btn-row ion-padding">
+                <ion-col size="8"></ion-col>
+                <ion-col size="2">
+                  <ion-button (click)="onCancel()" class="cancel-btn" fill="outline"> 
+                    Cancel
+                  </ion-button>
+                </ion-col>
+                <ion-col size="2">
+                  <ion-button [disabled]="!addNewBannerForm.valid" type="submit" class="save-btn" fill="outline"> 
+                    Save
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>

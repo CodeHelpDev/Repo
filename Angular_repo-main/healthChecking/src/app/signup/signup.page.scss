@@ -1,0 +1,56 @@
+.first-card{
+    width: 100%;
+    margin: 0 auto;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: none;
+    justify-content: end;
+}
+.first-card ion-label:first-child{
+    color: black;
+    font-size:x-large;
+    font-weight: 600;
+}
+.first-card ion-label:nth-child(2){
+    color: black;
+    font-size:medium;
+    font-weight: 100;
+    width: 220px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.first-card ion-label:nth-child(2),
+.first-card ion-label:first-child{
+    margin-block: 10px;
+}
+.second-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 200px;
+    box-shadow: none;
+
+}
+.second-card ion-button{
+    width: 80%;
+    --border-radius: 25px;   
+}
+.second-card ion-button:first-child{
+    --background-activated:black;
+    --background:black;
+}
+.second-card ion-button:nth-child(2){
+    --background-activated:black;
+    --background:rgb(116, 115, 115);
+}
+.second-card ion-button:nth-child(3){
+    --background-activated:black;
+    --background:rgb(190, 190, 190);
+}
+ion-card ion-button ion-img{
+    width: 50px;
+    height: 30px;
+}

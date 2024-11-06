@@ -1,0 +1,129 @@
+ion-icon[name="document"]{
+    font-size: 60px;
+    color: black;
+}
+.file-upload-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    --background:lightgray;
+    border-radius: 2px;
+    height: 100px;
+    margin-block:10px;
+    border: 1px dashed gray;
+    width: 90%;
+}
+ion-select,ion-textarea,ion-input{
+    width: 90%;
+    border: 1px solid gray;
+    --padding-start:10px;
+    margin-block:10px;
+    --highlight-height:0px;
+    --background:lightgray;
+    border-radius: 2px;
+}
+ion-textarea{
+    height: 300px;
+}
+.heading{
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    
+}
+.input-heading{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+.fir-row{
+    margin-block: 20px;
+}
+.vignette-info-grid{
+    background:lightgray;
+}
+// .vignette-info-grid ion-row,.vignette-info-grid ion-col{
+    
+// }
+.vignette-info-grid ion-input,
+.vignette-info-grid ion-textarea,
+.file-upload-card{
+    margin-block: 10px;
+    --width: 90%;
+    --background: white;
+    
+}
+.question-grid{
+    background: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+.question-grid ion-row{
+    padding: 20px;
+}
+.answer-grid ion-input{
+    width: 90%;
+
+}
+.multiple-choice  ion-select{
+    --background: white;
+}
+.option-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.hidden-question-grid{
+    background:rgb(239, 239, 239);
+}
+.fir-hidden-row{
+    margin: 10px;
+}
+.fir-hidden-row ion-radio{
+    margin: 10px;
+}
+.hidden-question-grid ion-select{
+    --background: rgb(228, 228, 228);
+
+}
+#addQuestion{
+    --background:#ed7c18;
+    --background-activated: #ed7c18;
+    text-transform: capitalize;
+    color: white;
+    width: 300px;
+}
+ion-card{
+    box-shadow: none;
+}
+.submit-btn-row{
+    background:rgb(239 239 239);
+}
+.submit-btn-row ion-button{
+    --background:#ed7c18;
+    --background-activated: #ed7c18;
+    text-transform: capitalize;
+    width: 200px;
+}
+ion-radio {
+    --border-radius: 4px;
+    --inner-border-radius: 4px;  
+    --color: #ddd;
+    --color-checked: #6815ec;
+  }
+  
+  ion-radio.ios::part(container) {
+    width: 20px;
+    height: 20px;
+  
+    border: 2px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .radio-checked.ios::part(container) {
+    border-color: #6815ec;
+  }

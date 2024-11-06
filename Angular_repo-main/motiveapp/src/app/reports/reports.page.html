@@ -1,0 +1,90 @@
+<app-common></app-common>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="navrow">
+      <ion-col size="0.5"></ion-col>
+      <ion-col class="event-nav" size="11">
+        <ion-label class="ev-text">
+          <ion-icon routerLink="/home" class="ion-padding" size="large" name="arrow-back"></ion-icon>
+          <ion-label>New Participants</ion-label>
+        </ion-label>
+      </ion-col>
+      <ion-col size="0.5"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-segment value="reports">
+          <ion-segment-button (click)="seg($event)" value="reports">Reports</ion-segment-button>
+          <ion-segment-button (click)="seg($event)" value="live">Live Reports</ion-segment-button>
+          <ion-segment-button (click)="seg($event)" value="participants">By Participants</ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card [ngSwitch]="segmentValue">
+  <ion-grid *ngSwitchCase="'participants'" class="ion-padding set-bg-colour">
+    <ion-row>  
+      <ion-col class="reportheading" size="6">
+        <ion-label class="heading">
+          Reports
+        </ion-label>  
+      </ion-col>     
+      <ion-col>
+        <ion-searchbar (ionInput)="searchValue($event)" placeHolder="Search for..."></ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+    <ion-grid *ngSwitchCase="'reports'">
+      <ion-row>
+        <ion-col>
+          <div id="piechart" style="width: 900px; height: 500px;"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid *ngSwitchCase="'live'">
+      <ion-row>
+        <ion-col>
+          <div id="curve_chart" style="width: 900px; height: 500px"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="ion-padding data-grid" *ngSwitchCase="'participants'">
+      <ion-row class="navbar">
+        <ion-col size="1"></ion-col>
+        <ion-col size="3">
+          <ion-label>Name</ion-label>
+        </ion-col>
+        <ion-col size="3">
+          <ion-label>Email</ion-label>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+        <ion-col size="2">
+          <ion-label>
+            {{participants.length}} Participants
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let val of participants">
+        <ion-col size="1"></ion-col>
+        <ion-col size="3">
+          <ion-label>{{val.participantName}}</ion-label>
+        </ion-col>
+        <ion-col size="3">
+          <ion-label>
+            {{val.email}}
+          </ion-label>
+        </ion-col>
+        <ion-col size="4"></ion-col>
+        <ion-col size="1">
+          <ion-icon size="large" color="warning" name="chevron-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+    
+  
+  
+</ion-content>

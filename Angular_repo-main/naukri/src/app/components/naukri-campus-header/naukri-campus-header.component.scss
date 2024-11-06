@@ -1,0 +1,655 @@
+.main-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    margin-top: 0px;
+    box-shadow: none;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-left {
+    box-shadow: none;
+}
+
+.ion-mag-btn {
+    position: absolute;
+    right: 15px;
+    z-index: 3;
+    top: 8px;
+}
+
+.main-center {
+    box-shadow: none;
+}
+
+.main-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+}
+
+.ham-ion-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+}
+
+ion-searchbar {
+    --border-radius: 20px;
+}
+
+
+
+.hr-main-card {
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    height: auto;
+    background-color: rgba(203, 230, 240, 0.4);
+    padding-top: 30px;
+    height: 600px;
+
+}
+
+.hr-content-card {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: self-start;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+
+}
+
+.hr-center-card {
+    width: 50%;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 23px;
+    overflow-y: scroll;
+    max-height: 550px;
+    box-shadow: none;
+
+}
+
+.top-center-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: none;
+}
+
+.bottom-center-card {
+    background-color: rgba(219, 213, 213, 0.3);
+    border-radius: 12px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgb(245, 240, 240);
+}
+
+#career-btn {
+    width: fit-content;
+}
+
+.recommendations-text {
+    color: black;
+    font-size: large;
+    font-weight: 500;
+}
+
+.recommended-jobs {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+
+.view-all-btn {
+    font-weight: 600;
+}
+
+.profile-app,
+.ats-app {
+    box-shadow: none;
+    background: transparent;
+}
+
+.hr-center-inside {
+    background: transparent;
+    box-shadow: none;
+}
+
+
+.swiper-flex {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.slider-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 190px;
+    gap: 5px;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.slider-image {
+    width: 50px;
+    border-radius: 12px;
+}
+
+.slider-heading {
+    color: black;
+    font-size: small;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.rating-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    box-shadow: none;
+    align-items: center;
+    width: 150px;
+    height: auto;
+}
+
+.slider-review {
+    color: gray;
+}
+
+.slider-view-btn {
+    color: blue;
+    font-size: medium;
+    font-weight: 550;
+}
+
+.temp {
+    height: 400px;
+}
+
+.swiper-card {
+    margin: 0px;
+    // --swiper-navigation-size: 20px;
+}
+
+.inside-explore-card {
+    box-shadow: none;
+    margin: 0px;
+}
+
+.pf-card {
+    border-radius: 18px;
+    height: auto;
+    padding: 10px;
+}
+
+.pathfinder-img {
+    width: 80px;
+}
+
+.discover-heading-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px;
+    height: 30px;
+    box-shadow: none;
+    width: 100%;
+}
+
+.discover-heading {
+    color: black;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.pf-card-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0px;
+    box-shadow: none;
+    gap: 10px;
+}
+
+.ion-seg-btn {
+    width: auto;
+    font-size: small;
+}
+
+.pf-card-bottom {
+    height: 430px;
+    border-radius: 15px;
+}
+
+.pf-img-card {
+    height: auto;
+    border-radius: 12px;
+}
+
+.pf-img {
+    width: 100%;
+}
+
+.pf-list-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills {
+    text-align: center;
+}
+
+.title-heading {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+
+.col-item {
+    color: orange;
+    font-weight: 600;
+}
+
+.pf-avg-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ep-card {
+    height: auto;
+    border-radius: 18px;
+}
+
+.ep-heading {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+
+.ep-text {
+    color: gray;
+    font-size: medium;
+    margin-bottom: 30px;
+}
+
+.resume-deatils-card {
+    background-color: rgba(206, 240, 229, 0.5);
+    border-radius: 18px;
+    height: auto;
+    padding: 15px;
+}
+
+.resume-heading {
+    color: black;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.resume-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: transparent;
+    gap: 8px;
+}
+
+.resume-item {
+    width: auto;
+    border-radius: 18px;
+    border: 1px solid gray;
+    font-size: small;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dev-image-card {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.dev-details-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: none;
+}
+
+.dev-list-details {
+    height: fit-content;
+}
+
+.dev-text {
+    color: gray;
+
+    font-size: small;
+}
+
+.dev-date-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    font-weight: 500;
+    box-shadow: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.purple-card {
+    color: purple;
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid purple;
+    border-radius: 18px;
+    width: fit-content;
+    font-size: small;
+    margin: 0 auto;
+
+}
+
+.dev-card {
+    box-shadow: none;
+}
+
+.ncat-card {
+    height: auto;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.ncat-left {
+    margin: 0px;
+    width: 60%;
+    padding: 5px;
+    box-shadow: none;
+}
+
+.ncat-right {
+    width: 40%;
+    margin: 0px;
+    box-shadow: none;
+}
+
+.ncat-img-card {
+    border-radius: 18px;
+    box-shadow: none;
+
+}
+.ncat-left-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    box-shadow: none;
+}
+.ncat-left-item ion-label {
+    margin-left: 10px;
+    color: gray;
+}
+.ncat-heading {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+.ncat-btn {
+    --display: inline-block;
+}
+.pc-card {
+    height: auto;
+    border-radius: 18px;
+}
+.pc-heading {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+.pc-card-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: none;
+}
+.pc-card-middle {
+    width: 100%;
+    margin: 0px;
+    border-radius: 12px 12px 0px 0px;
+    height: 180px;
+    box-shadow: none;
+}
+.logo-img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 40px;
+    left: 20px;
+}
+.logo-img::part(image) {
+    border-radius: 10px;
+}
+.naukri-campus {
+    font-weight: 600;
+    font-size: medium;
+}
+.naukri-tech {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+.pc-card-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    padding:15px;
+    border-radius: 0px 0px 12px 12px;
+    box-shadow: none;
+}
+.pc-lowest-card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: none;
+    margin: 0px;
+    box-shadow: none;
+}
+.rounded-btn {
+    border: 1px solid gray;
+    border-radius: 12px;
+    width: fit-content;
+    display: inline-block;
+    padding: 8px;
+    margin: 10px;
+}
+.rounded-btn-card {
+    box-shadow: none;
+}
+.flying-lbl{
+    background-color: antiquewhite;
+    border-radius: 0px 0px 12px 12px ;
+    padding: 5px;
+    position: absolute;
+    top: -5px;
+    right: 15px;
+}
+.resume-img::part(image){
+    border-radius: 12px;
+}
+
+.resume-text{
+    margin-top: 10px;
+}
+.inside-resume-card{
+    box-shadow: none;
+    height: auto;
+    margin: 0px;
+
+}
+.slider-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+}
+.resume-img{
+    width: 48%;
+}
+.resume-swiper{
+    margin-top: 10px;
+}
+.resume-card{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 18px;
+}
+
+.ai-list-flex ion-item{
+    width: auto;
+}
+.ai-main-card{
+    padding: 16px;
+    border-radius: 18px;
+}
+.ai-card{
+    height: auto;
+    margin: 0px;
+    padding: 10px;
+    box-shadow: none;
+}
+.ai-question-no{
+    color: gray;
+    font-weight: 500;
+}
+.ai-question{
+    color: gray;
+    font-weight: 550;
+    font-size: large;
+    margin-top: 20px;
+    color: black;
+}
+.ai-below-card{
+    border-top: 1px gray dashed;
+}
+.ai-below-card{
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    margin-top: 70px;
+    padding: 10px;
+
+}
+.ai-below-card ion-label{
+    margin: 10px;
+}
+
+.cd-card{
+    height: 400px;
+    border-radius: 18px;
+}
+.cd-ion-seg-btn{
+    width: fit-content;
+}
+.cg-card{
+    border-radius: 18px;   
+}
+.cg-main-card{
+    margin: 0px;
+    width: 100%;  
+    display:flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    box-shadow: none;
+}
+.inside-cg-card{
+    width: 50%;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    justify-content: space-between;
+    height: 220px;
+}
+.cg-top-card{
+    width: 100%;    
+    margin: 0px;
+}
+.cg-text{
+    font-size: small;
+    color: gray;
+    margin-top: 15px;
+}
+.cg-bottom-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0px;
+    padding: 10px;
+    box-shadow: none;
+}
+.cg-bottom-flex-heading{
+    color: black;
+    font-weight: 500;
+    font-size: small;
+}
+#temp{
+    height: 600px;
+}
+.cg-top-card ion-img{
+    width: 100%;
+    height: 100px;
+    object-fit: fill;
+}
+
+#footer{
+    padding: 40px !important;
+    
+
+}

@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border" [translucent]="true">
+
+</ion-header>
+
+<ion-content class="content" [fullscreen]="true">
+  <ion-card class="top-card">
+    <ion-label class="heading">Qwik</ion-label>
+  </ion-card>
+  <ion-card class="main-card"> 
+   <form [formGroup]="changePasswordForm" (ngSubmit)="onSubmit(changePasswordForm.value)">
+    <ion-card class="designer-card-content">
+      <ion-label>Correct Code</ion-label>
+      <ion-label>Success! Please enter your new password below.</ion-label>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon class="ion-padding" color="primary"  name="lock-closed"></ion-icon>
+          <ion-input type="password" formControlName="password" placeHolder="Password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon class="ion-padding" color="primary" name="lock-closed"></ion-icon>
+          <ion-input type="password" formControlName="cpassword" placeHolder="Verify Password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button [disabled]="!changePasswordForm.valid" type="submit" shape="round" >Submit</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card> 
+   </form>
+  </ion-card>
+<ion-modal [isOpen]="isActionSheetOpen" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+ <ng-template>
+  <ion-list lines="none" class="modal-list">
+    <ion-item class="modal-item">
+      <ion-card class="lightgreen">
+        <ion-card class="darkgreen">
+          <ion-icon size="large" color="light" name="lock-closed-sharp"></ion-icon>
+        </ion-card>
+      </ion-card>
+    </ion-item>
+    <ion-item class="modal-item">
+      <ion-label>Password Changed</ion-label>
+    </ion-item>
+    <ion-item class="modal-item">
+      <ion-text>
+        Your Password has been changed.You may now login with yoe new info
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="onClickHandler()" id="modalBtn">Login</ion-button>
+    </ion-item>
+  </ion-list>
+ </ng-template>
+</ion-modal>
+ 
+</ion-content>

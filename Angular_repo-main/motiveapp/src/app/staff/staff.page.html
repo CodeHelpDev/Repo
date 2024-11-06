@@ -1,0 +1,265 @@
+<app-common></app-common>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="navrow">
+      <ion-col size="0.5"></ion-col>
+      <ion-col class="event-nav" size="11">
+        <ion-label class="ev-text">
+          <ion-icon routerLink="/home" class="ion-padding" size="large" name="arrow-back"></ion-icon>
+          <ion-label>Staff</ion-label>
+        </ion-label>
+      </ion-col>
+      <ion-col size="0.5"></ion-col>
+    </ion-row>
+    <ion-row class="seg-row">
+      <ion-col size="12">
+        <ion-segment [(ngModel)]="segmentValue" value="games">
+          <ion-segment-button (click)="segValue($event)" value="games">Games</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="teams">Teams</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="participant">Participants</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="staff">Staff</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="chat">Chat</ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card [ngSwitch]="segmentValue">
+    <ion-grid *ngSwitchCase="'games'">
+      <ion-row>
+        <ion-col class="left-tbl" size="3">
+          <ion-breadcrumbs>
+            <ion-breadcrumb routerLink="/ourevent">Event Name Dashboard</ion-breadcrumb>
+            <ion-breadcrumb routerLink="/staff">Staff</ion-breadcrumb>
+          </ion-breadcrumbs>
+        </ion-col>
+        <ion-col class="left-tbl" size="3"></ion-col>
+        <ion-col class="right-tbl" size="6"></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="left-tbl" size="6">
+          <ion-grid class="ion-padding">
+            <ion-row>
+              <ion-col size="12">
+                <ion-label class="info-heading">Staff</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="heading-row">
+              <ion-col size="4">Name</ion-col>
+              <ion-col size="8">Email</ion-col>
+            </ion-row>
+            <ion-row *ngFor="let val of validEmpCode; let i = index" class="tbl-rows">
+              <ion-col size="4">
+                <ion-label>{{val.name}}</ion-label>
+              </ion-col>
+              <ion-col size="4">
+                <ion-label>{{val.email}}</ion-label>
+              </ion-col>
+              <ion-col size="2"></ion-col>
+              <ion-col size="2">
+                <ion-icon name="trash" (click)="deleteUser(i)"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+        <ion-col class="ion-padding right-tbl" size="6">
+          <ion-grid class="right-grid">
+            <ion-row class="heading-row">
+              <ion-col size="4">Name</ion-col>
+              <ion-col size="8">Email</ion-col>
+            </ion-row>
+            <ion-row class="tbl-rows right-row">
+              <ion-col size="4">
+                <ion-label>Test</ion-label>
+              </ion-col>
+              <ion-col size="4">
+                <ion-label>textgmail.com</ion-label>
+              </ion-col>
+              <ion-col size="2"></ion-col>
+              <ion-col size="2">
+                <ion-icon size="large" color="success" name="add"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="ion-padding teams-grid" *ngSwitchCase="'teams'">
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="person-circle"></ion-icon>
+        </ion-col>
+        <ion-col size="7">
+          <ion-label class="heading">
+            Anthony Williams
+          </ion-label> <br>
+          <ion-text>
+            Active Now
+          </ion-text>
+        </ion-col>
+        <ion-col size="4">
+          <ion-searchbar (ionInput)="searchMsg($event)" placeHolder="Search for Chat"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+        <ion-list *ngIf="dualMessageArr.length>0" class="chat-container"  id="chats">
+          <ion-item *ngFor="let val of dualMessageArr">
+            <ion-label slot="start"> {{val?.secondUserMsg}} <sub>{{val?.replyTime}}</sub> </ion-label>
+            <ion-label slot="end">{{val?.firUserMsg}}<sub>{{val?.time}}</sub></ion-label>
+          </ion-item>
+        </ion-list>  
+        <ion-list *ngIf="dualMessageArr?.length===0">
+          <ion-item>
+            <ion-label>No Communications</ion-label>
+          </ion-item>
+        </ion-list>    
+      <ion-row>
+        <ion-col>
+          <form [formGroup]="msgform">
+            <ion-list lines="none">
+              <ion-item>
+                <ion-input (keyup.enter)="userMsgSend(msgform.value)" placeHolder="Add a reply" formControlName="firUserMsg"></ion-input>
+                <ion-icon size="large" (click)="userMsgSend(msgform.value)" slot="end" name="send"></ion-icon>
+              </ion-item>
+            </ion-list>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-grid class="ion-padding" *ngSwitchCase="'staff'">
+      <form (ngSubmit)="formSubmit(addStaffForm.value)" [formGroup]="addStaffForm">
+        <ion-row>
+          <ion-col size="6">
+            <ion-label>Emp Code</ion-label>
+            <ion-input [(ngModel)]="emp" readOnly formControlName="empCode" placeholder="Employee Code"> </ion-input>
+          </ion-col>
+          <ion-col size="6">
+            <ion-label>Staff Name</ion-label>
+            <ion-input formControlName="name" placeHolder="Employee Name"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-label>Email Id </ion-label>
+            <ion-input formControlName="email" placeholder="Email"></ion-input>
+          </ion-col>
+          <ion-col size="6">
+            <ion-label>Mobile No </ion-label>
+            <ion-input formControlName="mobileno" placeholder="Mobile Number"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label>Address</ion-label>
+            <ion-textarea formControlName="address" placeholder="Address"></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button [disabled]="!addStaffForm.valid" type="submit" id="formBtn">Submit</ion-button>
+          </ion-col>
+        </ion-row>
+
+      </form>
+    </ion-grid>
+
+    <ion-grid class="ion-padding data-grid" *ngSwitchCase="'participant'">
+      <ion-row>
+        <ion-col size="12">
+          <ion-label class="heading">Participant</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2">
+          <ion-button id="participantBtn">New Participant</ion-button>
+        </ion-col>
+        <!-- <ion-col size="1"></ion-col> -->
+        <ion-col size="2">
+          <ion-button id="inviteBtn">Invite All</ion-button>
+        </ion-col>
+        <!-- <ion-col size="1"></ion-col> -->
+        <ion-col size="2">
+          <ion-button id="uploadBtn" fill="outline">Upload by CSV</ion-button>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+        <ion-col class="search-col" size="3">
+          <ion-searchbar (ionInput)="searchStaff($event)" placeholder="Search for..."></ion-searchbar>
+        </ion-col>
+      </ion-row>
+     <ion-grid *ngIf="participantData?.length>0" >
+      <ion-row class="tbl-header">
+        <ion-col size="2">
+          <ion-label>Name</ion-label>
+        </ion-col> 
+        <ion-col size="5"></ion-col>
+        <ion-col size="2">
+          <ion-label>20 Checked In </ion-label>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+        <ion-col size="2">
+          <ion-label>52 Participants</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let val of participantData; let i = index">
+        <ion-col size="6">
+          <ion-label>
+            {{val.participantName}}
+          </ion-label>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+        <ion-col size="2">
+          <ion-button id="uploadBtn" fill="outline">
+            Send Invite
+          </ion-button>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+        <ion-col size="1">
+          <ion-icon size="large" (click)="deleteParticipants(i)" color="dark" name="trash"></ion-icon>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+     </ion-grid>
+     <ion-grid *ngIf="participantData==null" >
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-label class="no-data">No Participants Found !</ion-label>
+        </ion-col>
+      </ion-row>
+     </ion-grid>
+    </ion-grid>
+
+    <ion-grid class="ion-padding" *ngSwitchCase="'chat'">
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="chat-heading">Chat Bot</ion-label>
+        </ion-col>
+        <ion-col class="bot-col" size="6">
+          <ion-img class="chatbot-image" src="../../assets/ChatBot.png"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row class="chatlines" *ngFor="let val of chatMessages">
+        <ion-col class="chat-display-col" size="12">
+          <ion-label [innerHTML]="val.message"></ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <form [formGroup]="chatForm">
+            <ion-list>
+              <ion-item>
+                <ion-input (keyup.enter)="sendMsg(chatForm.value)" formControlName="message"
+                  placeholder="Please Enter your Message"></ion-input>
+                <ion-icon (click)="sendMsg(chatForm.value)" name="send"></ion-icon>
+              </ion-item>
+            </ion-list>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+
+
+</ion-content>

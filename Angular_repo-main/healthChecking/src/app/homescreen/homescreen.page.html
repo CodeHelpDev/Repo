@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-label class="title">Good Morning, Martina!</ion-label>
+      <ion-menu-button id="main-content" slot="end" color="dark"></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-card class="main-card">
+  <ion-card class="weekdays">
+    <ion-label>T</ion-label>
+    <ion-label>F</ion-label>
+    <ion-label>S</ion-label>
+    <ion-label>S</ion-label>
+    <ion-label>M</ion-label>
+    <ion-label>T</ion-label>
+    <ion-label>W</ion-label>
+  </ion-card>
+  <ion-card class="dates">
+    <ion-label>2</ion-label>
+    <ion-label>3</ion-label>
+    <ion-label>4</ion-label>
+    <ion-label>5</ion-label>
+    <ion-label>6</ion-label>
+    <ion-label>7</ion-label>
+    <ion-label>8</ion-label>
+  </ion-card>
+  <ion-card class="dotted-circle">
+    <ion-card class="black-circle">
+      <ion-label>Your period starts in </ion-label>
+      <ion-label>4 days</ion-label>
+      <ion-label>Low pregnancy <br> chance</ion-label>
+    </ion-card>
+  </ion-card>
+  <ion-label class="heading">Your daily insights</ion-label>
+  
+</ion-card>
+<ion-card class="flex-card">
+  <ion-card class="fir-card">
+    <ion-label class="card-text">Cycle day</ion-label>
+    <ion-label class="card-number">18</ion-label>
+  </ion-card>
+  <ion-card class="sec-card">
+    <ion-label class="card-text">Ovulation</ion-label>
+    <ion-label class="card-number">3</ion-label>
+  </ion-card>
+  <ion-card class="thi-card" (click)="navigate()" >
+    <ion-label class="card-text">Symptoms</ion-label>
+    <ion-icon size="large" name="storefront-outline"></ion-icon>      
+  </ion-card>
+  <ion-card class="for-card">
+    <ion-label class="card-text">Add info</ion-label>
+    <ion-icon size="large" color="dark" name="add-outline"></ion-icon>
+  </ion-card>
+</ion-card>
+</ion-content>

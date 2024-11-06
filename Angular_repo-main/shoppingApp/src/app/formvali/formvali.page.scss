@@ -1,0 +1,92 @@
+ion-title{
+    text-align: center;
+
+}
+.basicValidation{
+    color: #FF0062;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+ion-input{
+    --highlight-height:0px;
+    border-bottom:1px solid gray;
+    --highlight-color-valid:gray;
+    --highlight-color-invalidgray:gray;
+    --highlight-color-focused:gray;
+}
+ion-icon[name="information-circle-outline"]{
+    color: #FF0062;
+}
+.warning{
+    color: #FF0062;
+    margin: 10px;
+}
+.ion-col-for-warning{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.main-grid,
+.pasword-grid,
+.counter-grid{
+    margin: 0 auto;
+    width: 90%;  
+}
+.main-grid ion-row{
+    margin-block: 30px;
+     
+}
+.main-grid ion-col ion-label,
+.phone-grid ion-col ion-label{
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.phone-grid{
+    width: 90%;    
+    margin: 0 auto;
+}
+.circle-btn{
+    --border-radius: 50%;
+    --border-color: black;
+    --color:black;
+    --color-activated:black;
+
+}
+.counter-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+.room-fir{
+    --border-radius: 25px 0px 0px 25px;
+    --color:black;
+    --margin: 0;
+    --border-color:black;
+}
+.room-sec{
+    --border-radius: 0px 25px 25px 0px;
+    --color:black;
+    --margin: 0;
+    --border-color:black;
+}
+#submit-btn{
+    --border-radius: 20px;
+    --color:gray;
+    width: 70%;
+    margin: 0 auto;
+    --border-color:gray;
+    display: flex;
+}
+.termsGrid ion-row{
+    margin-block: 10px;
+
+}

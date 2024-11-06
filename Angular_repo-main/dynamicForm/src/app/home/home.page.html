@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <form (ngSubmit)="formValues(signUpForm.value)" [formGroup]="signUpForm">
+    <ion-grid class="ion-padding">
+      <ion-row size="12">
+        <ion-col>
+            <ion-input formControlName="name" label="Name"></ion-input>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-grid class="ion-padding" formArrayName="phone_numbers">
+        <ion-row size="12" *ngFor="let phones of signUpForm.controls['phone_numbers'].controls;let i=index;">
+          <ion-col [formGroupName]="i">
+              <ion-input formControlName="phone" label="Phone Number"></ion-input>
+          </ion-col>
+          <ion-col>
+            < <ion-grid class="ion-padding" formArrayName="addresses">
+              <ion-row size="12" *ngFor="let address of phones.get('addresses')['controls'];let j=index;">
+                <ion-col [formGroupName]="j">
+                    <ion-input formControlName="address" label="Address"></ion-input>
+                </ion-col>
+              </ion-row>
+            </ion-grid> -->
+            
+          <!-- </ion-col>
+        </ion-row>
+        <ion-col >
+          <ion-button (click)="add_phone()" expand="block" shape="round" size="4">Add more Phone number</ion-button>
+        </ion-col >
+      </ion-grid>  -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-button type="submit" expand="block" shape="round">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  </form>
+</ion-content>

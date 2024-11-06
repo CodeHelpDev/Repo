@@ -1,0 +1,33 @@
+.main-card{
+    width: 100%;
+    height: 85%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
+.content-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: none;
+}
+.content-card ion-label:first-child{
+    color: black;
+    font-size: xx-large;
+    font-weight: 600;
+}
+.content-card ion-label:nth-child(2){
+    color: black;
+    font-size: medium;
+    font-weight: 100;
+}
+ion-button{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    --border-radius: 30px;
+}

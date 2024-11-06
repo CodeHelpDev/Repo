@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+        ">
+    <style>
+        #wrpper {
+            overflow-x: hidden;
+        }
+
+        #fir {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        input {
+            margin: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" name="signup" id="signup">
+        <div id="fir">
+            Name : <input type="text" id="name" name="name" class="form-control">
+            Email : <input type="text" id="email" name="email" class="form-control">
+
+            <span></span>
+            Mobile No : <input type="text" id="mobileno" name="mobileno" class="form-control">
+            Password : <input type="text" id="password" name="password" class="form-control">
+            Confirm Password : <input type="text" id="cpassword" name="cpassword" class="form-control">
+            <input type="button" value="Save" id="btnSubmit" class="btn btn-primary">
+
+
+        </div>
+    </form>
+    <script>
+
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var pswd = $('#password').val();
+                var cpswd = $('#cpassword').val();
+                var email = $('#email').val();
+                var mobileno = $('#mobileno').val();
+
+                if (pswd == null || pswd == "" || cpswd == null || cpswd == "") {
+                    alert("Please Enter Password ");
+                }
+                else {
+                    if (pswd == cpswd) {
+
+                        //For Mobile Number 
+                        const regex = /^[0-9]/;
+                        if (regex.test(mobileno)) {
+
+                            var email = $('#email').val();
+                            var vemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+
+                            if (vemail == true) {
+                                $('span').text("Valid Email");
+                                var arr = []
+                                var formData = document.getElementById('signup').value;
+                                formData = new FormData(formData);
+                                formData = Object.fromEntries(new FormData(document.getElementById('signup')).entries());
+                                console.log(formData);
+
+
+                                if (localStorage.getItem('signup') == null || localStorage.getItem('signup') == "") {
+                                    arr.push(formData);
+                                    arr = arr.concat(JSON.parse(localStorage.getItem('signup')) || []);
+                                    localStorage.setItem('signup', JSON.stringify(arr));
+
+                                }
+                                else {
+                                    var storedData = JSON.parse(localStorage.getItem('signup'))
+                                    $(storedData).each((key, elements) => {
+                                        if (formData.email == elements.email && formData.password == elements.password) {
+                                            alert("user Present ")
+                                            return false;
+                                        }
+                                        else {
+                                            arr.push(formData);
+                                            arr = arr.concat(JSON.parse(localStorage.getItem('signup')) || []);
+                                            localStorage.setItem('signup', JSON.stringify(arr));
+                                            return false;
+                                        }
+                                    })
+
+
+                                }
+
+
+
+
+
+                                // this.form.reset();
+                                // location.replace("Login.html");
+
+                            }
+
+                            else {
+                                $('span').text("Invalid Email");
+                                $('span').css({ "color": "red" });
+                                return false
+                            }
+
+
+                        } else {
+                            alert("Invalid Mobile No ");
+                            return false
+
+                        }
+
+
+                    }
+                    else {
+                        alert("Password Does Not Matched ");
+                    }
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>

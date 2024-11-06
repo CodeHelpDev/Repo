@@ -1,0 +1,56 @@
+
+.heading{
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    width: 290px;
+    display: flex;
+ 
+}
+.main{
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: none;   
+}
+.note{    
+    font-size: medium;
+    font-weight: 500;
+    width: 290px;
+    display: flex;
+}
+.number-input{
+    border-bottom: 2px solid blue;
+    width: 80%;
+    position: relative;
+    left: 30px;
+    color: black;
+    font-size: medium;
+    --padding-start:10px
+}
+.select-country{
+    position: absolute;
+    left: 0px;
+    top: 210px;
+    font-size: large;
+    color: black;
+    font-weight: 500;
+    width: fit-content;   
+   
+}
+
+ion-select-option.required-field-indicator::part(label) {
+    --color: red;
+    background-color: aquamarine;
+}
+.btn-next{
+    width: 80%;
+    margin: 0 auto;
+    
+
+}

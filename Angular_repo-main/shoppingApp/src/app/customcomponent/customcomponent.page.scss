@@ -1,0 +1,104 @@
+ion-toolbar{
+    --background: black;
+    color: white;
+}
+.pink-row{
+    background: #FF0062;
+    height: 50px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+ion-grid{
+    margin: 0;
+    padding: 0;
+}
+.pink-text{
+    color: #FF0062;
+}
+.para{
+    text-align: left;
+    line-height: 30px
+}
+.scrollable-gray-card{
+    background: lightgray;
+    font-size: 16px;
+    max-width: 300px;
+    display: flex;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 32px;
+    scrollbar-width: thin;
+}
+
+.back-blue{
+    background: rgb(0, 191, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 10px;
+    ion-checkbox{
+        color: white;
+        font-size: 16px;
+    }
+}
+ion-checkbox{
+    color: black;
+    font-size: 16px;
+}
+ion-input[type="password"]{
+    --background: white;
+    width: 250px;
+    margin: 0 auto;
+    --padding-start:10px;
+}
+ion-input{
+    --background: white;
+    width: 250px;
+    margin: 0 auto;
+    --padding-start:10px;
+}
+ion-content{
+    --background:rgb(244, 243, 243);
+
+}
+.heading{
+    color:black;
+    font-size: 20px;
+    font-weight: 900;
+}
+.timer{
+    background: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+.timer ion-text{
+    font-size: small;
+}
+#fill-timer{
+    filter: drop-shadow(0 0 0.75rem black);
+    border-radius:5px;
+}
+#black-timer{
+    background: black;
+    color: white;   
+}
+.flex-row-col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+    margin: 0 auto;
+}

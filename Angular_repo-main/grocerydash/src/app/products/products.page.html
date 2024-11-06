@@ -1,0 +1,165 @@
+<ion-content [fullscreen]="true">
+  <app-header #child (childClick)="handleChildClick()"></app-header>
+   <ion-grid class="main-grid">
+    <ion-row class="ion-padding"> 
+      <ion-col class="flex-row">
+        <ion-label class="heading">
+          Products
+        </ion-label>
+        <ion-button routerLink="/addnewproduct" class="addBtn">
+          <ion-icon name="add-outline"></ion-icon>
+          Add New Product
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <ion-list *ngIf="notificationArray.length>0" class="pop-list">
+            <ion-item (click)="delNoti(i)" lines="none" *ngFor="let val of notificationArray; let i = index">
+              <ion-icon slot="start" name="notifications-outline"></ion-icon>
+              <ion-label>{{val?.title}} 
+                <sub>{{val?.time}}</sub>
+              </ion-label>
+              <ion-label class="dateTime"></ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-list lines="none" *ngIf="notificationArray.length===0">
+            <ion-item class="ion-text-center">
+              <ion-label>No Notifications Found</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+    <ion-row class="ion-padding">
+      <ion-col size="12">
+        <ion-grid class="inner-grid">
+          <ion-row>
+            <ion-col size="3">
+              <ion-input [(ngModel)]="nameValue" (ionInput)="searchByName($event)" id="search-input" placeholder="Enter at least 3 character to search"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row class="input-row">
+            <ion-col size="3">
+              <ion-select [(ngModel)]="catValue" (ionChange)="searchbyCat($event)" placeholder="Search Based on Category">
+                <ion-select-option *ngFor="let val of catSearchingArray" [value]="val?.category">{{val?.category}}</ion-select-option>      
+              </ion-select>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button (click)="exportData()" fill="outline">
+                Export product
+              </ion-button>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button fill="outline">
+                Import product
+              </ion-button>
+            </ion-col>
+            <ion-col size="5">
+              <ion-button fill="outline">
+                Download the base template to import products
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="loader-row">
+            <ion-col>
+              <ion-loading (willDismiss)="isLoading=false" [isOpen]="isLoading" message="Loading..." [duration]="2000" spinner="circles"></ion-loading>
+            </ion-col>
+          </ion-row>
+          <ion-row class="tbl-header">
+            <ion-col size="2">
+              <ion-label>Name</ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-label>
+                Category
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-label>
+                Sub Category
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-label>
+                Deal Offer
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-label>
+                Edit
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-label>
+                Enable
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-label>
+                View
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-label>
+                Image
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-label>
+                Delete
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-toast #toast [isOpen]="isNotificationOpen" (didDismiss)="isNotificationOpen = false">
+          </ion-toast>
+          <ion-row *ngFor="let val of dataArray | paginate: { itemsPerPage: itemsPerPage, currentPage: p };let i = index" class="repeated-row" >
+            <ion-col size="2">
+              <ion-label>
+                {{val?.name}}
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-label>
+                {{val?.category}}
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-label>
+                {{val?.subCategory}}
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-label>
+                {{val?.stockDetails[0]?.dealOffer}} %
+              </ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon (click)="updateProduct(val)" name="create"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-toggle (ionChange)="toggleNotifications()" [checked]="true"></ion-toggle>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon (click)="viewProduct(val)"  name="eye"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-img [src]="val.image" class="tbl-image"></ion-img>
+            </ion-col>
+            <ion-col class="del-col" size="1">
+              <ion-card>
+                <ion-icon (click)="deleteProduct(i)" name="trash"></ion-icon>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+</ion-content>

@@ -1,0 +1,106 @@
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+  <ion-card class="main-grid">
+    <ion-grid class="ion-padding">
+      <ion-row class="ion-padding">
+        <ion-col class="flex-row">
+          <ion-label class="heading">
+            Categories
+          </ion-label>
+          <ion-button routerLink="/addnewcategory" class="addBtn">
+            <ion-icon name="add-outline"></ion-icon>
+            Add New Category
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding">
+        <ion-col size="12">
+          <ion-grid class="inner-grid">
+            <ion-row class="input-row">
+              <ion-col size="3">
+                <ion-input (ionInput)="searchCategory($event)" placeholder="Enter at least 3 characters to search">
+                </ion-input>
+              </ion-col>
+              <ion-col size="2">
+
+              </ion-col>
+              <ion-col size="2">
+
+              </ion-col>
+              <ion-col size="5">
+
+              </ion-col>
+            </ion-row>
+            <ion-row class="tbl-header">
+              <ion-col size="2">
+                <ion-label>Name</ion-label>
+              </ion-col>
+              <ion-col size="2">
+                <ion-label>
+                  Deal Offer
+                </ion-label>
+              </ion-col>
+              <ion-col size="1">
+                <ion-label>
+                  Edit
+                </ion-label>
+              </ion-col>
+              <ion-col size="2">
+                <ion-label>
+                  View
+                </ion-label>
+              </ion-col>
+              <ion-col size="1">
+                <ion-label>
+                  Enable
+                </ion-label>
+              </ion-col>
+              <ion-col size="2">
+                <ion-label>
+                  Delete
+                </ion-label>
+              </ion-col>
+              <ion-col size="2">
+                <ion-label>
+                  Image
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row *ngFor="let val of dataArray | paginate: { itemsPerPage: 10, currentPage: p };let i = index" class="repeated-row" >
+              <ion-col size="2">
+                <ion-label>{{val?.title}}</ion-label>
+              </ion-col>
+              <ion-col size="2">
+                <ion-label>
+                  -
+                </ion-label>
+              </ion-col>
+              <ion-col size="1">
+                <ion-icon (click)="updateProduct(val)" name="create"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                <ion-icon (click)="viewProduct(val)" name="eye"></ion-icon>
+              </ion-col>
+              <ion-col size="1">
+                <ion-toggle (ionChange)="toggleNotifications()" [checked]="true"></ion-toggle>
+              </ion-col>
+              <ion-col class="del-col" size="2">
+                <ion-card>
+                  <ion-icon (click)="deleteProduct(i)" name="trash"></ion-icon>
+                </ion-card>
+              </ion-col>
+              <ion-col size="1">
+                <ion-img [src]="val.image" class="tbl-image"></ion-img>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>

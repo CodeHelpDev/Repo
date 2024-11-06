@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+    <ion-card class="main-card">
+      <ion-grid class="ion-padding">
+        <ion-row class="ion-padding">
+          <ion-col size="3" class="con-col ion-padding">
+            <ion-label>
+              {{productDetails?.category || productDetails?.product}}
+            </ion-label>
+            <ion-text>
+              {{productDetails?.dealType}}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-padding">
+          <ion-col size="3" class="col-percent ion-padding">
+            <ion-label>
+              Deal Offer(%)
+            </ion-label>
+            <ion-text>
+             {{productDetails?.dealOffer}}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+  <app-footer></app-footer>
+</ion-content>

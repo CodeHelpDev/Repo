@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-title>Products</ion-title>
+   
+   <ion-back-button name="close"></ion-back-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-row>
+  <ion-col *ngIf="!products">
+    <ion-item>
+      <ion-spinner name="circles"></ion-spinner>
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+  <ion-row *ngFor="let val of products" routerLink="/details" [queryParams]="val" >
+    <ion-col size="6">
+      <ion-img [src]="val.image"></ion-img>
+    </ion-col>
+    <ion-col >{{val.title}} <br>
+      <ion-label id="price">{{val.price}}</ion-label>
+      
+
+    </ion-col>
+  </ion-row>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "manageCustomers",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-icon routerLink="/checkout" slot="start" class="ion-padding" name="chevron-back"></ion-icon>
+    <ion-title class="heading">Shipping Addresses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="address-grid ion-padding">
+    <ion-row  *ngFor="let val of allAddress ;let i =index">
+      <ion-col  class="repeated-row" size="8">
+        <ion-label>
+          {{val.address}}
+        </ion-label>
+        <ion-checkbox [(ngModel)]="checkBoxValue[i]" (ionChange)="selctAddress(val,i)" labelPlacement="end">Use as the shipping address</ion-checkbox>
+      </ion-col>
+      <ion-col  class="repeated-row" class="ion-text-right" size="3">
+        <!-- <ion-label (click)="editAddress(val,i)">Edit</ion-label> -->
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>
+        <ion-button id="saveBtn" (click)="routeWithData()">
+          Save Details
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

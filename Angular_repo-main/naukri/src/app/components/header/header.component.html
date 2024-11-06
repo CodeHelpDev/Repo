@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar>
+    <ion-title>
+      <ion-card class="title">
+        <ion-card class="title-card-left">
+          <ion-img class="naukriLogo" src="../../../assets/NaukriDotComLogo.svg"></ion-img>
+          <ion-text class="page">Jobs</ion-text>
+          <ion-text class="page">Companies</ion-text>
+          <ion-text class="page">Services</ion-text>
+        </ion-card>
+        <ion-card class="title-card-right">
+          <ion-button color="light" shape="round" class="loginBtn" (click)="login()">Login</ion-button>
+          <ion-button class="registerBtn" color="warning" shape="round" (click)="register()">Register</ion-button>
+          <ion-text routerLink="/register">For employers 
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </ion-text>
+        </ion-card>
+      </ion-card>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

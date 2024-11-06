@@ -1,0 +1,101 @@
+
+.hero-left {
+    width: 290px;
+    border-radius: 15px;
+}
+
+.hero-center {
+    border-radius: 15px;
+    width: 50%;
+}
+
+.hero-right {
+    border-radius: 15px;
+    width: 20%;
+}
+
+.profile-btn {
+    width: auto;
+}
+
+.left-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    box-shadow: none;
+}
+
+.pr-name {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+
+.pr-details {
+    color: black;
+    font-weight: 500;
+}
+
+.left-down {
+    background-color: rgba(224, 223, 248, 0.5);
+    padding: 12px;
+    box-shadow: none;
+    border-radius: 18px;
+}
+
+.pr-details-flex {
+    display: flex;
+    font-size: small;
+    justify-content: space-between;
+    box-shadow: none;
+    background: transparent;
+}
+
+.pr-box-1 {
+    padding: 10px;
+    color: black;
+    margin: 0 auto;
+    box-shadow: none;
+    box-shadow: none;
+    background: transparent;
+    text-align: left;
+}
+
+.apperances-flex:nth-child(odd) {
+    border-right: 1px solid black;
+}
+
+.apperances-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(64, 64, 226);
+    font-weight: 600;
+    width: 40px;
+    box-shadow: none;
+    background: transparent;
+}
+
+.pr-box-text {
+    font-size: small;
+    color: gray;
+    font-weight: 550;
+}
+
+.pr-box-center {
+    width: 1px;
+    background-color: rgb(145, 145, 145);
+    height: 55px;
+    margin-top: 20px;
+}
+.pr-performance{
+    color: black;
+    font-size: large;
+    font-weight: 500;
+}
+ion-modal{
+    width: 30%;
+    height: 400px;
+}

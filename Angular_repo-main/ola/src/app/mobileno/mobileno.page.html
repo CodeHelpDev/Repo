@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button color="dark" text="" slot="start" defaultHref="/login"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main">
+    <ion-label class="heading">Enter Phone number for verification</ion-label>
+    <ion-text class="note">
+      This number will be used for all ride-related communication. You Shall receive an SMS with code for verification
+    </ion-text>
+    <ion-input maxlength="10" (ionInput)="numberValues($event)" class="number-input" placeHolder="Your number"></ion-input>
+    <ion-select (ionChange)="countryCode($event)" interface="action-sheet" class="select-country">
+      <ion-select-option class="select-option" *ngFor="let value of countryData">
+        <ion-list lines="none">
+          <ion-item>
+            <ion-label slot="end">{{value.dial_code}}</ion-label>
+            <!-- <ion-label slot="start">{{value.flag}}</ion-label> -->
+          </ion-item>
+        </ion-list>
+      </ion-select-option>
+    </ion-select>
+  </ion-card>
+  <ion-button (click)="submitNumberValue()" [disabled]="isdisabled" expand="block" class="btn-next" color="dark">Next</ion-button>
+</ion-content>

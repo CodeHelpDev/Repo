@@ -1,0 +1,26 @@
+.heading{
+    color:black;
+    font-size: x-large;
+    font-weight: bold;
+    width: 250px; 
+    display: flex;  
+    line-height: 40px; 
+}
+.otp-input{
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: 2px solid blue;
+    --padding-start:20px;
+    --padding-end:20px;
+    font-size: large;
+    color: black;
+
+}
+.main-card{
+    box-shadow: none;
+}
+.verify-otp{
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+}

@@ -1,0 +1,38 @@
+.main-card{
+    margin: 0;
+    padding: 0;
+    background: aliceblue;
+    min-height: 600px;
+    padding: 20px;
+}
+.up-heading {
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+.tbl-header-row ion-col ion-label{
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+}
+.inner-grid{
+    background: white;
+}
+.repeated-row{
+    padding: 10px;
+}
+.repeated-row:nth-child(odd){
+    background: rgb(234, 232, 232);
+}
+.repeated-row ion-col ion-label{
+    color: black;
+}
+ion-icon[name="create"],
+ion-icon[name="eye"]{
+    font-size: 20px;
+    cursor: pointer;
+}
+ion-card{
+    box-shadow: none;
+}

@@ -1,0 +1,179 @@
+ion-breadcrumb {
+    --color: #000000;
+    --color-active: #ed7c18;
+     --color-hover: rgb(103, 61, 180);
+     background: lightgray;
+     
+}
+  .info-heading{
+    color: black;
+    font-weight: 500;
+    font-size: 25px;
+}
+.heading-row{
+    background: #646262;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.tbl-rows{
+    background: white;
+    padding: 15px;
+    margin-block: 10px;
+    border-radius: 5px;
+
+}
+.left-tbl{
+    background: lightgray;
+}
+.right-tbl{
+    background: rgb(237, 235, 235);
+}
+
+ion-input{
+    --highlight-height:0px;
+    width: 90%;
+    margin: 2%;
+    background: lightgray;
+    --padding-start:20px ;
+    border-radius: 5px;
+}
+ion-textarea{
+    --highlight-height:0px;
+    width: 95%;
+    margin: 2%;
+    background: lightgray;
+    --padding-start:20px ;
+    border-radius: 5px;
+
+}
+#formBtn{
+    --background: #ed7c18;
+    --background-activated: #ed7c18;
+    width: 200px;
+    --border-radius: 25px;
+    margin: 0 auto;
+    display: flex;
+}
+form ion-row ion-col ion-label{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+.right-grid{
+    margin: 0px;
+    padding: 0px;
+}
+ion-modal{
+    width: 50%;
+    height: 400px;
+    --backdrop-opacity: 0;
+}
+.right-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.chat-heading{
+    color: black;    
+    font-size: 20px;
+    font-weight: bold;
+}
+.chatbot-image{
+    width: 100px;
+    height: 50px;
+ 
+}
+.bot-col{
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+// .chat-display-col{
+//     // height: 350px;
+//     // background-color: #ed7c18;
+// }
+.chatlines{
+    // border: 1px solid black;
+    margin-block: 10px;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+.chatlines ion-col ion-label{
+    font-size: 20px;
+    color: black;
+
+}
+.heading{
+    color: black;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.data-grid ion-row{
+    padding: 10px;
+}
+.search-col{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    // background: red;
+}
+ion-button{
+    text-transform: capitalize;
+    width: 150px;
+}
+#uploadBtn{
+    --border-color:black;
+    color: black;
+    font-weight: 700;
+}
+#inviteBtn{
+    --background: black;
+    --background-activated: black;
+}
+#participantBtn{
+    --background: #ed7c18;;
+    --background-activated:  #ed7c18;;    
+}
+.tbl-header{
+    background: rgb(138, 138, 138);
+    border-radius: 5px;
+    color: white;
+}
+.no-data{
+    font-size: 20px;
+    font-weight: 600;
+}
+ion-icon[name="person-circle"]{
+    font-size: 50px;
+    color: black;
+}
+.teams-grid ion-row:first-child{
+    display: flex;    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+sub{
+    margin: 10px;
+    font-size: 12px;
+}
+.chat-container{
+    max-height: 330px;
+    overflow-y: auto;
+
+}
+.chat-container ion-item{
+    height: 33px;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}

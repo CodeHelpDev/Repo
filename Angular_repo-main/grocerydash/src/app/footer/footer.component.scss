@@ -1,0 +1,22 @@
+.main-grid{
+    background: black;
+
+}
+ion-icon[name="notifications-outline"]{
+    font-size: 25px;
+    font-weight: bold;
+}
+ion-icon[name="person-outline"] {
+    font-size: 25px;
+    font-weight: bold;
+}   
+.ion-text-center{
+    color: white;
+}
+.row ion-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}

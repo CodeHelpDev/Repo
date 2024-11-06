@@ -1,0 +1,63 @@
+ion-datetime{
+    --background:white;
+    margin: 0 auto;
+}
+ion-item ion-card{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+ion-toolbar{
+    --background: white;
+}
+.fir-dot{
+    background-color: darkgray;
+
+}
+.sec-dot{
+    background-color: lightgray;
+}
+.thi-dot{
+    background-color: black;
+}
+ion-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 350px;
+    margin-left: 20px;
+}
+.heading{
+    font-size: larger;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: black;
+    margin-left: 30px;
+}
+.bar-col{
+    background-color: black;
+    height: 100px;
+    width: 1%;  
+    border-radius: 18px;
+    color: red;
+}
+ion-title{
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: large;
+}
+#test-card{
+    width: 90%;
+    height: 200px;
+    box-shadow: none;
+}
+.bar-row{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}

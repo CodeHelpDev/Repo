@@ -1,0 +1,157 @@
+.naukriLogo {
+    width: 150px;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.title,
+.title-card-left,
+.title-card-right {
+    box-shadow: none;
+}
+
+.title-card-left {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-weight: 500;
+}
+
+.title-card-right {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ion-title {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.registered {
+    color: black;
+    font-size: medium;
+}
+
+.blue-text {
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+// 
+// 
+.main-section {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    box-shadow: none;
+    flex-direction: row;
+}
+
+.main-card {
+    width: 85%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    box-shadow: none;
+}
+
+.left-section {
+    width: 25%;
+    height: 420px;
+    border-radius: 10px;
+    padding: 15px;
+    overflow-y: hidden; 
+}
+
+.right-section {
+    width: 60%;
+    height: auto;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.register_Image {
+    width: 150px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.register_item {
+    line-height: 30px;
+    font-size: medium;
+}
+
+.register_heading {
+    color: black;
+    font-size: large;
+    font-weight: 700;
+    margin-left: 60px;
+}
+
+.pr-heading {
+    color: black;
+    font-size: x-large;
+    margin-left: 20px;
+    font-weight: 700;
+
+}
+
+.form-heading {
+    color: black;
+    font-size: larger;
+    font-weight: 600;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.work-status {
+    margin: 10px;
+}
+
+
+ion-input {
+    margin: 25px;
+}
+
+ion-input {
+    border: 0.5px solid gray;
+    border-radius: 12px;
+    width: 95%;
+    --highlight-color-focused: none;
+    padding-left: 15px;
+}
+
+#term-blue {
+    color: blue;
+}
+
+#regBtn {
+    color: white;
+    font-size: small;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.term-heading {
+    margin: 15px;
+}
+
+ion-text {
+    margin-top: 0px;
+    margin-left: 20px;
+}

@@ -1,0 +1,87 @@
+ion-title{
+    color: white;
+    margin: 0 auto;
+    font-weight: 200;
+    // margin-left:134px;
+}
+ion-toolbar{
+    height: 80px;
+    --background: rgb(0, 15, 99);
+}
+.heading{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+.main-card{
+    margin: 0px;
+    border-radius: 15px 15px 0px 0px;
+    background-color: aliceblue;
+    margin-block: 50px; 
+    --overflow: hidden;  
+    padding: 15px;
+}
+.content{
+    --background: rgb(0, 15, 99);
+    --overflow-y: hidden; 
+    overflow: auto;
+}
+.user{
+    font-size: 116px;
+    margin-top: 15px;
+    color: black;
+}
+.blue-card{
+    background: aliceblue;
+    margin: 0px;
+    padding: 0px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.list-button ion-item{
+    background-color: white;    
+    border-radius: 10px;
+    margin-block: 15px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.list-button{
+    width: 90%;
+    margin: 0 auto;
+    background: transparent;
+    padding: 10px;
+
+}
+ion-button{
+    --background:rgb(0, 162, 255);
+    font-weight: bolder;
+    margin: 0 auto;
+    display: flex;  
+    width: 200px;
+    --border-radius: 25px;
+}
+.heading{
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+ion-icon[name="cash-outline"]{
+    margin-right: 20px;
+}
+ion-list{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+ion-item{
+    --border-radius: 25px;
+    margin-block: 10px;
+    padding: 5px;
+
+}

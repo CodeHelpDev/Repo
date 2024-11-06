@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <ion-card class="title">
+        <ion-card class="title-card-left">
+          <ion-img class="naukriLogo" src="../../../assets/NaukriDotComLogo.svg"></ion-img>
+        </ion-card>
+        <ion-card class="title-card-right">
+          <ion-text class="registered">Already Registered? <span class="blue-text" routerLink="/login">Login</span> here</ion-text>
+        </ion-card>
+      </ion-card>
+    </ion-title>
+  </ion-toolbar>
+  <!-- 
+   -->
+</ion-header>
+<ion-content>
+  <ion-card class="main-section">
+    <ion-card class="main-card">
+      <ion-card class="left-section">
+        <ion-img class="register_Image" src="../../assets/register_Image.png"></ion-img>
+        <ion-label class="register_heading">On registering, you can</ion-label>
+        <ion-list class="register_List" lines="none">
+          <ion-item class="register_item">
+            <ion-icon slot="start" color="success" name="checkmark-circle"></ion-icon>
+            Build your profile and let recruiters find you
+          </ion-item>
+          <ion-item class="register_item">
+            <ion-icon slot="start" color="success" name="checkmark-circle"></ion-icon>
+            Get job postings delivered right to your email
+          </ion-item>
+          <ion-item class="register_item">
+            <ion-icon slot="start" color="success" name="checkmark-circle"></ion-icon>
+            Find a job and grow your career
+          </ion-item>
+        </ion-list>
+      </ion-card>
+      <ion-card class="right-section">
+        <ion-label class="pr-heading">Create your Naukri profile</ion-label> <br>
+        <ion-text>Search & apply to jobs from India's No.1 Job Site</ion-text>
+        <form [formGroup]="regForm" (ngSubmit)="reg(regForm.value)">
+          <ion-label class="form-heading">Full Name </ion-label>
+          <ion-input formControlName="name" placeHolder="What is your Name?"></ion-input>
+
+          <ion-label class="form-heading">Email ID </ion-label>
+          <ion-input formControlName="email" placeHolder="Tell us Your Email ID"></ion-input>
+
+          <ion-text>We'll send relevant jobs and updates to this email</ion-text> <br>
+
+          <ion-label class="form-heading">Password</ion-label>
+          <ion-input formControlName="password" placeHolder="(Minimum 6 characters)"></ion-input>
+
+          <ion-text>This helps your account stay protected</ion-text> <br>
+          <ion-label class="form-heading">Mobile Number</ion-label>
+          <ion-input formControlName="mobileno" placeHolder="Enter your mobile number"></ion-input>
+
+          <ion-label class="form-heading">Work Status</ion-label> <br>
+          <ion-radio-group formControlName="workStatus">
+            <ion-radio class="work-status" value="Experience">Experience</ion-radio>
+            <ion-radio class="work-status" value="fresher">Fresher</ion-radio>
+          </ion-radio-group>
+          <br>
+          <ion-text class="term-heading">By clicking Register, you agree to the <span id="term-blue">Terms and
+              Conditions</span> & <span id="term-blue">Privacy Policy</span> of Naukri.com</ion-text>
+          <ion-button [disabled]="!regForm.valid" type="submit" shape="round" id="regBtn">Register Now</ion-button>
+
+          
+          <ion-alert [isOpen]="isAlertOpen" header="Invalid Mobile Number"
+            subHeader="Please Enter Your Valid Mobile Number"
+            message="Please Do Not Write Country Code or 0 Before Number" [buttons]="alertButtons"
+            (didDismiss)="setOpen(false)"></ion-alert>
+
+            <ion-alert [isOpen]="isEmailAlert" header="Invalid Email Id"
+            subHeader="Please Enter Your Valid Email"
+             [buttons]="emailAlert"
+            (didDismiss)="setOpen(false)"></ion-alert>
+        </form>
+      </ion-card>
+    </ion-card>
+  </ion-card>
+</ion-content>

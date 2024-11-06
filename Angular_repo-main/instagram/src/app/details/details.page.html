@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-back-button slot="start" text="" color="dark" defaultHref="/tabs/home"></ion-back-button>
+    <ion-title>{{post.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col>
+      <ion-img [src]="post.thumbnailUrl"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      {{post.description}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="6">
+      Post at :
+      {{post.uploadTime}}
+    </ion-col>
+    <ion-col size=""></ion-col>
+    <ion-col size="6">
+      Total Views:
+      {{post.views}}
+    </ion-col>
+  </ion-row>
+</ion-content>

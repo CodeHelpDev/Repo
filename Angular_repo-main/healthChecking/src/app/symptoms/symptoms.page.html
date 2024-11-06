@@ -1,0 +1,84 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" text="" color="dark" slot="start"></ion-back-button>
+    <ion-title>Log</ion-title>
+    <ion-menu-button slot="end" color="dark"></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-card class="gray-card">
+      <ion-label class="heading">Mood</ion-label>
+     <ion-card class="flex-card">
+      <ion-card class="rounded-cards">
+        <ion-icon name="rainy"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="star-half"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="invert-mode"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="pulse"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="rainy"></ion-icon>
+      </ion-card>
+     </ion-card>
+     <ion-card class="flex-text">
+      <ion-label>Calm</ion-label>
+      <ion-label>Happy</ion-label>
+      <ion-label>Meh</ion-label>
+      <ion-label>Anxious</ion-label>
+      <ion-label>Sad</ion-label>
+     </ion-card>
+    </ion-card>
+
+    <ion-card class="gray-card">
+      <ion-label class="heading">Symptoms</ion-label>
+     <ion-card class="flex-card">
+      <ion-card class="rounded-cards">
+        <ion-icon name="medical"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="speedometer"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="thermometer"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="options-outline"></ion-icon>
+      </ion-card>
+      <ion-card class="rounded-cards">
+        <ion-icon name="apps-outline"></ion-icon>
+      </ion-card>
+     </ion-card>
+     <ion-card class="flex-text">
+      <ion-label>Headach</ion-label>
+      <ion-label>Cramps</ion-label>
+      <ion-label>Fever</ion-label>
+      <ion-label>Diarrhoe</ion-label>
+      <ion-label>Acne</ion-label>
+     </ion-card>
+    </ion-card>
+    <ion-label class="heading-2">Spotting</ion-label>
+    <ion-card class="btn-flex">
+      <ion-button>No spotting</ion-button>
+      <ion-button>Light</ion-button>
+      <ion-button>Heavy</ion-button>
+    </ion-card>
+    <ion-label class="heading-2">Menstrual flow</ion-label>
+    <ion-card class="btn-flex">
+      <ion-button>Light</ion-button>
+      <ion-button>Medium</ion-button>
+      <ion-button>Heavy</ion-button>
+    </ion-card>
+    <ion-button class="saveBtn">Save</ion-button>
+    
+
+    
+  </ion-card>
+  
+</ion-content>

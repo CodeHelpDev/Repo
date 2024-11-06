@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        for (i = 10; i > 0; i--) {
+            document.write(' &nbsp; ')
+            for (j = 1; j <= i; j++) {
+                document.write(' * ');
+            }
+            for (k = 1; k <= 10 - i; k++) {
+                document.write(' \xa0\xa0\ ')
+            }
+            for (l = 1; l <= 10 - i; l++) {
+                document.write('  \xa0\xa0\ ')
+            }
+            for (m = i; m >= 1; m--) {
+                document.write(' * ')
+            }
+            if (i != 1) {
+                document.write('<br/>')
+            }
+        }
+        for (k = 1; k <= 10; k++) {
+            document.write(' &nbsp; ')
+            for (j = 2; j <= k; j++) {
+                document.write(' * ');
+            }
+            for (m = 10; m >= k; m--) {
+                document.write(' \xa0\xa0\ ')
+            }
+            for (m = 10; m >= k; m--) {
+                document.write(' \xa0\xa0\ ')
+            }
+            for (j = 2; j <= k; j++) {
+                document.write(' * ');
+            }
+            document.write('<br/>')
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+ion-icon[name="chevron-back"]{
+    font-size: 20px;
+}
+.heading{
+    color: black;
+    font-size: 20px;
+    
+}
+.address-grid{
+    background: rgb(244, 241, 241);
+}
+.address-grid ion-row{
+    background: white;
+    margin-block:40px;
+    border-radius: 12px;
+    padding: 10px;
+}
+ion-checkbox{
+    --border-color:black;
+    --border-color-checked:black;
+    --checkbox-background-checked:black;
+}
+ion-button{
+    --border: none;
+}
+.repeated-row{
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.address-grid ion-row:nth-child(5){
+    background: transparent;
+}
+#saveBtn{
+    --background: #DB3022;
+    --background-activated: #DB3022;
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 25px;
+}

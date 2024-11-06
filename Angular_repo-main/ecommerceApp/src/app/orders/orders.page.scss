@@ -1,0 +1,31 @@
+ion-icon[name="notifications-outline"]{
+    font-size: 20px;
+}
+.heading{
+    font-size: 30px;
+    font-weight: 500;
+}
+ion-img{
+    width:100px;
+}
+
+.orders-grid ion-row{
+    box-shadow: 2px 2px 10px black;
+    margin-block: 20px;
+    border-radius: 25px;
+}
+.details-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ion-button{
+    font-size: small;
+    text-transform: capitalize;
+    z-index: 10;
+    --background: linear-gradient(90deg, rgba(102, 126, 234, 1) 0%, rgba(100, 182, 255, 1) 100%);
+    width: 85%;
+    color: white;
+
+  
+}

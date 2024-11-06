@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border" [translucent]="true">
+
+</ion-header>
+
+<ion-content class="content" [fullscreen]="true">
+  <ion-card class="top-card">
+    <ion-label class="heading">Qwik</ion-label>
+  </ion-card>
+  <ion-card class="main-card"> 
+  <form [formGroup]="otpForm" (ngSubmit)="onSubmit(otpForm.value)">
+    <ion-card class="designer-card-content">
+      <ion-label>Correct Email</ion-label>
+      <ion-label>Success! Please enter the code that was sent to the Email associated with your account</ion-label>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon class="ion-padding" color="primary" name="star"></ion-icon>
+          <ion-input formControlName="otp" placeHolder="Enter OTP"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button class="fir-btn" shape="round" fill="outline">Send Again</ion-button>
+          <ion-button type="submit" shape="round" >Submit</ion-button>
+        </ion-item>
+      </ion-list>
+
+    </ion-card>
+  </form>
+  </ion-card>
+ 
+</ion-content>

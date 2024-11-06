@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content class="bg-card" [fullscreen]="true">
+  <ion-label class="heading">
+    Qwik
+  </ion-label>
+  <ion-card class="designer-card">
+    <ion-card class="heading-card">
+      <form [formGroup]="incrrectemail">
+        <ion-label class="forget-heading">Incorrect Email</ion-label> <br>
+        <ion-label class="forget-text">This email address you entered is not associated with an account.Please try again with a different email  </ion-label>
+        <ion-list lines="none">
+          <ion-item>
+            <ion-icon color="primary" name="mail-outline"></ion-icon>
+            <ion-input formControlName="incorrectemail" placeHolder="Email">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-button size="medium" id="btn" slot="end"  shape="rounded">Submit</ion-button>
+
+            <ion-button size="medium" id="btn" slot="start" shape="rounded" fill="outline">Exit</ion-button>
+          </ion-item>
+        </ion-list>
+
+      </form>
+    </ion-card>
+  </ion-card>
+</ion-content>

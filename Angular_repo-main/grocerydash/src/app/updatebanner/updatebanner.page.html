@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+  <ion-card class="main-card">
+    <ion-grid class="main-grid">
+      <ion-row>
+        <ion-col size="3"></ion-col>
+        <ion-col size="6">
+         <form [formGroup]="updateBannerForm" (ngSubmit)="onFormSubmit(updateBannerForm.value)">
+          <ion-grid class="inner-grid ion-padding">
+            <ion-row>
+              <ion-col size="12">
+                <ion-label class="input-label">
+                  Title
+                </ion-label>
+                <ion-input [readonly]="true" formControlName="title"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label class="input-label">
+                  Description
+                </ion-label>
+                <ion-input formControlName="description"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label class="input-label">
+                  Banner for
+                </ion-label>
+                <ion-select (ionChange)="changeSelectValue(toggleCon)" [(ngModel)]="toggleCon" formControlName="bannerFor">
+                  <ion-select-option value="category">Category</ion-select-option>
+                  <ion-select-option value="product">Product</ion-select-option>
+                </ion-select>
+              </ion-col>
+            </ion-row>
+            <ion-row *ngIf="toggleCon==='category'">
+              <ion-col size="12">
+                <ion-label class="input-label">
+                  Category
+                </ion-label>
+                <ion-select formControlName="category">
+                  <ion-select-option *ngFor="let cat of allCategory">{{cat?.title}}</ion-select-option>
+                </ion-select>
+              </ion-col>
+            </ion-row>
+            <ion-row *ngIf="toggleCon==='product'">
+              <ion-col size="12">
+                <ion-label class="input-label">
+                  Product
+                </ion-label>
+                <ion-select formControlName="product">
+                  <ion-select-option *ngFor="let prod of allProduct" >{{prod?.name}}</ion-select-option>
+                </ion-select>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label class="input-label">
+                  Image
+                </ion-label>
+                <ion-button class="select-btn" (click)="openFileUpload()">
+                  <ion-icon name="cloud-upload"></ion-icon> &nbsp;&nbsp;
+                  <ion-label>Select File:</ion-label>
+                </ion-button>
+                  <input style="display: none;" (change)="imageUpload($event)" type="file" id="file-upload">
+              </ion-col>
+            </ion-row>
+            <ion-row *ngIf="imageUrl">
+              <ion-col size="12">
+                <ion-img [src]="imageUrl"></ion-img>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="8"></ion-col>
+              <ion-col size="2">
+                <ion-button routerLink="/banner" fill="outline" class="cancel">Cancel</ion-button>
+              </ion-col>
+              <ion-col size="2">
+                <ion-button [disabled]="!updateBannerForm.valid" type="submit" fill="outline" class="save">Save</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+         </form>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>

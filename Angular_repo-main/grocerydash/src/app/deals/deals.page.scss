@@ -1,0 +1,52 @@
+.main-card{
+    min-height: 500px;
+    background: aliceblue;
+    margin: 0;
+}
+.heading{
+    color: black;    
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+#addNewBanner{
+    --background: black;
+    --background-activated:black ;
+    color: white;
+    text-transform: capitalize;
+}
+.fir-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.inner-grid{
+    background: white;
+}
+ion-input{
+    border: 1px solid lightgray;
+    border-radius: 9px;
+    --padding-start:10px;
+    --highlight-height:0px;
+}
+// .tbl-header{
+//     color: black;
+// }
+.tbl-header ion-col ion-label{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}   
+.bannerFor{
+    text-transform: capitalize;
+}
+ion-img{
+    width: 50px;
+}
+ion-icon[name="eye"],
+ion-icon[name="create"],
+ion-icon[name="trash"]{
+    font-size: 20px;
+    color: black;
+}

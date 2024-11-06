@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Products Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-icon (click)="likeBtn()" name="heart" [color]="isLiked ? 'danger' : 'black'" size="large"></ion-icon>
+  <ion-text>{{item?.title}}</ion-text>
+  <ion-img [src]="item?.image"></ion-img>
+  <ion-list *ngIf="item">
+    <ion-item>
+      <p>{{item?.unit_price}}</p>
+      <p slot="end">{{item?.ratings_total}} in Stock</p>
+    </ion-item>
+    <ion-item>
+      Description <br><br>
+      {{item?.title}}
+    </ion-item>
+    <ion-item>
+      <ion-label>Quantity</ion-label>
+
+      <ion-label id="qua">{{quantity}}</ion-label>
+      <ion-button size="medium" class="plus" (click)="plus()">+</ion-button>
+      <ion-button size="medium" class="min" (click)="min()">-</ion-button>
+    </ion-item>
+    <ion-button (click)="addToCart()" *ngIf="!isAddedToCart" color="primary">Add to Cart</ion-button>
+    <ion-button (click)="addToCart()" *ngIf="isAddedToCart" color="primary">Buy Now</ion-button>
+    <ion-item *ngIf="!item">No Data Found</ion-item>
+  </ion-list>
+<!--  -->
+  <!--   -->
+
+
+</ion-content>

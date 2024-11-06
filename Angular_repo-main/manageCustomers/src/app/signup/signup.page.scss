@@ -1,0 +1,51 @@
+.heading {
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+}
+ion-input{
+    --padding-start:10px;
+    --padding-end:10px;
+    border-bottom: 1px solid gray;
+    width: 85%;
+    margin: 0 auto;
+    margin-block: 10px;
+    font-size: larger;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    color: black
+}
+.first-card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: none;
+
+}
+ion-card{
+    box-shadow: none;
+}
+::ng-deep ion-input .label-text{
+    color: rgb(255, 38, 0);
+}
+.pink-text{
+    color: rgb(255, 38, 0);
+    font-weight: 700;
+}
+ion-checkbox{
+    width: 80%;
+    height: 50px;
+}
+ion-button{
+    --background:rgb(255, 38, 0);
+    --background-activated:#ef5365;
+    --background-focused:#ef5365;
+    width: 90%;
+    margin: 0 auto;
+}
+.account-text{
+    width: fit-content;
+    margin: 0 auto;
+}

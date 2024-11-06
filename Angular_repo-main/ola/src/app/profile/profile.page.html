@@ -1,0 +1,16 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/tabs/home" text="" color="dark" slot="start"></ion-back-button>
+    <ion-title>User Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-img class="user-image" src="../../assets/userImage.jpg"></ion-img>
+    <ion-label>Mobile No : {{data?.number}} </ion-label>
+    <ion-label routerLink="/ridehistory">Total Ride : {{rideDetails?.length}} </ion-label>
+  </ion-card>
+  <ion-label routerLink="/ridehistory" class="text-blue">View All Previous Rides</ion-label>
+ 
+</ion-content>

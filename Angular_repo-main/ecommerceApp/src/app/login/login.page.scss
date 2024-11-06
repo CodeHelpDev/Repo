@@ -1,0 +1,27 @@
+ion-title{
+    color: black;
+    font-size: 29px;
+}
+ion-toolbar,ion-content{
+    --background: lightcyan;
+}
+ion-input{
+    --padding-start:20px;
+    border-radius: 18px;
+    border: 1px solid black;
+    --highlight-height:0px;
+}
+ion-button{
+    --background: black;
+    --background-activated:black;
+    display: flex;
+    width: 200px;
+    margin: 0 auto;
+}
+ion-row{
+    margin-block: 30px;
+}
+.blue-text{
+    color: blue;
+    text-decoration: underline;
+}

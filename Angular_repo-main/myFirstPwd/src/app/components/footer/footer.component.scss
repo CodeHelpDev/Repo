@@ -1,0 +1,43 @@
+.container{
+    height: 500px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.appstore{
+    margin-left:12px;
+    width: 150px;
+}
+.playstore{
+    width: 150px;
+}
+.imgClass{
+    width: 100px;
+}
+.first-card,.second-card,.third-card,.fourth-card{
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+ion-item:first-child{
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+}
+ion-footer{
+    margin-top: 0px;
+}
+
+
+
+
+
+
+
+
+ion-img{
+    margin-right: 20px;
+}

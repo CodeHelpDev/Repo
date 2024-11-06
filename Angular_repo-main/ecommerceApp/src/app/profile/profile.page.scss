@@ -1,0 +1,16 @@
+.heading{
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+}
+.main-grid ion-row ion-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.main-grid ion-row{
+    margin-block: 40px;
+}
+.main-grid ion-row ion-col ion-text{
+    color: rgb(118, 118, 118);
+}

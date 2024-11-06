@@ -1,0 +1,38 @@
+<ion-header class="no-border" [translucent]="true">
+ 
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-back-button class="ion-padding" defaultHref="/" text="" slot="start" color="light"></ion-back-button>
+    <ion-title>Review Transaction</ion-title>
+    <ion-icon class="ion-padding" size="large" color="light" slot="end" name="notifications-outline"></ion-icon>
+  </ion-toolbar>
+  <ion-list class="pass-list" lines="none">
+    <ion-item>
+      <ion-label>Verify your transaction.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>3,400.52</ion-label>
+    </ion-item>  
+  </ion-list>
+  <ion-card class="bottom-card">
+    <ion-list class="bottom-list" lines="none">
+      <ion-item>
+        <ion-label>
+          Enter the Username, ID, Email,or Phone Number
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="primary" sie="large" name="person-outline"></ion-icon>
+        <ion-input placeHolder="Enter here"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button routerLink="/requestmoney" slot="start" size="medium">Edit Transaction</ion-button>
+        <ion-button slot="end" size="medium" fill="outline">Edit Transaction</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>

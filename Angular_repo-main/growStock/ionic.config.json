@@ -1,0 +1,7 @@
+{
+  "name": "growStock",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

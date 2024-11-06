@@ -1,0 +1,68 @@
+.main-card{
+    background: url(../../assets/mainBanner.png);
+    height: 198px;
+    width: 100%;
+    margin: 0px;
+    background-size: cover;
+    background-position: center;
+}
+.street-heading{
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+}
+.left-heading{
+    font-size: 30px;
+    font-weight: 700;
+}
+.viewAll{
+    font-size: small;
+    font-weight: 200;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    
+}
+#never-text{
+    font-size: small;
+    font-weight: 200;
+    color: lightgray;
+}
+
+.repeated-col{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 20px;
+    margin: 0 auto;
+    width: 120px;
+    height: 295px;
+    box-shadow: none;
+    
+    ion-card {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        box-shadow: none;
+        overflow-y: hidden;
+        height: 230px;
+        box-shadow: none;
+        width: 128px;
+    }
+}
+
+ion-img{
+    height: 65%;
+    width: 90%;
+}
+.prod-name{
+    color: black;
+    font-size: 14px;
+}
+.heart{
+    font-size: 20px;
+}

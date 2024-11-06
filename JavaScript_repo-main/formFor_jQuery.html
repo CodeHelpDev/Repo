@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea,
+        input {
+            border: none;
+            border-bottom: 3px solid black;
+        }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h2>Patient Registration Form </h2>
+
+    <div>
+        <form action="" method="post" name="myform" id="myform">
+            <table>
+                <tr>
+                    <td>
+                        <label for="fname">First Name : </label>
+                        <input type="text" name="fname" id="fname" onkeyup="validateForm('fname')">
+                        <span id="fname_err"></span>
+                    </td>
+                    <td>
+                        <label for="lname">Last Name : </label>
+                        <input type="text" id="lname" name="lname" onkeyup="validateForm('lname')">
+                        <span id="lname_err"></span>
+                    </td>
+                    <td>
+                        <label for="title">Title : </label>
+                        <select name="title" id="title" name="title">
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="Ms.">Ms.</option>
+                            <option value="Dr.">Dr.</option>
+                            <option value="Er.">Er.</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dob">Date Of Birth : </label>
+                        <input type="date" id="dob" name="dob">
+                        <span id="dob_err"></span>
+                    </td>
+                    <td>
+                        <label for="ssl">Social Security # </label>
+                        <input type="text" id="ssl" name="ssl">
+                    </td>
+                    <td>
+                        <label for="gender">Gender : </label>
+                        <input type="radio" name="gender" value="male"><label>Male</label>
+                        <input type="radio" name="gender" value="female"><label>Female</label>
+                        <span id="gender_err"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="ma">Mailing Address : </label><br>
+
+                        <textarea name="MailingAddress" id="ma" cols="30" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="ma">Physical Address : </label> <br>
+
+
+                        <textarea name="PhysicalAddress" id="pa" cols="30" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="homephone">Home Phone : </label>
+                        <input type="text" id="homephone" name="homePhone" onkeyup="validateForm('homephone')">
+                        <span id="phone_err"></span>
+                    </td>
+
+                    <td>Ok To Call <br>
+                        <input type="radio" name="call" id="call">
+                    </td>
+                    <td>Best Time To Call <br>
+                        <input type="text" name="btcall" id="btcall">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="workphone">Work Phone : </label>
+                        <input type="text" id="workphone" name="workphone">
+                    </td>
+
+                    <td><br>
+                        <input type="radio" name="call" id="call">
+                    </td>
+                    <td> <br>
+                        <input type="text" name="btcall" id="btcall">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="cellphone">Cell Phone : </label>
+                        <input type="text" id="cellphone" name="cellPhone">
+                    </td>
+
+                    <td><br>
+                        <input type="radio" name="call" id="call">
+                    </td>
+                    <td> <br>
+                        <input type="text" name="btcall" id="btcall">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Marital Status <br>
+                        <input type="radio" name="mstatus"> <label for="single">Single</label><br>
+                        <input type="radio" name="mstatus"> <label for="married">Married</label><br>
+                        <input type="radio" name="mstatus"><label for="seperated">Seperated</label><br>
+                        <input type="radio" name="mstatus"><label for="diverced">Diversed</label><br>
+                        <input type="radio" name="mstatus"><label for="widowed">Widowed</label><br>
+                        <input type="radio" name="mstatus"><label for="unknown">Unknown</label>
+                    </td>
+
+                    <td>Employement Status <br>
+                        <input type="radio" name="estatus"> <label for="Full-Time">Full-Time</label><br>
+                        <input type="radio" name="estatus"> <label for="Part-Time">Part-Time</label><br>
+                        <input type="radio" name="estatus"><label for="Self-Employed">Self Employed</label><br>
+                        <input type="radio" name="estatus"><label for="Active Duty">Active Duty</label><br>
+                        <input type="radio" name="estatus"><label for="Disabled">Disabled</label><br>
+                    </td>
+                    <td>
+                        <input type="radio" name="estatus"><label for="None">None</label><br>
+                        <input type="radio" name="estatus"><label for="Student">Student</label><br>
+                        <input type="radio" name="estatus"><label for="Retired">Retired</label><br>
+                        <input type="radio" name="estatus"><label for="Unknown">Unknown</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="eaddress">Email Address : </label>
+                        <input type="email" id="email" name="email" onkeyup="validateForm('email')">
+                        <span id="email_err"></span>
+                        <label for="InterRequired">Interpreter Required ? </label> <input type="radio" name="inter">
+                        <label for="title">Language : </label>
+                        <input type="text" id="language" name="language">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Patient Employer <input type="text" id="patientEmployer" name="patientEmployer"></td>
+                    <td>Spause Employer <input type="text" id="spauseEmployer" name="spauseEmployer"></td>
+                </tr>
+                <tr>
+                    <td>Address <br> <textarea name="PatientAddress" id="paAddress" cols="30" rows="5"></textarea>
+                    <td>Address <br> <textarea name="SpauseAddress" id="spAddress" cols="30" rows="5"></textarea>
+                </tr>
+                <tr>
+                    <td>Phone <input type="text" id="patientEmployerPhone" name="patientEmployerPhone"></td>
+                    <td>Phone <input type="text" id="spauseEmployerPhone" name="spauseEmployerPhone"></td>
+                </tr>
+                <tr>
+                    <td>Occupation <input type="text" id="patientOccupation" name="patientOccupation"></td>
+                    <td>Occupation <input type="text" id="spauseOccupation" name="spauseOccupation"></td>
+                </tr>
+                <tr>
+                    <td>How did you Hear About us?</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="about_us[]" value="Physician">Physician <br>
+                        <input type="checkbox" name="about_us[]" value="Employer">Employer <br>
+                        <input type="checkbox" name="about_us[]" value="CaseManager">CaseManager <br>
+                        <input type="checkbox" name="about_us[]" value="FormerPatient">FormerPatient <br>
+                        <input type="checkbox" name="about_us[]" value="Adjustor">Adjustor <br>
+                        <input type="checkbox" name="about_us[]" value="School">School <br>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="about_us[]" value="Hospital">Hospital <br>
+                        <input type="checkbox" name="about_us[]" value="CrossReferral">Cross Referral <br>
+                        <input type="checkbox" name="about_us[]" value="Friend">Friend - Word of Mouth <br>
+                        <input type="checkbox" name="about_us[]" value="Attorney">Attorney <br>
+                        <input type="checkbox" name="about_us[]" value="Self">Self <br>
+                        <input type="checkbox" name="about_us[]" value="ScreenOpenHouses">Screens - Open Houses <br>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="about_us[]" value="Print">Marketing Ad - Print <br>
+                        <input type="checkbox" name="about_us[]" value="Tv">Marketing Ad - TV <br>
+                        <input type="checkbox" name="about_us[]" value="Billboard">Marketing Ad - Billboard <br>
+                        <input type="checkbox" name="about_us[]" value="emailm">Marketing Ad - Direct Mail - Email <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Specify: <input type="text" id="specify" name="specify"></td>
+                    <td><input type="button" value="Save" onclick="formSubValidate()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+<script>
+
+    //for GetData On Browser from LocalStorage 
+    // var data = localStorage.getItem('patientForm');
+    // console.log(JSON.parse(data));
+    // if (data) {
+    //     data = JSON.parse(data)
+    //     document.getElementById('fname').value = data.fname
+    //     document.getElementById('lname').value = data.lname
+    // }
+
+
+
+    function validateForm(e) {
+        if (e == 'fname') {
+            var fname = document.myform.fname.value;
+            var validFname = /^[a-zA-Z]*$/.test(fname);
+            if (validFname) {
+                // console.log(fname);
+                document.getElementById("fname_err").innerHTML = "*Valid*";
+                document.getElementById("fname_err").style.color = "green";
+                return true;
+            } else {
+                document.getElementById("fname_err").innerHTML = "*Please Enter Only Letters*";
+                document.getElementById("fname_err").style.color = "red";
+            }
+        }
+        if (e == 'lname') {
+            var lname = document.myform.lname.value;
+            var validLname = /^[a-zA-Z]*$/.test(lname);
+            if (validLname) {
+                // console.log(lname);
+                document.getElementById("lname_err").innerHTML = "Valid";
+                document.getElementById("lname_err").style.color = "green";
+                return true;
+            } else {
+                document.getElementById("lname_err").innerHTML = "*Please Enter Only Letters*";
+                document.getElementById("lname_err").style.color = "red";
+            }
+        }
+        if (e == 'homephone') {
+            var contact = document.myform.homephone.value;
+            var regmm = '^([0|+[0-9]{1,5})?([7-9][0-9]{9})$';
+
+            var regmob = new RegExp(regmm);
+            if (regmob.test(contact)) {
+                document.getElementById("phone_err").innerHTML = "Valid";
+                document.getElementById("phone_err").style.color = "green";
+                return true;
+            }
+            else {
+                document.getElementById("phone_err").innerHTML = "Please Enter Mobile Number Properly";
+                document.getElementById("phone_err").style.color = "red";
+            }
+        }
+
+        // For email Validation 
+        if (e == 'email') {
+            var email = document.myform.email.value;
+            var em = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (em == true) {
+                // console.log('email' + em);
+                document.getElementById("email_err").innerHTML = "Valid";
+                document.getElementById("email_err").style.color = "green";
+            }
+            else {
+                document.getElementById("email_err").innerHTML = "Please Enter a Valid Email Id ";
+                document.getElementById("email_err").style.color = "red";
+            }
+        }
+
+    }
+
+    function formSubValidate() {
+
+        var vgender = document.myform.gender.value;
+        if (vgender) {
+            document.getElementById("gender_err").style.color = "green"
+            document.getElementById("gender_err").innerHTML = "*Valid*";
+        }
+        if (vgender == null || vgender == "") {
+            document.getElementById("gender_err").innerHTML = "*Please Select Gender*";
+            document.getElementById("gender_err").style.color = "red";
+        }
+        var vdob = document.myform.dob.value;
+        if (vdob) {
+            document.getElementById("dob_err").innerHTML = "*Valid *";
+            document.getElementById("dob_err").style.color = "green";
+        }
+        if (vdob == null || vdob == "") {
+            document.getElementById("dob_err").innerHTML = "*Please select Date Of Birth *";
+            document.getElementById("dob_err").style.color = "red";
+        }
+
+
+        var vemail = document.myform.email.value;
+        console.log(vemail)
+        if (vemail == null || vemail == "") {
+            document.getElementById("email_err").innerHTML = "Please Fill Email id ";
+            document.getElementById("email_err").style.color = "red";
+        }
+        var vfname = document.myform.fname.value;
+
+        if (vfname == null || vfname == "") {
+            document.getElementById("fname_err").style.color = "red";
+            document.getElementById("fname_err").innerHTML = "Please Fill name";
+        }
+        var vlname = document.myform.lname.value;
+        if (vlname == null || vlname == "") {
+            document.getElementById("lname_err").style.color = "red";
+            document.getElementById("lname_err").innerHTML = "Please Fill name";
+        }
+
+        // for Getting The of CheckBox 
+        let count = 0;
+        var checkedCheckBoxes=[];
+        var checkbox = document.getElementsByName('about_us[]')
+        for (let index = 0; index < checkbox.length; index++) {
+            if (checkbox[index].checked) {
+                var checkValue=checkbox[index].value;
+                checkedCheckBoxes.push(checkbox[index]);
+                 console.log(checkValue);
+                //console.log(checkbox[index].value);
+            } else {
+                count++;
+            }
+        }
+        if (count === checkbox.length) {
+            alert('Please select any Hear about us')
+            // return false;
+        }
+        //For set Data In LocalStorage
+
+          var formdata = document.getElementById('myform').value;
+          var formData = new FormData( document.querySelector("form") );
+          var formData = Object.fromEntries(new FormData(document.querySelector('form')).entries());
+          console.log(formData)
+          localStorage.setItem('patientForm', JSON.stringify(formData));
+    }
+</script>
+
+</html>

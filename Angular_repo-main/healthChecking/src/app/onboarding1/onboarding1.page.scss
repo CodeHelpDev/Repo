@@ -1,0 +1,43 @@
+.range{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+ion-range::part(knob) {
+    display: none;
+}
+ion-range{
+    pointer-events: none;
+    --bar-background-active: black;
+}
+.skip-text{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+.heading{
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    margin: 0 auto;
+}
+.main-card{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    box-shadow: none;
+    margin-top: 20px;
+    height: 300px;
+    gap: 20px;
+    
+}
+ion-button{
+    width:80%;
+    margin: 0 auto;
+    --color: black;
+    --background:white;
+    --background-activated:black;
+    --border-radius: 25px;
+    --border-color: black;
+    --color-activated:white;
+}

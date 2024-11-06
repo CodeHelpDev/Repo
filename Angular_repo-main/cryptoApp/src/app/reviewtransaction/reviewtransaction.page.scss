@@ -1,0 +1,76 @@
+ion-toolbar{
+    --background:rgb(0, 15, 99);
+    // height: 50px;
+}
+ion-content{
+    --background: rgb(0, 15, 99);
+}
+ion-title{
+    color: white;
+    font-weight: 400;
+}
+.pass-list{
+    background: transparent;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.pass-list ion-item{
+    --background: transparent;
+    margin-block: 10px;
+}
+.pass-list ion-item:first-child{
+    color: white;
+    width: 300px;
+    text-align: center;
+}
+.pass-list ion-item:nth-child(2) ion-label{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+.bottom-card{
+    background-color: rgb(1, 27, 174);
+    margin: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 200px;
+}
+.bottom-card ion-list{
+    background-color: transparent;
+}
+.bottom-card ion-list ion-item{
+    --background: transparent;
+}
+.bottom-list{
+    width: 90%;
+    margin: 0 auto;
+}
+.bottom-list ion-item:first-child ion-label{
+    color: white;
+    text-align: center;
+    font-weight: 400;
+}
+.bottom-list ion-item:nth-child(2){
+    background: white;
+    border-radius: 25px;
+    margin: 10px;
+
+}
+.bottom-list ion-item:nth-child(3) ion-button:nth-child(2){
+    --background: transparent;
+    --background-activated:transparent;
+    color: white;
+
+}
+.bottom-list ion-item:nth-child(3) ion-button{
+    font-size: small;
+}
+ion-input{
+    --padding-start:10px
+}

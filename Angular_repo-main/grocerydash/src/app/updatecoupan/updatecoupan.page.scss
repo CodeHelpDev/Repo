@@ -1,0 +1,64 @@
+.main-card{
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+}
+.main-grid{
+    background: aliceblue;
+}
+.inner-grid{
+    background: white;
+    border-radius: 8px;
+}
+.input-label{
+    color: darkgray;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+ion-input {
+    border: 1px solid lightgray;
+    --padding-start: 10px;
+    border-radius: 5px;
+    --highlight-height:0px;
+    --padding-end: 10px;
+
+}
+.inner-grid ion-row ion-col{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.select-btn{
+    --background: #1CBCD8;
+    width: 180px;
+    --background-activted: #1CBCD8;
+    --padding-right: 10px
+}
+.save{
+    color: green;
+    font-weight: 500;
+    --border-color: green;
+}
+.cancel{
+    color: black;
+    font-weight: 500;
+    --border-color: black;
+}
+ion-button[fill="outline"]{
+    width: fit-content;
+    text-transform: capitalize;
+}
+ion-img{
+    width: 30%;
+    height: 200px;
+    object-fit: fill;
+    display: flex;
+    margin: 0 auto;
+}
+.main-heading{
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

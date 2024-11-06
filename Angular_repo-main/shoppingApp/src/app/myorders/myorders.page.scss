@@ -1,0 +1,31 @@
+ion-icon[name="chevron-back"]{
+    font-size: 20px;
+}
+ion-icon[name="search"]{
+    font-size: 20px;
+}
+.heading{    
+    color: black;
+    font-size: 40px;
+    font-weight: 700;
+}
+.repeated-row{
+    --background: white;
+    margin-block: 20px;
+}
+ion-toolbar{
+    --background: rgb(245, 245, 245);
+}
+ion-content{
+    --background:  rgb(245, 245, 245);
+}
+.repeated-row ion-row{
+    background: white;
+    padding: 15px;
+}
+.repeated-row ion-row:first-child{
+    border-radius: 25px 25px 0px 0px;
+}
+.repeated-row ion-row:nth-child(2){
+    border-radius: 0px 0px 25px 25px;
+}

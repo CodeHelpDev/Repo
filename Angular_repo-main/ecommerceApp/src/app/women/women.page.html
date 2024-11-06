@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" slot="start" color="dark"></ion-back-button>
+    <ion-title>Women Shopping</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid *ngIf="finalArray.length===0">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-loading class="custom-loading" [isOpen]="isLoadingVisible" message="Loading..." [duration]="100"></ion-loading>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="ion-padding products-grid" *ngFor="let val of finalArray">
+    <ion-row>
+      <ion-col size="10">
+        <ion-img (click)="routeToDetails(val)" [src]="val?.image"></ion-img>
+      </ion-col>
+      <ion-col size="1" class="ion-text-center">
+        <ion-icon [ngStyle]="val?.isLiked ?{color:'red'} : {color:''}  " (click)="like(val)" size="large" name="heart"></ion-icon>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label class="green-text">Price:  {{val?.price | currency}}</ion-label>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-label class="row-flex">
+          <ion-button *ngIf="val?.isAddedToCart===true" class="cart-btn" (click)="addtoCart(val)" color="success">Remove Cart</ion-button>
+         <ion-icon *ngIf="val?.isAddedToCart!==true" (click)="addtoCart(val)" size="large" name="cart-outline"></ion-icon>
+        </ion-label>
+        
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-text class="heading">Title:</ion-text>
+        <ion-label>{{val?.title}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

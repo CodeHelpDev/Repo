@@ -1,0 +1,32 @@
+ion-toolbar{
+    --background: #ff1a72;
+}
+ion-grid{
+    background: #ff1a72;
+}
+ion-icon[name="person-circle-outline"]{
+    font-size: 40px;
+}
+
+ion-row:first-child{
+    color: white;
+}
+.first-row{
+    font-size: 30px;
+    font-weight: 600;
+}
+.first-row ion-text{
+    font-size: medium;
+}
+ion-row:nth-child(2){
+    color: white;
+}
+ion-row:nth-child(2) ion-label{
+    font-size: 20px;
+}
+ion-row:nth-child(3){
+    color: white;
+}
+ion-row{
+    margin-block: 30px;
+}

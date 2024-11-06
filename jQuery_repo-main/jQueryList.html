@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .str {
+            text-decoration: line-through;
+        }
+        input{
+            margin: 1%;
+        }
+        .sp{
+            margin-left: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="txt" name="txt">
+    <input type="button" value="Add To List" id="btn">
+    <div id="div1"></div>
+
+
+    <script>
+        $(document).ready(function (e) {
+            $('#txt').keypress(function () {
+                if (event.keyCode === 13) {
+                    append();
+                }
+            });
+
+            // function addToCart() {
+
+            $("#btn").click(function () {
+                append();
+            })
+
+            var i = 0;
+            function append() {
+
+                if ($('#txt').val() !== null && $('#txt').val() !== "") {
+                    i = i + 1;
+                    var value = $('input').val();
+                    var splitValue= value.split(/[.:;?!~,`"&|()<>{}\[\]\r\n/\\]+/);
+                    // .split(/[\s,]+/);
+                    console.log(splitValue);
+
+                    for(var k =0 ;k<splitValue.length;k++){
+                    var html = '<div id="removeDiv_'+i+'">'
+                        +'<input type="checkbox" id="check_'+i+'" onclick="strike(' + i + ')" class="in_' + i + '">' + '<label for="check_'+i+'" class="in_' + i + '">' + splitValue[k] + '</label>'+
+                    '<input type="button" value="x" onclick=removeRow('+i+') class="cross_'+i+' sp" >'+'</br>'+
+                        
+                        '</div>';
+                    $("#div1").append(html);
+                    $('#txt').val('');
+                }
+
+                }
+
+                return false;
+            }
+        })
+        function strike(e) {
+            // console.log("e", e);
+            $(".in_" + e).addClass("str");
+        }
+        function removeRow(f){
+            $("#removeDiv_" + f).remove();
+           
+        }
+    </script>
+
+</body>
+
+</html>

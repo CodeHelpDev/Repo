@@ -1,0 +1,136 @@
+.main-section {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(244, 245, 247);
+    height: auto;
+    box-shadow: none;
+}
+
+.inner-main-section {
+    margin-top: 20px;
+    background: transparent;
+    height: auto;
+    box-shadow: none;
+}
+
+.main-card {
+    width: 70%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+    box-shadow: none;
+    background: transparent;
+}
+
+.left-card {
+    width: 55%;
+    height: 450px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 5px rgb(44, 244, 255, 0.6), -0.2em 0 .2em 0.1em rgb(44, 244, 255, 0.5);
+
+}
+
+.inner-left-card {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding: 40px;
+    box-shadow: none;
+    margin-top: 0px;
+}
+
+.left-heading {
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.left-items {
+    font-size: 14px;
+}
+
+#registerBtn {
+    margin-left: 20px;
+    width: fit-content;
+}
+
+.login-image {
+    width: 250px;
+    height: 180px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.right-card {
+    width: 45%;
+    height: 550px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 2px 2px 5px rgb(44, 244, 255, 0.6), -0.2em 0 .2em 0.1em rgb(44, 244, 255, 0.5);
+    padding: 25px;
+}
+
+.inner-right-card {
+    width: 90%;
+    height: 500px;
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    align-content: space-around;
+}
+
+.right-heading {
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.login-btn-card,
+.password-card,
+.username-card {
+    padding: 20px;
+    box-shadow: none;
+    margin: 0;
+}
+
+.login-btn {
+    filter: contrast(80%);
+}
+
+.form-label {
+    color: black;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.forget-text {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: small;
+    color: blue;
+    cursor: pointer;
+}
+
+ion-input {
+    border: 0.1em solid black;
+    padding: 20px;
+    --highlight-color-focused: none;
+}
+
+.otp-text {
+    color: rgb(80, 80, 247);
+    margin: 100px;
+    width: fit-content;
+}

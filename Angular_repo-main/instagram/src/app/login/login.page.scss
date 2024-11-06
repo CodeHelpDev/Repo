@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+
+ion-title{
+    margin-top: 80px;
+    font-size: 40px;
+    z-index: 9999;
+}
+
+form{
+    margin: 0 auto;
+    width: 75%;
+    margin-top:150px;
+    
+}
+ion-input{
+    background-color: rgba(255, 255, 255, 0.082);
+    border: 2px solid rgb(208, 194, 194);
+    border-radius: 4px;
+    font-size: 14px;
+    height: 8px;
+}
+ion-input,ion-button{
+    margin: 8px;
+}
+ion-button{
+    width: 100%;
+}
+
+#or{
+    margin: 0 auto;
+    width: 10px;
+    margin-left: 50%;
+    position: relative;
+
+}
+ion-label[routerLink]{   
+    color: blue;
+}
+.forget{
+    position: relative;
+    left: 120px;
+}

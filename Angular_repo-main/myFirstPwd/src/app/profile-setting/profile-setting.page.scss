@@ -1,0 +1,193 @@
+.left-card {
+    // border: .0001rem solid black;
+    height: 650px;
+    width: 25%;
+    margin-left: 20%;
+    margin-bottom: 100px;
+    position: relative;
+    top: 25px;
+}
+
+.right-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    border: 0px;
+    position: relative;
+    top: 25px;
+}
+
+.main-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.third-card {
+    height: 40%;
+    padding: 0;
+    background-color: rgb(211, 219, 231);
+    margin: 0;
+}
+
+.logoutBtn {
+    width: 80%;
+    margin: 0 auto;
+    height: 50px;
+    background-color: white;
+    border: .5px solid black;
+    border-radius: 8px;
+}
+
+.fourth-card {
+    height: 150px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.icons-row {
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.row-text {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+ion-col {
+    display: flex;
+    flex-direction: row;
+}
+
+.userIcon {
+    width: 50px;
+    border-radius: 18px;
+}
+
+.first-div {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.second-div {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userProfileText {
+    font-size: 16px;
+}
+
+#profileLink {
+    color: rgb(132, 132, 255) !important;
+}
+
+#profileName {
+    color: black;
+}
+
+.shortlisted {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+.ion-img {
+    border-radius: 25px;
+    min-height: 180px;
+    max-width: 170px;
+}
+
+.list-Card {
+    width: 95%;
+    height: 110px;
+}
+
+.liked-car-list {
+    width: 600px;
+}
+
+
+
+.inner-card-left,
+.inner-card-right {
+    box-shadow: none;
+}
+
+.car-details {
+    color: black;
+    font-size: 14px;
+}
+
+.checkbtn {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    justify-content: space-around;
+    font-weight: bold;
+    color: rgb(255, 140, 0);
+}
+.active{
+    color: rgb(0, 17, 255);
+}
+.orders-img{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+.No-Orders{
+    margin: 0 auto;
+    font-size: larger;
+    font-weight: bolder;
+    color: black;
+}
+.card-center{
+    width: 100%;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+}
+.Browse-btn{
+    width: 250px;
+    height: 40px;
+    margin-top: 30px;
+    font-size: small;
+    font-weight: bold;
+    // color: white;
+    // background-color: orange;
+}
+.profile-list{
+    cursor: pointer;
+}
+.profile-setting{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: none;
+}
+ion-modal{
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    top: 100px;
+    border: 2px solid black;
+    color: black;
+}
+.card-heading{
+    font-weight: bolder;
+    color: black;
+}
+.addressForm{
+    margin: 0 auto;
+    width: 70%;
+}
+.addressEdit{
+    position: absolute;
+    right: 10px;
+}

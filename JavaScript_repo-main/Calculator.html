@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+//Regex Function is Used for JS Validation Only 
+        const regex = /^[0-9]+$/;
+        function add() {
+            const t1 = Number(document.getElementById('txt1').value);
+            const t2 = Number(document.getElementById('txt2').value);
+            if (regex.test(t1) && regex.test(t2)) {
+                var t3 = (t1 + t2);
+                document.getElementById('txt3').value = t3;
+            }
+            else {
+                alert("Input was Wrong Please Enter Number Only");
+            }
+
+        }
+        function sub() {
+            var t1 = Number(document.getElementById('txt1').value);
+            var t2 = Number(document.getElementById('txt2').value);
+
+            if (regex.test(t1) && regex.test(t2)) {
+                var t3 = (t1 - t2);
+                document.getElementById('txt3').value = t3;
+            }
+            else {
+                alert("Input was Wrong Please Enter Number Only");
+            }
+
+
+        }
+        function mul() {
+            var t1 = Number(document.getElementById('txt1').value);
+            var t2 = Number(document.getElementById('txt2').value);
+
+
+            if (regex.test(t1) && regex.test(t2)) {
+                var t3 = (t1 * t2);
+                document.getElementById('txt3').value = t3;
+            }
+            else {
+                alert("Input was Wrong Please Enter Number Only");
+            }
+
+
+        }
+        function divi() {
+            var t1 = Number(document.getElementById('txt1').value);
+            var t2 = Number(document.getElementById('txt2').value);
+
+
+
+            if (regex.test(t1) && regex.test(t2)) {
+                var t3 = (t1 / t2);
+                document.getElementById('txt3').value = t3;
+            }
+            else {
+                alert("Input was Wrong Please Enter Number Only");
+            }
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>Calculator</h2>
+    <form action="" method="post" name="cal">
+
+        <label for="firstNumber"> First Number : </label>
+        <input type="text" id="txt1">
+
+        <label for="secondNumber"> Second Number : </label>
+        <input type="text" id="txt2">
+
+        <input type="button" value="+" onclick="add()">
+        <input type="button" value="-" onclick="sub()">
+        <input type="button" value="*" onclick="mul()">
+        <input type="button" value="/" onclick="divi()">
+
+        <label for="result">Result : </label>
+        <input type="text" id="txt3">
+        <!-- <span id="txt3"></span> -->
+
+    </form>
+</body>
+
+</html>

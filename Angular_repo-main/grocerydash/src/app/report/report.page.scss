@@ -1,0 +1,37 @@
+.main-card{
+    background: aliceblue;
+    margin: 0;
+    min-height: 600px;
+}
+.main-grid ion-col{
+    background: white;
+}
+.main-grid ion-row{
+    background: white;
+    margin-block: 25px;
+    height: 100px;
+    padding: 16px;
+    border-radius: 10px;
+}
+.no-record{
+    color: aqua;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.heading{
+    color: rgb(66, 65, 65);
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+ion-select,
+ion-input{
+    border: 1px solid lightgray;
+    border-radius: 9px;
+    --padding-start:10px;
+    --highlight-height:0px;
+}
+.center-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

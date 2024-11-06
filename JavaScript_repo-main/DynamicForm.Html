@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#addRow").click(function () {
+                var html = '<div class="inputFormRow">';
+                html += '<input type="text" name="title[]" id="title" placeholder="Title">';
+                html += '<input type="text" name="name[]" id="name" placeholder="Name">';
+                html += '<input type="button" value="Romove Button" class="removeRow" > ';
+                html += '</div>';
+
+                $('#newRow').append(html);
+            });
+
+            //For Deleting Append With appended Remove Btn  Button 
+            //  $(document).on('click', '.removeRow', function () {
+            //     console.log("hi");
+            //     $(this).closest('.inputFormRow').remove();
+            // });
+
+            $('#delRow').click(function(){
+                $("#newRow div:last-child").remove()
+                // $(this).closest('.inputFormRow').remove();/
+            })
+        })  
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <div class="inputFormRow">
+            <input type="text" name="title[]" id="title" placeholder="Title">
+            <input type="text" name="name[]" id="name" placeholder="Name">
+            <input type="button" id="addRow" value="Add Button">
+            <input type="button" id="delRow" value="Remove Button">
+            
+        </div>
+        <div id="newRow"></div>
+    </form>
+</body>
+
+</html>

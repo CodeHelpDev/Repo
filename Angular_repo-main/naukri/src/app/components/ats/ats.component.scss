@@ -1,0 +1,32 @@
+.ats-main-card{
+    width: 250px;
+    border-radius: 10px;
+}
+.ats-btn:hover{
+    text-decoration: underline blue 2px;
+}
+.ats-card{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-items: flex-start;
+    width: 90%;
+    box-shadow: none;
+}
+.ats-heading{
+    color: black;
+    font-size: medium;
+    font-weight: 520;
+}
+.ats-card{
+    padding: 10px;
+}
+.btn-card{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+
+}
+.ats-btn{
+    margin-left: 0px;
+}

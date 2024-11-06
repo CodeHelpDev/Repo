@@ -1,0 +1,60 @@
+.main-card{
+    background: url(../../assets/Main.png);
+    height: 410px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-size: cover
+
+}
+.inner-card{
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    height: 140px;
+}
+ion-button{
+    --background: #DB3022;
+    --background-activated: #DB3022;
+    color: white;
+    width: 150px;
+    --border-radius: 25px;
+}
+.inner-card ion-label{
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+}
+.ion-text-left{
+    font-size: 30px;
+    font-weight: 700;
+}
+.ion-padding{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+#never-text{
+    font-size: small;
+    font-weight: 200;
+    color: lightgray;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+    margin: 0 auto;
+  
+    ion-card {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        height: 70px;
+    }
+}
+.repeated-card{
+    background: url(../../assets/mainImage.jpg);
+    background-size:cover;
+}

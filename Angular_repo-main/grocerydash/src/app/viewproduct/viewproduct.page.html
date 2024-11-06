@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+  <ion-card class="main-card ion-padding">
+    <ion-grid class="main-grid ">
+      <ion-row class="ion-padding">
+        <ion-col size="5">
+          <ion-img [src]="productData.image"></ion-img>
+        </ion-col>
+        <ion-col class="ion-padding " size="7">
+          <ion-card class="flex-col">
+            <ion-label>{{productData?.name}}</ion-label>
+            <ion-label>{{productData?.subCategory}}</ion-label>
+            <ion-label><ion-text>Category</ion-text> : {{productData?.category}}</ion-label>
+            <ion-label><ion-text>Deal Offer</ion-text> : {{productData?.stockDetails[0]?.dealOffer}} %</ion-label>
+            <ion-label><ion-text>Total rating</ion-text> : 0</ion-label>
+            <ion-label><ion-text>Average rating</ion-text> : 0</ion-label>
+            <ion-label><ion-text>No. of users rated</ion-text> : 0</ion-label>
+          </ion-card>
+          <ion-row class="inner-grid-header ion-text-center">
+            <ion-col size="4">
+              <ion-label>
+                Capacity :
+              </ion-label>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label>
+                Price
+              </ion-label>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label>
+                Stock :
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-text-center">
+            <ion-col size="4">
+              <ion-label>
+                {{productData.capacity}} KG
+              </ion-label>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label>
+                {{productData.price | currency}}
+              </ion-label>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label>
+                {{productData.stock}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+    
+    </ion-grid>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>

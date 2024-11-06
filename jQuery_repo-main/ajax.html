@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style src="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css"></style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+</head>
+<style>
+    .loader {
+        position: absolute;
+        height: 100%;
+        background: #ccc;
+        width: 100%;
+        text-align: center;
+        opacity: 0.6;
+        display: none;
+    }
+
+    img {
+        width: 100px;
+        margin: 35%;
+    }
+</style>
+
+<body>
+    <div class="loader">
+        <img src="loader.gif" />
+    </div>
+    <button id="btnClick"> Click Now!</button>
+    <script src="ajax.js"></script>
+    <table id="myTable" style="border:2px solid black">
+        <thead>
+            <tr>
+                <th>Id </th>
+                <th>User Id </th>
+                <th>Title </th>
+                <th>Body</th>
+            </tr>
+
+        </thead>
+        <tbody id="t_body">
+        </tbody>
+    </table>
+
+    <button id="btn" onclick="getData()"> Save </button>
+</body>
+
+</html>

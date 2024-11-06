@@ -1,0 +1,42 @@
+.backBtn{
+    position: absolute;
+    left: 0px;
+}
+.main-heading{
+    color: black;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.sales-performance{
+    width: 90%;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+}
+.first-card{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    height: 260px;
+    box-shadow: none;
+}
+.images-data{
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+}
+ion-col{
+    text-align: center;
+}
+.optimization-image{
+    width: 85%;
+    display: flex;
+    margin: 0 auto;
+}
+ion-menu-button{
+    --color: rgb(255, 38, 0);
+    
+}

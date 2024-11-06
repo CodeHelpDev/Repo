@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref="/" color="dark"></ion-back-button>
+    <ion-title></ion-title>
+    <ion-icon class="ion-padding" size="large" slot="end" color="dark" name="notifications-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid *ngFor="let val of userData" class="ion-padding main-grid">
+    <ion-row>
+      <ion-col>
+        <ion-label class="heading">Profile</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>Name</ion-text>
+        <ion-label>{{val?.name}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>Email</ion-text>
+        <ion-label>{{val?.email}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>Mobile No</ion-text>
+        <ion-label>+91 {{val?.mobileno}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

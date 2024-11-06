@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Products List</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-searchbar class="custom" (ionInput)="searcnFilter($event)" ></ion-searchbar>
+    </ion-item>
+    <ion-item>
+      <div slot="">Category</div>
+      <div slot="end">See All</div>
+    </ion-item>
+
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col id="fir"> </ion-col>
+      <ion-col id="fir">1</ion-col>
+      <ion-col id="fir">1</ion-col>
+      <ion-col id="fir"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Apparel</ion-col>
+      <ion-col>Shoe</ion-col>
+      <ion-col>Beauty</ion-col>
+      <ion-col>Electronic</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center" *ngIf="!isReady">
+        <ion-spinner></ion-spinner>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let val of data" class="products" routerLink="/tabs/tab2"
+      [queryParams]="val">
+      <ion-col size="5">
+        <ion-img [src]="val.image"></ion-img>
+      </ion-col>
+      <ion-col size="6" [innerHTML]="val.title">
+
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

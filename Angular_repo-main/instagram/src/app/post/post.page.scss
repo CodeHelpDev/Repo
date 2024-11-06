@@ -1,0 +1,17 @@
+ion-input [label="Description"]{
+    --background-color: aqua;
+    --border: 2px solid black;
+    height:200px
+}
+form{
+    padding: 20px;
+}
+.des{
+    --text-wrap: wrap;
+    --border-width	:2px !important;
+    --border-color: #000000 !important;
+}
+ion-icon{
+    position: relative;
+    right: 10px;
+}

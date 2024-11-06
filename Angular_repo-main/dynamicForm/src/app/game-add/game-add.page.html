@@ -1,0 +1,412 @@
+<!-- <appHeader></appHeader>
+<ion-content [fullscreen]="true">
+  <ion-header class="child-header">
+    <ion-toolbar>
+      <ion-icon name='arrow-back-outline' *ngIf="is_scenario" (click)="add_scenarios()" color="primary"></ion-icon>
+      <ion-buttons slot="start" *ngIf="!is_scenario">
+        <ion-back-button text="" defaultHref="" color="primary" (click)="comman.back()"></ion-back-button>
+      </ion-buttons>
+      <ion-title [innerHTML]="params?.name+' Dashboard - ' +(params?.game_id ? 'Update' : 'New')+' Game'"> </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form [formGroup]="gameForm" (ngSubmit)="submit(gameForm.value)">
+    <ion-grid class="ion-no-padding" *ngIf="!is_scenario">
+      <ion-row class="game-form">
+        <ion-col class="pr" size-md="6" size-xs="6">
+          <ion-label>Game Name</ion-label>
+          <ion-item lines="none">
+            <ion-input placeholder="Enter Game Name" type="text" formControlName="game_name">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="pr" size-md="6" size-xs="6">
+          <ion-label>What Teams are assigned this Game ?</ion-label>
+          <ion-item lines="none">
+            <p *ngIf="teams.length<=0" class="link" (click)="comman.redirect(params,'team')">No teams have been added to
+              this event.
+              Add a team to create a
+              game.</p>
+
+            <ion-select placeholder="Select Team" formControlName="team_id" multiple *ngIf="teams.length>0">
+              <ion-select-option *ngFor="let team of teams" [innerHTML]="team?.team_name"
+                [value]="team?.id"></ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col class="ion-no-padding" size-md="6" size-xs="5" style="padding-right: 10px;">
+          <ion-label>
+            Game Description
+          </ion-label>
+          <ion-item lines="none">
+            <ion-textarea rows="6" placeholder="Type Here......" formControlName="description">
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col class="pr" size-md="6" size-xs="6">
+          <ion-label>How will this game be scored ?</ion-label>
+          <ion-item lines="none">
+            <ion-select placeholder="Select Any" formControlName="score_type">
+              <ion-select-option value="point">Points</ion-select-option>
+              <ion-select-option value="money">Money</ion-select-option>
+              <ion-select-option value="both">Both</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col class="pr" size-md="12" size-xs="12">
+          <ion-label>Capabilities - {{capability_count}} Total</ion-label>
+          <ion-item lines="none">
+            <!-- <tag-input formControlName="capabilities_id" (onAdd)="onAdd($event)" placeholder="Enter Capabilities"
+              secondaryPlaceholder="Enter Capabilities" (onRemove)="onAdd($event)" (onFocus)="check_focus(true)"
+              (onBlur)="check_focus()" [(ngModel)]="item">
+              <tag-input-dropdown [autocompleteItems]="[{display: 'Item1', value: 0}, 'item2', 'item3']">
+              </tag-input-dropdown>
+            </tag-input> -->
+            <tag-input formControlName="capabilities_id" (onAdd)="onAdd($event)" (onRemove)="onAdd($event)"
+              [modelAsStrings]="true" secondaryPlaceholder="Enter Capabilities" id="capa">
+              <tag-input-dropdown [autocompleteItems]="items" [showDropdownIfEmpty]="true" [dynamicUpdate]="false">
+              </tag-input-dropdown>
+            </tag-input>
+          </ion-item>
+          <!-- <ion-list *ngIf="item.length>0 && isFocus" class="dropdown">
+            <ion-item *ngFor="let i of item" [innerHTML]="i"></ion-item>
+          </ion-list> -->
+        </ion-col>
+        <ion-col class="pr" size-md="12" size-xs="12">
+          <ion-label>Game Scenarios</ion-label>
+          <ion-item lines="none" (click)="add_scenarios()">
+            <ion-text> <ion-icon name="add"></ion-icon> Add Scenario</ion-text>
+          </ion-item>
+          <table class="table-full" *ngIf="scenrios.length>0">
+            <thead>
+              <tr class="table-row table-head table-full guns">
+                <th class="table-cell first-cell">Game Scenarios -</th>
+                <th class="table-cell"> Minutes Total</th>
+                <th class="table-cell">Edit Time</th>
+                <th class="table-cell"></th>
+                <th class="table-cell"></th>
+              </tr>
+            </thead>
+            <tbody id="sortTrue">
+              <tr class="table-row table-full guns" *ngFor="let scenrio of scenrios;let i=index">
+                <td class="table-cell" (click)="edit_scenrio(i)">
+                  <ion-icon name="menu"></ion-icon> {{scenrio?.scenarios_title}}
+                </td>
+                <td class="table-cell" [innerHTML]="scenrio?.scenarios_time+' min'" (click)="edit_scenrio(i)"></td>
+                <td class="table-cell"><ion-icon name="trash" (click)="delete_scenrio(i)"></ion-icon></td>
+                <td class="table-cell" (click)="edit_scenrio(i)">Scenario #</td>
+                <td class="table-cell"><ion-icon name="caret-forward" (click)="edit_scenrio(i)"></ion-icon></td>
+              </tr>
+            </tbody>
+          </table>
+        </ion-col>
+        <ion-col size="4" class="pr">
+          <ion-button type="submit" class="primary ion-margin-bottom" expand="block"
+            [disabled]="!gameForm.valid">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <form [formGroup]="scenarioForm" (ngSubmit)="submitForm(scenarioForm.value)">
+    <ion-grid class="ion-no-padding">
+      <ion-row class="game-form" *ngIf="is_scenario" style="border-bottom: 2px solid;">
+        <h1>Scenario Info</h1>
+        <ion-col class="pr" size-md="6" size-xs="6">
+          <ion-label>Game Scenarios</ion-label>
+          <ion-item lines="none">
+            <ion-input placeholder="Enter Scenario" type="text" formControlName="scenarios_title">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="pr" size-md="6" size-xs="6">
+          <ion-label>Upload Starting Scenario Injects</ion-label>
+          <ion-item lines="none" style="border: 2px dashed #C1C9D6;">
+            <div class="scenario-{{scenrios.length}}" style="width: 100%;"> </div>
+          </ion-item>
+        </ion-col>
+        <ion-col class="ion-no-padding" size-md="6" size-xs="5" style="padding-right: 10px;">
+          <ion-label>
+            Scenario Description
+          </ion-label>
+          <ion-item lines="none">
+            <ion-textarea rows="6" placeholder="Type Here......" formControlName="scenario_description">
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col class="pr" size-md="6" size-xs="6">
+          <ion-label>Time to complete scenario Introduction</ion-label>
+          <ion-item lines="none">
+            <ion-input type="number" min="1" step="1" placeholder="Enter number of minutes"
+              formControlName="scenarios_time"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding" *ngIf="is_scenario" style="border-bottom: 2px solid;">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-grid class="ion-no-padding">
+            <ion-row class="ion-padding">
+              <ion-col size="12" class="ion-no-padding">
+                <h3 class="primary-heading">
+                  Vignette Info
+                </h3>
+              </ion-col>
+            </ion-row>
+
+            <!-- Vignette  -->
+            <div formArrayName="vignettes">
+              <div *ngFor="let vignette of scenarioForm.controls['vignettes'].controls; let i=index">
+                <ion-row class="game-form ion-padding-/horizontal" [formGroupName]='i'>
+                  <ion-col class="pr" size-md="6" size-xs="12">
+                    <ion-label>
+                      Vignette Title
+                    </ion-label>
+                    <ion-item lines="none">
+                      <ion-input placeholder="Enter Name of Vignette" type="text"
+                        formControlName="vignette_name"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col class="pl" size-md="6" size-xs="12">
+                    <ion-label>
+                      Time to Complete Vignette
+                    </ion-label>
+                    <ion-item lines="none">
+                      <ion-input placeholder="Enter Number of Minutes" type="number" min="1"
+                        formControlName="vignette_time"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col class="ion-no-padding pr" size-md="6 " size-xs="12">
+                    <ion-label>
+                      Brief
+                    </ion-label>
+                    <ion-item lines="none">
+                      <ion-textarea rows="6" placeholder="Type the brief here..." formControlName="vignette_breif">
+                      </ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col class="ion-no-padding pl" size-md="6" size-xs="12">
+                    <ion-label>
+                      Upload Starting Vignette Inject
+                    </ion-label>
+                    <ion-item lines="none" style="border: 2px dashed #C1C9D6;">
+                      <div class="vignette-{{i+1}}" style="width: 100%;"> </div>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <!-- Questions  -->
+                    <ng-container formArrayName="questions">
+                      <div
+                        *ngFor="let number of scenarioForm.controls['vignettes'].controls[i].controls.questions.controls; let j=index">
+                        <div [formGroupName]="j">
+                          <ion-row class="capability">
+                            <ion-col size="12" class="ion-no-padding">
+                              <h3 class="heading-primary">Question {{j+1}}</h3>
+                              <ion-icon name="close" *ngIf="question_count>0"
+                                (click)="removeForm(question,j)"></ion-icon>
+                            </ion-col>
+                          </ion-row>
+                          <ion-row class="game-form ion-padding">
+                            <ion-col class="pr" size-md="4" size-xs="12">
+                              <ion-label>
+                                Answer Format
+                              </ion-label>
+                              <ion-item lines="none">
+                                <ion-select placeholder="Select Answer Format" formControlName="answer_format"
+                                  (ionChange)="choices(i,j)">
+                                  <ion-select-option value="text">Text Answer</ion-select-option>
+                                  <ion-select-option value="select">Mutliple Choice</ion-select-option>
+                                  <ion-select-option value="video_audio">Video/Audio</ion-select-option>
+                                </ion-select>
+                              </ion-item>
+                            </ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12">
+                              <ion-label>
+                                Data Visualization Type
+                              </ion-label>
+                              <ion-item lines="none">
+                                <ion-select placeholder="Enter Data Visualization type" formControlName="data_visual">
+                                  <ion-select-option value="pie">Pie graph</ion-select-option>
+                                  <ion-select-option value="line">Line chart</ion-select-option>
+                                  <ion-select-option value="plotted">Plotted graph</ion-select-option>
+                                </ion-select>
+                              </ion-item>
+                            </ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12">
+                              <ion-label>
+                                Scoring Rubric
+                              </ion-label>
+                              <ion-item lines="none">
+                                <ion-input placeholder="Enter Scoring Rubric" type="text"
+                                  formControlName="scroing_rubric"></ion-input>
+                              </ion-item>
+                            </ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12">
+                              <ion-label>
+                                Question {{i+1}}
+                              </ion-label>
+                              <ion-item lines="none">
+                                <ion-textarea rows="6" placeholder="Type here..." formControlName="question">
+                                </ion-textarea>
+                              </ion-item>
+                            </ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12">
+                              <ion-label>
+                                Does this question score for Points?
+                              </ion-label>
+                              <ion-item lines="none">
+                                <ion-select placeholder="Select any" formControlName="is_point"
+                                  (ionChange)="choices(i,j)">
+                                  <ion-select-option value="1">Yes</ion-select-option>
+                                  <ion-select-option value="0">No</ion-select-option>
+                                </ion-select>
+                              </ion-item>
+                            </ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12"></ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12">
+                              <ion-label>
+                                Select Capabilities this question is testing for
+                              </ion-label>
+                              <ion-item lines="none">
+                                <ion-select placeholder="Select multiple" formControlName="selected_capabilities"
+                                  multiple (ionChange)="choices(i,j)">
+                                  <ion-select-option [value]="cap"
+                                    *ngFor="let cap of gameForm.controls['capabilities_id'].getRawValue()"
+                                    [innerHTML]="cap"></ion-select-option>
+                                </ion-select>
+                              </ion-item>
+                            </ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12">
+                              <ion-label>
+                                Does this question score for money?
+                              </ion-label>
+                              <ion-item lines="none">
+                                <ion-select placeholder="Select any" formControlName="is_money"
+                                  (ionChange)="choices(i,j)">
+                                  <ion-select-option value="1">Yes</ion-select-option>
+                                  <ion-select-option value="0">No</ion-select-option>
+                                </ion-select>
+                              </ion-item>
+                            </ion-col>
+                            <ion-col class="pr" size-md="4" size-xs="12"></ion-col>
+                          </ion-row>
+                          <ion-row class="game-form ion-padding multiple-choice" *ngIf="check_select(i,j)">
+                            <ion-col size="12" class="ion-no-padding">
+                              <h3 class="heading-primary">{{check_select(i,j)=='select' ? 'Multiple Choice Options' :
+                                'Answer'}}</h3>
+                            </ion-col>
+                            <ion-col size="12" class="ion-no-padding" formArrayName='answers'>
+                              <div class="form-table-container">
+                                <table class="form-table">
+                                  <thead>
+                                    <th></th>
+                                    <th>
+                                      <ion-label>Answer</ion-label>
+                                    </th>
+                                    <th *ngIf="check_is_point(i,j)=='1'">
+                                      <ion-label>Points</ion-label>
+                                    </th>
+                                    <th *ngIf="check_is_money(i,j)=='1'">
+                                      <ion-label>Money</ion-label>
+                                    </th>
+                                    
+                                    <th>
+                                      <ion-label>Next Vignette if Answered</ion-label>
+                                    </th>
+                                    <!-- <th>
+                                      <ion-label>Hidden Question (Check if Yes)</ion-label>
+                                    </th> -->
+                                  </thead>
+                                  <tbody>
+                                    <tr
+                                      *ngFor="let answer of scenarioForm.controls['vignettes'].controls[i].controls.questions.controls[j].controls.answers.controls; let idx = index;"
+                                      [formGroupName]="idx">
+                                      <th><ion-label>{{multiple_choice[idx]}}</ion-label></th>
+                                      <td>
+                                        <ion-item detail="false" class="input-fields" lines="none">
+                                          <ion-input class="form-input" type="text"
+                                            placeholder="Answer {{multiple_choice[idx]}}" formControlName="answer"
+                                            id="answer_{{j}}_{{idx}}"></ion-input>
+                                        </ion-item>
+                                      </td>
+                                      <td *ngIf="check_is_point(i,j)=='1'">
+                                        <ion-item detail="false" class="input-fields" lines="none">
+                                          <ion-input type="number" min="1" placeholder="Enter Point"
+                                            formControlName="point_value" id="point_value_{{j}}_{{idx}}">
+                                          </ion-input>
+                                        </ion-item>
+                                      </td>
+                                      <td *ngIf="check_is_money(i,j)=='1'">
+                                        <ion-item detail="false" class="input-fields" lines="none">
+                                          <ion-input placeholder="Enter Amount($)" type="number" min="0"
+                                            formControlName="money_value" id="money_value_{{j}}_{{idx}}"></ion-input>
+                                        </ion-item>
+                                      </td>
+                                      <td *ngFor="let k of capabilitiesUpdate(i,j);let l=index">
+                                        <ion-item detail="false" class="input-fields" lines="none">
+                                          <ion-input type="number" min="1" placeholder="Enter Point"
+                                            formControlName="capabilities_{{l+1}}" class="capabilities_{{j}}_{{idx}}">
+                                          </ion-input>
+                                        </ion-item>
+                                      </td>
+                                      <td>
+                                        <ion-item detail="false" class="input-fields" lines="none">
+                                          <ion-select placeholder="Select any" formControlName="is_vignette"
+                                            id="is_vignette_{{j}}_{{idx}}">
+                                            <ion-select-option value="1">Yes</ion-select-option>
+                                            <ion-select-option value="0">No</ion-select-option>
+                                          </ion-select>
+                                        </ion-item>
+                                      </td>
+                                      <!-- <td>
+                                        <ion-item detail="false" class="input-fields" lines="none"
+                                          id="check_type_{{j}}_{{idx}}">
+                                          <ion-select placeholder="Question/Vignatte">
+                                            <ion-select-option value="question">Question</ion-select-option>
+                                            <ion-select-option value="vignatte">Vignatte</ion-select-option>
+                                          </ion-select>
+                                          <ion-select placeholder="Question">
+                                            <ion-select-option value="question">Question</ion-select-option>
+                                            <ion-select-option value="vignatte">Vignatte</ion-select-option>
+                                          </ion-select>
+                                        </ion-item>
+                                      </td> -->
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </ion-col>
+                            <ion-col class="ion-no-padding pl" size-md="6" size-xs="12">
+                              <ion-label>
+                                Question {{j+1}} Inject
+                              </ion-label>
+                              <ion-item lines="none" style="border: 2px dashed #C1C9D6;">
+                                <div class="question-{{i}}-{{j}}" style="width: 100%;"> </div>
+                              </ion-item>
+                            </ion-col>
+                          </ion-row>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </ion-col>
+                  <ion-col size="4">
+                    <ion-button (click)="addQuestion(i)" class="primary ion-margin-bottom" expand="block">Add
+                      Question/Answer</ion-button>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </ion-grid>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button (click)="add_scenarios()" class="primary ion-margin-bottom" expand="block">Back</ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button (click)="addVignette()" class="primary ion-margin-bottom" expand="block">Add
+            Vignette</ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button type="submit" class="primary ion-margin-bottom" expand="block"
+            >Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content> -->

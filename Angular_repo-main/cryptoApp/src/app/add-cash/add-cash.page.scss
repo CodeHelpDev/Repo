@@ -1,0 +1,204 @@
+ion-title{
+    text-align: center;
+    color: white;
+    width: fit-content;
+    margin-left: 32px;
+}
+ion-toolbar{
+    height: 80px;
+    --background: rgb(0, 15, 99);
+}
+
+
+.heading{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+.main-card{
+    margin: 0px;
+    border-radius: 15px 15px 0px 0px;
+    padding: 20px;
+    background-color: aliceblue;
+    margin-block: 50px; 
+    --overflow: hidden;  
+}
+ion-content::part(scroll)::-webkit-scrollbar {
+    display: none;
+ }
+.content{
+    --background: rgb(0, 15, 99);
+    --overflow-y: hidden; 
+    overflow: auto;
+}
+.main-row{
+    width: 100%;
+    margin: 0 auto;
+    margin-block:10px;
+    
+}
+.main-row ion-col{
+    width: 100%;
+    height: 50px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;    
+}
+.send-heading{
+    color: black;
+    font-size:15px;
+    font-weight: bold;
+}
+.blue-card{
+    width: 110px;
+    height: 80px;
+    background-color: rgb(0 15 99);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.blue-text{
+    color: rgb(15, 135, 255);
+    font-weight: 600;
+}
+.sec-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.ion-list-flex{
+    background: transparent;
+}
+.ion-item-flex{
+    margin-block: 15px;
+    --border-radius: 25px;
+    padding: 0px;
+}
+.btn-card{
+    width: 300px;
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.addCash{
+    --background: rgb(71, 193, 241);
+    padding: 15px;
+    --border-radius: 25px;
+    --padding-start:30px;
+    --padding-end:30px;
+    font-size:10px;
+}
+.cashOut{
+    --background: transparent;
+    border: 2px solid rgb(71, 193, 241); 
+    border-radius: 25px;
+    --padding-start:30px;
+    --padding-end:30px;
+    font-size:10px;
+}
+.flex-list{
+    --background: transparent;
+}
+.flex-item{
+    --background: transparent;
+}
+.darkBlue-card{
+    background:rgb(0 15 99); 
+    padding: 5px;
+    border-radius: 10px;
+}
+.acc-icon{
+    font-size: 25px;
+}
+.text-red{
+    color: red;
+    font-weight: 500;
+}
+.main-row ion-col ion-label:nth-child(2){
+    text-align: left;
+    color: black;
+    width: 193px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.my-card ion-text{
+    margin-top: 15px;
+}
+::ng-deep ion-input .label-text{
+    color: rgb(71, 193, 241);
+}
+.transferBtn{
+    --background: rgb(71, 193, 241);
+    text-transform: capitalize;
+    --border-radius: 25px;
+    --padding-start:25px;
+    --padding-end:25px;
+
+}
+.cancelBtn{
+    --border-radius: 25px;
+    --border-color: rgb(71, 193, 241);
+    --background:transparent;
+    color:  rgb(71, 193, 241);
+    box-shadow: none;
+    --padding-start:25px;
+    --padding-end:25px;
+    text-transform: capitalize;
+
+}
+.lower-heading{
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+}
+.last-text{
+    margin-top: 120px;
+}
+.last-card{
+    height: 160px;
+    box-shadow: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btns-card-flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+    background: transparent;
+    width: 100%;
+    margin: 0 auto;
+}
+.btns-card-flex ion-button{
+    width: 100px;
+    --border-radius: 25px;
+    --color:black;
+    --background: white;
+    margin-block: 20px;
+}
+.cal-list{
+    width: 100%;
+    margin: 0px;
+    margin-block: 30px;
+}
+.cal-list ion-item ion-label:nth-child(2){
+    font-weight: bold;
+}

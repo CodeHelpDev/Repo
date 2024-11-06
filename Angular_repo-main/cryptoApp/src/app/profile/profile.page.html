@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border" [translucent]="true">
+ 
+</ion-header>
+
+<ion-content scroll-y="false" class="content no-scroll" [fullscreen]="true">
+  <ion-toolbar>    
+    <ion-title>
+      Profile 
+    </ion-title>
+    <ion-icon class="ion-padding"  slot="end" color="light" size="large" name="notifications-outline"></ion-icon>
+  </ion-toolbar> 
+  <ion-card class="main-card">
+    <ion-row>
+      <ion-col size="4">
+        <ion-icon class="user" name="person-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="7">
+        <ion-list class="fir-list" lines="none">
+          <ion-item>
+            Archie Walden
+          </ion-item>
+          <ion-item>
+            GW845
+          </ion-item>
+          <ion-item>
+            Member Since 2013
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-card class="blue-card">
+        <ion-list lines="none" class="list-button">
+          <ion-item routerLink="/edit-info" [button]="true">Edit Personal Information
+            
+          </ion-item>
+          <ion-item routerLink="/connectedusers" [button]="true">Connected Users
+            
+          </ion-item>
+          <ion-item routerLink="/contactus" [button]="true">Contact Support
+            
+          </ion-item>
+        </ion-list>
+        <ion-button>Share Profile </ion-button>
+    </ion-card>
+    
+  </ion-card>
+
+</ion-content>

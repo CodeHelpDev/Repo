@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#accept').click(function(){
+                if($('#submitbtn').is(':disabled')){
+                    $('#submitbtn').removeAttr('disabled');
+                }
+                else
+                {
+                    $('#submitbtn').attr('disabled','disabled');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="checkbox"  name="" id="accept" > I accept <br>
+    <input type="submit" value="Submit" id="submitbtn" disabled="disabled">
+
+</body>
+</html>

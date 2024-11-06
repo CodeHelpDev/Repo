@@ -1,0 +1,1273 @@
+<app-naukri-campus-header></app-naukri-campus-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="hr-main-card">
+    <ion-card class="hr-content-card">
+      <ion-card class="profile-app">
+        <app-profile></app-profile>
+      </ion-card>
+
+      <ion-card class="hr-center-card">
+        <ion-card class="hr-center-inside">
+          <ion-card class="top-center-card">
+            <ion-label class="recommended-jobs">Recommended jobs for you</ion-label>
+            <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+          </ion-card>
+          <ion-card class="bottom-center-card">
+            <ion-label class="recommendations-text">Get the best job recommendations by <br> telling us your career
+              needs</ion-label>
+            <ion-button id="career-btn" shape="round">Add career preferences</ion-button>
+          </ion-card>
+        </ion-card>
+
+        <ion-card class="explore-card">
+          <ion-card class="top-center-card">
+            <ion-label class="recommended-jobs">Explore jobs by top companies</ion-label>
+            <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+          </ion-card>
+
+          <ion-card class="inside-explore-card">
+            <swiper-container class="swiper-card" [navigation]="true">
+              <swiper-slide class="swiper-flex">
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/tatachemicals.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Tata Chemicals</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.2</ion-label>
+                    <ion-text class="slider-review">708 reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/malabar.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">MALABAR GOLD.. </ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.2</ion-label>
+                    <ion-text class="slider-review">556 reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/motilal.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Motilal Oswal</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">3.8</ion-label>
+                    <ion-text class="slider-review">1.9k+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+              </swiper-slide>
+              <swiper-slide class="swiper-flex">
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/FeaturedCompany/amazon.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Amazon</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">3.9</ion-label>
+                    <ion-text class="slider-review">730 reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/firstchoics.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">First American</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.2</ion-label>
+                    <ion-text class="slider-review">1.2K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/airtel.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Airtel</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.1</ion-label>
+                    <ion-text class="slider-review">12.1K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+              </swiper-slide>
+              <swiper-slide class="swiper-flex">
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/duteche.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Deutsche Bank</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.0</ion-label>
+                    <ion-text class="slider-review">2.9K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/alkem.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Alkem...</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.0</ion-label>
+                    <ion-text class="slider-review">2.6K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/HDB Finance.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Tata Chemicals</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.2</ion-label>
+                    <ion-text class="slider-review">18.2K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+              </swiper-slide>
+              <swiper-slide class="swiper-flex">
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/medline.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Medline</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.2</ion-label>
+                    <ion-text class="slider-review">192 reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/lenegizer.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">lenergizer...</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.7</ion-label>
+                    <ion-text class="slider-review">16K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/shahi.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Shahi</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.1</ion-label>
+                    <ion-text class="slider-review">1.6K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+              </swiper-slide>
+              <swiper-slide class="swiper-flex">
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/MSN Grp.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">MSN Group</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">3.8</ion-label>
+                    <ion-text class="slider-review">1.7K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/asianPaints.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">Asian Paints</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">4.1</ion-label>
+                    <ion-text class="slider-review">6.5K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+                <ion-card class="slider-card">
+                  <ion-card class="slider-image">
+                    <ion-img src="../../assets/HomePage/ICICI Securities.gif"></ion-img>
+                  </ion-card>
+                  <ion-label class="slider-heading">ICICI Securities</ion-label>
+                  <ion-card class="rating-card">
+                    <ion-icon name="star" color="warning"></ion-icon>
+                    <ion-label class="slider-rating">3.8</ion-label>
+                    <ion-text class="slider-review">1.7K+ reviews</ion-text>
+                  </ion-card>
+                  <ion-label class="slider-view-btn">View jobs </ion-label>
+                </ion-card>
+              </swiper-slide>
+
+              
+            </swiper-container>
+          </ion-card>
+        </ion-card>
+
+        <ion-card class="pf-card">
+          <ion-card class="pf-card-top">
+            <ion-img class="pathfinder-img" src="../../assets/pathfinder.svg"></ion-img>
+            <ion-card class="discover-heading-flex">
+              <ion-label class="discover-heading">Discover the career path that’s right for you!</ion-label><br>
+              <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+            </ion-card>
+            <ion-text>Explore roles, check your readiness, and succeed with a personalised learning plan.</ion-text>
+            <ion-label>Roles in IT Industry</ion-label>
+          </ion-card>
+          <ion-segment [scrollable]="true" value="software-product">
+            <ion-segment-button (click)="segValue($event)" value="software-product" class="ion-seg-btn">Software Product
+              Company</ion-segment-button>
+            <ion-segment-button (click)="segValue($event)" value="it-services" class="ion-seg-btn">IT services and
+              consulting company</ion-segment-button>
+            <ion-segment-button (click)="segValue($event)" value="e-Commerce" class="ion-seg-btn">Internet/ E-Commerce
+              Company</ion-segment-button>
+          </ion-segment>
+          <ion-card class="pf-card-bottom">
+            <swiper-container autoplay="true" *ngIf="segmentValue=='software-product'">
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/sde.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Software Development Engineer</ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 4.9L </ion-label>
+                    <ion-label class="col-item">27%
+                      <ion-icon name="arrow-down"></ion-icon>
+                    </ion-label>
+                    <ion-text>demand since last year </ion-text>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button size="medium" shape="round" color="light" class="skills">Aptitude</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" color="light" class="skills">Verbal
+                      ability</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/pythonImplementation.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Product Implementation Engineer </ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 3.8L </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="small" shape="round" color="light"
+                      class="skills">Aptitude</ion-button>
+                    <ion-button size="small" shape="round" color="light" class="skills">Verbal ability</ion-button>
+                    <ion-button slot="end" size="small" shape="round" color="light" class="skills">Software
+                      Testing</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/softwareQualityAssurance.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Software Quality Assurance Engineer</ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 3.6L </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button size="small" shape="round" color="light" class="skills">Aptitude</ion-button>
+                    <ion-button slot="end" size="small" shape="round" color="light" class="skills">Verbal
+                      ability</ion-button>
+                    <ion-button size="small" shape="round" color="light" class="skills">Software testing</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/DataScientits.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Data Scientist</ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 5L </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button size="small" shape="round" color="light" class="skills">Aptitude</ion-button>
+                    <ion-button slot="end" size="small" shape="round" color="light" class="skills">Verbal
+                      ability</ion-button>
+                    <ion-button size="small" shape="round" color="light" class="skills">Software testing</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+            </swiper-container>
+
+            <swiper-container autoplay="true" *ngIf="segmentValue=='it-services'">
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/softwareQualityAssurance.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Software Quality Assurance Engineer</ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 3.6L </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button size="small" shape="round" color="light" class="skills">Aptitude</ion-button>
+                    <ion-button slot="end" size="small" shape="round" color="light" class="skills">Verbal
+                      ability</ion-button>
+                    <ion-button size="small" shape="round" color="light" class="skills">Software testing</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/DataScientits.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Data Scientist</ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 5L </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button size="small" shape="round" color="light" class="skills">Aptitude</ion-button>
+                    <ion-button slot="end" size="small" shape="round" color="light" class="skills">Verbal
+                      ability</ion-button>
+                    <ion-button size="small" shape="round" color="light" class="skills">Software testing</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+            </swiper-container>
+
+            <swiper-container autoplay="true" *ngIf="segmentValue=='e-Commerce'">
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/sde.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Software Development Engineer</ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 4.9L </ion-label>
+                    <ion-label class="col-item">27%
+                      <ion-icon name="arrow-down"></ion-icon>
+                    </ion-label>
+                    <ion-text>demand since last year </ion-text>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button size="medium" shape="round" color="light" class="skills">Aptitude</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" color="light" class="skills">Verbal
+                      ability</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="pf-img-card">
+                  <ion-img class="pf-img" src="../../assets/Pf/pythonImplementation.png"></ion-img>
+                </ion-card>
+                <ion-list lines="none" class="pf-list-flex">
+                  <ion-item class="title-heading">Product Implementation Engineer </ion-item>
+                  <ion-item class="pf-avg-flex">
+                    <ion-label>Avg. Salary 3.8L </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="small" shape="round" color="light"
+                      class="skills">Aptitude</ion-button>
+                    <ion-button size="small" shape="round" color="light" class="skills">Verbal ability</ion-button>
+                    <ion-button slot="end" size="small" shape="round" color="light" class="skills">Software
+                      Testing</ion-button>
+                  </ion-item>
+                  <ion-item>
+                    <ion-button slot="start" size="medium" shape="round">Check readiness</ion-button>
+                    <ion-button slot="end" size="medium" shape="round" fill="outline">Know more</ion-button>
+                  </ion-item>
+                </ion-list>
+              </swiper-slide>
+            </swiper-container>
+          </ion-card>
+        </ion-card>
+
+        <ion-card class="ep-card">
+          <ion-list lines="none">
+            <ion-item>
+              <ion-label class="ep-heading">Expert speak</ion-label>
+              <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-text class="ep-text">Gain insights from industry experts</ion-text>
+            </ion-item>
+          </ion-list>
+          <swiper-container autoplay="true" [navigation]="true">
+            <swiper-slide>
+              <ion-card class="resume-deatils-card">
+                <ion-label class="resume-heading">Fresher Resume masterClass with a resume expert </ion-label>
+                <ion-list lines="none" class="resume-flex">
+                  <ion-item class="resume-item">ResumeBuilding</ion-item>
+                  <ion-item class="resume-item">Resume</ion-item>
+                </ion-list>
+              </ion-card>
+              <ion-card class="dev-card">
+                <ion-card class="dev-details-flex">
+                  <ion-card class="dev-image-card">
+                    <ion-img src="../../assets/Ep/satyamKhandelwal.jpeg"></ion-img>
+                  </ion-card>
+                  <ion-list lines="none">
+                    <ion-item class="dev-list-details">Satyam Khandelwal</ion-item>
+                    <ion-item class="dev-list-details dev-text">Career & Resume Coach at IIMs,IITs</ion-item>
+                  </ion-list>
+                </ion-card>
+                <ion-card class="dev-date-time">
+                  <ion-label>
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                    Jun 20,Thursday 7-8 pm
+                  </ion-label>
+                </ion-card>
+                <ion-card class="purple-card">
+                  <ion-icon name="person-outline"></ion-icon>
+                  19729 enrolled
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+            <!-- 2/ -->
+            <swiper-slide>
+              <ion-card class="resume-deatils-card">
+                <ion-label class="resume-heading">Powering Your Career - Navigating the Culture and Skills for
+                  Success</ion-label>
+                <ion-list lines="none" class="resume-flex">
+                  <ion-item class="resume-item">CareerSuccess</ion-item>
+                  <ion-item class="resume-item">CareerGrowth</ion-item>
+                </ion-list>
+              </ion-card>
+              <ion-card class="dev-card">
+                <ion-card class="dev-details-flex">
+                  <ion-card class="dev-image-card">
+                    <ion-img src="../../assets/Ep/Balaji.jpeg"></ion-img>
+                  </ion-card>
+
+                  <ion-list lines="none">
+                    <ion-item class="dev-list-details">Balaji Kamaraj</ion-item>
+                    <ion-item class="dev-list-details dev-text">VP and Global Head of Talent Acquisition at Creative
+                      Synergies Group</ion-item>
+                  </ion-list>
+                </ion-card>
+                <ion-card class="dev-date-time">
+                  <ion-label>
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                    June 25,Tuesday 7-8 pm
+                  </ion-label>
+
+                </ion-card>
+                <ion-card class="purple-card">
+                  <ion-icon name="person-outline"></ion-icon>
+                  822 enrolled
+                </ion-card>
+              </ion-card>
+
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="resume-deatils-card">
+                <ion-label class="resume-heading">Navigating the Path to Success in Product Management Roles at Tech
+                  Companies</ion-label>
+                <ion-list lines="none" class="resume-flex">
+                  <ion-item class="resume-item">#Product</ion-item>
+                  <ion-item class="resume-item">#ProductManagers</ion-item>
+                </ion-list>
+              </ion-card>
+              <ion-card class="dev-card">
+                <ion-card class="dev-details-flex">
+                  <ion-card class="dev-image-card">
+                    <ion-img src="../../assets/Ep/sushant.jpeg"></ion-img>
+                  </ion-card>
+                  <ion-list lines="none">
+                    <ion-item class="dev-list-details">Sushant Mathur</ion-item>
+                    <ion-item class="dev-list-details dev-text">Director, Product Management at Sabre India</ion-item>
+                  </ion-list>
+                </ion-card>
+                <ion-card class="dev-date-time">
+                  <ion-label>
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                    Jun 28,Friday 6:30-7:30 pm
+                  </ion-label>
+
+                </ion-card>
+                <ion-card class="purple-card">
+                  <ion-icon name="person-outline"></ion-icon>
+                  1433 enrolled
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="resume-deatils-card">
+                <ion-label class="resume-heading">Emerging Recruitment Trends: Guiding students in their job search
+                  journey.</ion-label>
+                <ion-list lines="none" class="resume-flex">
+                  <ion-item class="resume-item">#interviewPreparation</ion-item>
+                  <ion-item class="resume-item">#CareerGuidance</ion-item>
+                </ion-list>
+              </ion-card>
+              <ion-card class="dev-card">
+                <ion-card class="dev-details-flex">
+                  <ion-card class="dev-image-card">
+                    <ion-img src="../../assets/Ep/neha.jpeg"></ion-img>
+                  </ion-card>
+                  <ion-list lines="none">
+                    <ion-item class="dev-list-details">Neha Chakrabarty</ion-item>
+                    <ion-item class="dev-list-details dev-text">Talent Acquisition Leader at Tesco</ion-item>
+                  </ion-list>
+                </ion-card>
+                <ion-card class="dev-date-time">
+                  <ion-label>
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                    Jul 3,Wednesday 6:30-7:30 pm
+                  </ion-label>
+
+                </ion-card>
+                <ion-card class="purple-card">
+                  <ion-icon name="person-outline"></ion-icon>
+                  1535 enrolled
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="resume-deatils-card">
+                <ion-label class="resume-heading">Exploring the world of consulting.</ion-label>
+                <ion-list lines="none" class="resume-flex">
+                  <ion-item class="resume-item">#Consulting</ion-item>
+                  <ion-item class="resume-item">#InterviewPreparation</ion-item>
+                </ion-list>
+              </ion-card>
+              <ion-card class="dev-card">
+                <ion-card class="dev-details-flex">
+                  <ion-card class="dev-image-card">
+                    <ion-img src="../../assets/Ep/neha.jpeg"></ion-img>
+                  </ion-card>
+                  <ion-list lines="none">
+                    <ion-item class="dev-list-details">Feroz Kudrolli</ion-item>
+                    <ion-item class="dev-list-details dev-text">Executive Director, EY Centre for Executive Leadership
+                      (CEL) Research Lead, Strategy and Transactions at EY GDS</ion-item>
+                  </ion-list>
+                </ion-card>
+                <ion-card class="dev-date-time">
+                  <ion-label>
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                    Feb 21,Wednesday 6-7 pm
+                  </ion-label>
+
+                </ion-card>
+                <ion-card class="purple-card">
+                  <ion-icon name="person-outline"></ion-icon>
+                  1535 enrolled
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+          </swiper-container>
+
+        </ion-card>
+        <ion-card class="ncat-card">
+          <ion-card class="ncat-left">
+            <ion-label class="ncat-heading">
+              80% companies hire using an aptitude test! Practice with NCAT.
+            </ion-label>
+            <ion-card class="ncat-left-item">
+              <ion-icon name="checkmark"></ion-icon>
+              <ion-label>Test your skills early</ion-label>
+            </ion-card>
+            <ion-card class="ncat-left-item">
+              <ion-icon name="checkmark"></ion-icon>
+              <ion-label>Assess your strengths</ion-label>
+            </ion-card>
+            <ion-card class="ncat-left-item">
+              <ion-icon name="checkmark"></ion-icon>
+              <ion-label>Understand areas of improvement</ion-label>
+            </ion-card>
+            <ion-button class="ncat-btn" shape="round">Take NCAT</ion-button>
+            <ion-button class="ncat-btn" shape="round" fill="outline">Know More</ion-button>
+          </ion-card>
+          <ion-card class="ncat-right">
+            <ion-card class="ncat-img-card">
+              <ion-img src="../../assets/Ep/ncat.png"></ion-img>
+            </ion-card>
+          </ion-card>
+
+        </ion-card>
+        <!-- Popular contest -->
+        <swiper-container autoplay="true" navigation="true">
+          <swiper-slide>
+            <ion-card class="pc-card">
+              <ion-card class="pc-card-top">
+                <ion-label class="pc-heading">Popular contests among students</ion-label>
+                <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+              </ion-card>
+              <ion-card class="pc-card-middle">
+                <ion-label class="flying-lbl">Quiz</ion-label>
+                <ion-img class="banner-img" src="../../assets/contest_banner_1397.jpg"></ion-img>
+                <ion-img class="logo-img" src="../../assets/bannerLogo.gif"></ion-img>
+              </ion-card>
+
+              <ion-card class="pc-card-bottom">
+                <ion-text class="naukri-campus">naukri campus presents</ion-text>
+                <ion-label class="naukri-tech">TechQuezt #10 : Cloud Computing</ion-label>
+
+                <ion-label>Round : 1 Duration : 30 mins, Jun 23 </ion-label>
+                <ion-label>Participants : Individual </ion-label>
+
+                <ion-card class="rounded-btn-card">
+                  <ion-label class="rounded-btn">#TechContest</ion-label>
+                  <ion-label class="rounded-btn">#CloudComputing</ion-label>
+                </ion-card>
+
+                <ion-card class="pc-lowest-card">
+                  <ion-card class="purple-card">
+                    <ion-icon name="person-outline"></ion-icon>
+                    19729 enrolled
+                  </ion-card>
+                  <ion-text>Reg. Closes on 23 Jun, 07:00..</ion-text>
+                </ion-card>
+              </ion-card>
+            </ion-card>
+          </swiper-slide>
+          <swiper-slide>
+            <ion-card class="pc-card">
+              <ion-card class="pc-card-top">
+                <ion-label class="pc-heading">Popular contests among students</ion-label>
+                <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+              </ion-card>
+              <ion-card class="pc-card-middle">
+                <ion-label class="flying-lbl">Quiz</ion-label>
+                <ion-img class="banner-img" src="../../assets/contest_banner_1397.jpg"></ion-img>
+                <ion-img class="logo-img" src="../../assets/bannerLogo.gif"></ion-img>
+              </ion-card>
+
+              <ion-card class="pc-card-bottom">
+                <ion-text class="naukri-campus">naukri campus presents</ion-text>
+                <ion-label class="naukri-tech">CodeQuezt Contest #10: The Ultimate Coding Challenge</ion-label>
+
+                <ion-label>Round : 1 Duration : 2 hr, Jun 30 </ion-label>
+                <ion-label>Participants : Individual </ion-label>
+
+                <ion-card class="pc-lowest-card">
+                  <ion-card class="purple-card">
+                    <ion-icon name="person-outline"></ion-icon>
+                    6840 enrolled
+                  </ion-card>
+                  <ion-text>Reg. Closes on 30 Jun, 07:00..</ion-text>
+                </ion-card>
+              </ion-card>
+            </ion-card>
+          </swiper-slide>
+          <swiper-slide>
+            <ion-card class="pc-card">
+              <ion-card class="pc-card-top">
+                <ion-label class="pc-heading">Popular contests among students</ion-label>
+                <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+              </ion-card>
+              <ion-card class="pc-card-middle">
+                <ion-label class="flying-lbl">Quiz</ion-label>
+                <ion-img class="banner-img" src="../../assets/contest_banner_1397.jpg"></ion-img>
+                <ion-img class="logo-img" src="../../assets/bannerLogo.gif"></ion-img>
+              </ion-card>
+
+              <ion-card class="pc-card-bottom">
+                <ion-text class="naukri-campus">naukri campus presents</ion-text>
+                <ion-label class="naukri-tech">Brandquezt #10 : Brand innovation</ion-label>
+
+                <ion-label>Round : 1 Duration : 30 mins, Jun 16 </ion-label>
+                <ion-label>Participants : Individual </ion-label>
+
+                <ion-card class="rounded-btn-card">
+                  <ion-label class="rounded-btn">#BrandInnovation</ion-label>
+                  <ion-label class="rounded-btn">#BrandQueztContest</ion-label>
+                </ion-card>
+
+                <ion-card class="pc-lowest-card">
+                  <ion-card class="purple-card">
+                    <ion-icon name="person-outline"></ion-icon>
+                    19729 enrolled
+                  </ion-card>
+                  <ion-text>Reg. Closes on 23 Jun, 07:00..</ion-text>
+                </ion-card>
+              </ion-card>
+            </ion-card>
+          </swiper-slide>
+        </swiper-container>
+
+        <ion-card class="resume-card">
+          <ion-label class="pc-heading">Your resume is ready! Choose a template & download for free.</ion-label>
+          <ion-text class="resume-text">33.1L+ students have already downloaded their resume</ion-text>
+
+          <ion-card class="inside-resume-card">
+            <swiper-container class="resume-swiper">
+              <swiper-slide class="slider-flex">
+                <ion-img class="resume-img" src="../../assets/Resume1.jpg"></ion-img>
+                <ion-img class="resume-img" src="../../assets/Resume2.jpg"></ion-img>
+              </swiper-slide>
+              <swiper-slide class="slider-flex">
+                <ion-img class="resume-img" src="../../assets/Resume3.jpg"></ion-img>
+                <ion-img class="resume-img" src="../../assets/resume4.jpg"></ion-img>
+              </swiper-slide>
+              <swiper-slide class="slider-flex">
+                <ion-img class="resume-img" src="../../assets/Resume3.jpg"></ion-img>
+                <ion-img class="resume-img" src="../../assets/Resume2.jpg"></ion-img>
+              </swiper-slide>
+            </swiper-container>
+          </ion-card>
+
+        </ion-card>
+
+        <ion-card class="ai-main-card">
+          <ion-card class="pc-card-top">
+            <ion-label class="pc-heading">Decode commonly asked interview questions like a pro 😎</ion-label>
+            <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+          </ion-card>
+          <ion-list class="ai-list-flex" lines="none">
+            <ion-item>
+              <ion-icon slot="start" color="success" name="checkmark-circle"></ion-icon>
+              <ion-label>Get personalised answer</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-icon slot="start" color="success" name="checkmark-circle"></ion-icon>
+              <ion-label>Get multiple answers to each question</ion-label>
+            </ion-item>
+          </ion-list>
+
+          <swiper-container navigation="true">
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 1</ion-label> <br>
+                <ion-label class="ai-question">Tell me about Yourself?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>16.8K+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 2</ion-label> <br>
+                <ion-label class="ai-question">Why should we hire you?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>3.6L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 3</ion-label> <br>
+                <ion-label class="ai-question">What are your short term and long term goals?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>2.1L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 4</ion-label> <br>
+                <ion-label class="ai-question">Tell us more about your projects and internship?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>1.6L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 5</ion-label> <br>
+                <ion-label class="ai-question">Tell us about your past work experience?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>1L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 6</ion-label> <br>
+                <ion-label class="ai-question">What are your Biggest achievements till date?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>1.3L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 7</ion-label> <br>
+                <ion-label class="ai-question">Where do you see yourself in 5 years?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>1.4L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 8</ion-label> <br>
+                <ion-label class="ai-question">What are your strengths & weaknesses?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>1.5L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 9</ion-label> <br>
+                <ion-label class="ai-question">Are you willing to relocate or travel?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>1.2L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card class="ai-card">
+                <ion-label class="ai-question-no">QUESTION 10</ion-label> <br>
+                <ion-label class="ai-question">Do you have any questions for me?</ion-label>
+              </ion-card>
+              <ion-card class="ai-below-card">
+                <ion-label>1 min read</ion-label>
+                <ion-label>1.5L+ views</ion-label>
+              </ion-card>
+            </swiper-slide>
+          </swiper-container>
+
+
+        </ion-card>
+
+        <ion-card class="cd-card">
+          <ion-card class="pc-card-top">
+            <ion-label class="pc-heading">Career guidance</ion-label>
+            <ion-button class="view-all-btn" fill="clear" color="blue"> View all</ion-button>
+          </ion-card>
+          <ion-segment value="career" scrollable="true">
+            <ion-segment-button (click)="secondSegValue($event)" class="cd-ion-seg-btn" value="career">Careers
+              Management</ion-segment-button>
+            <ion-segment-button (click)="secondSegValue($event)" class="cd-ion-seg-btn" value="interview">Interview
+              experiences</ion-segment-button>
+            <ion-segment-button (click)="secondSegValue($event)" class="cd-ion-seg-btn" value="hr">HR interview question
+              & answers </ion-segment-button>
+            <ion-segment-button (click)="secondSegValue($event)" class="cd-ion-seg-btn" value="learn">Learn from
+              leaders</ion-segment-button>
+          </ion-segment>
+
+
+          <swiper-container autoplay="true" navigation="true" *ngIf="secondSegmentValue=='career'">
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/ats.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">8 min read | 820 views | 2 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/Highest-Paying.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      11 Highest Paying Jobs in Biotechnology For Freshers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/latestGrpDiscuss.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Latest Group Discussion [GD] Topics For College Students - With Answers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,60,339 views | 3 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/upSkilling.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Quick Ways to Upskill While Being In Grad College
+                    </ion-label>
+                    <ion-label class="cg-text">5 min read | 19,740 views | 14 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/25Latest.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      25 Latest Technology Trends in 2024 For Freshers
+                    </ion-label>
+                    <ion-label class="cg-text">9 min read | 3,938 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/ATS.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+          </swiper-container>
+
+          <swiper-container autoplay="true" navigation="true" *ngIf="secondSegmentValue=='interview'">
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/25Latest.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      25 Latest Technology Trends in 2024 For Freshers
+                    </ion-label>
+                    <ion-label class="cg-text">9 min read | 3,938 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/ATS.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/latestGrpDiscuss.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Latest Group Discussion [GD] Topics For College Students - With Answers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,60,339 views | 3 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/upSkilling.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Quick Ways to Upskill While Being In Grad College
+                    </ion-label>
+                    <ion-label class="cg-text">5 min read | 19,740 views | 14 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/ats.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">8 min read | 820 views | 2 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/Highest-Paying.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      11 Highest Paying Jobs in Biotechnology For Freshers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+
+          </swiper-container>
+
+          <swiper-container autoplay="true" navigation="true" *ngIf="secondSegmentValue=='hr'">
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/latestGrpDiscuss.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Latest Group Discussion [GD] Topics For College Students - With Answers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,60,339 views | 3 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/upSkilling.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Quick Ways to Upskill While Being In Grad College
+                    </ion-label>
+                    <ion-label class="cg-text">5 min read | 19,740 views | 14 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/ats.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">8 min read | 820 views | 2 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/Highest-Paying.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      11 Highest Paying Jobs in Biotechnology For Freshers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/25Latest.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      25 Latest Technology Trends in 2024 For Freshers
+                    </ion-label>
+                    <ion-label class="cg-text">9 min read | 3,938 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/ATS.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+          </swiper-container>
+
+          <swiper-container autoplay="true" navigation="true" *ngIf="secondSegmentValue=='learn'">
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/ats.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">8 min read | 820 views | 2 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/Highest-Paying.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      11 Highest Paying Jobs in Biotechnology For Freshers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/latestGrpDiscuss.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Latest Group Discussion [GD] Topics For College Students - With Answers [2024]
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,60,339 views | 3 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/upSkilling.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      Quick Ways to Upskill While Being In Grad College
+                    </ion-label>
+                    <ion-label class="cg-text">5 min read | 19,740 views | 14 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="cg-main-card">
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/Career/25Latest.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      25 Latest Technology Trends in 2024 For Freshers
+                    </ion-label>
+                    <ion-label class="cg-text">9 min read | 3,938 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+                <ion-card class="inside-cg-card">
+                  <ion-card class="cg-top-card">
+                    <ion-img src="../../assets/ATS.png"></ion-img>
+                  </ion-card>
+                  <ion-card class="cg-bottom-flex">
+                    <ion-label class="cg-bottom-flex-heading">
+                      What Is Applicant Tracking Systems (ATS)? - Explained
+                    </ion-label>
+                    <ion-label class="cg-text">6 min read | 1,377 views | 4 likes</ion-label>
+                  </ion-card>
+                  <!--  -->
+                </ion-card>
+              </ion-card>
+            </swiper-slide>
+          </swiper-container>
+
+
+        </ion-card>
+      </ion-card>
+
+      <ion-card class="ats-app">
+        <app-ats></app-ats>
+      </ion-card>
+
+    </ion-card>
+    
+  </ion-card>
+      <app-footer id="footer"></app-footer>
+
+  </ion-content>

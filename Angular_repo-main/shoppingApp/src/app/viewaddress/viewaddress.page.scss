@@ -1,0 +1,46 @@
+ion-icon[name="chevron-back"]{
+    font-size: 20px;
+}
+ion-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+ion-modal{
+    width: 80%;
+    margin: 0 auto;
+    height: 300px;
+    margin-top: 100px;
+    border-radius: 12px;
+
+}
+.modal-content{
+    --background: rgb(210, 239, 248);
+}
+ion-icon[name="close"]{
+    font-size: 20px;
+}
+ion-input{
+    background: white;
+    --highlight-height:0px;
+    border-radius: 25px;
+    height: 175px;
+    --padding-start: 20px;
+    --padding-top: 20px;
+}
+#formBtn{
+    --background: black;
+    --background-activated:black;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    --border-radius: 25px;
+}
+.main-grid ion-row{
+    background: lightcoral;
+    margin-block: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+}

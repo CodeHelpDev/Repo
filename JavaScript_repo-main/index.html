@@ -1,0 +1,45 @@
+<html>
+    <head>
+                  
+    </head>
+    <body>
+        <div id="body">hbjhba</div>
+
+    </body>
+    <script>
+        // var x=[2,3,4,5]
+        var stu=[{
+            "name":"ayush2",
+            "class":"inter",
+        },{
+            "name":"ayush1",
+            "class":"inter",
+        },{
+            "name":"ayush3",
+            "class":"inter",
+        },{
+            "name":"ayush4",
+            "class":"inter",
+        },{
+            "name":"ayush5",
+            "class":"inter",
+        },{
+            "name":"ayush6",
+            "class":"inter",
+        },]
+        console.log(stu.find(x=>x.name==='ayush5'));
+           console.log(stu.filter(x=>x.name==='ayush3'));
+         console.log(stu.sort((a,b) => a.name - b.name));
+      
+        stu.map(element=>{
+            console.log(element?.class)
+        })
+
+        // stu.forEach(element=>{
+        //     console.log(element?.class)
+        // })
+        
+        document.getElementById('body').style.color='red';        
+    </script> 
+</html>
+

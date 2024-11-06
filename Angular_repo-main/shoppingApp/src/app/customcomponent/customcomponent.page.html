@@ -1,0 +1,652 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Custom Component</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="pink-row">
+      <ion-col class="ion-padding ion-text-left ion-text-uppercase">
+        <ion-label>CheckBox Wrapper </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding para">
+      <ion-col>
+        <ion-label>
+          This is a super straightforward component whose purpose is to wrap an <ion-text
+            class="pink-text">&lt;ion-checkbox&gt;</ion-text> element to enable accessing the checkbox state from its
+          parents.
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card" >
+        <ion-label>
+          {{codeSnippet1}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card" >
+        <ion-label>
+          {{codeSnippet2}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="2"></ion-col>
+      <ion-col [ngClass]="isBackBlueVisible ? 'back-blue':''" size="8">
+        <ion-checkbox (click)="checkColor($event)" checked labelPlacement="end">Sample Checkbox </ion-checkbox>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+    <ion-row class="pink-row">
+      <ion-col class="ion-padding ion-text-left ion-text-uppercase">
+        <ion-label>
+          SHOW / HIDE PASSWORD
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding para">
+      <ion-col>
+        <ion-label>
+          By wrapping an <ion-text
+          class="pink-text">&lt;ion-input&gt;</ion-text> element with this component, you can enhance the UX and add a show/hide password functionality
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card" >
+        <ion-label>
+          {{codeSnippet3}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input value="It's a secret!" type="password">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="pink-row">
+      <ion-col class="ion-padding ion-text-left ion-text-uppercase">
+        <ion-label>
+          Countdown Timer
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding para">
+      <ion-col>
+        <ion-label>
+          This components shows the remaining time (in days, hours, minutes or seconds) to a given date.
+
+          A few examples on how to use this component:
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          From days to seconds
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card" >
+        <ion-label>
+          {{codeSnippet4}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+            {{days}} <ion-text>D</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{hours}} <ion-text>H</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{minutes}} <ion-text>M</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{seconds}} <ion-text>S</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          From days to minutes
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- //df -->
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet5}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+            {{days}} <ion-text>D</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{hours}} <ion-text>H</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{minutes}} <ion-text>M</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          From hours to seconds
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet6}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{hours1}} <ion-text>H</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{minutes1}} <ion-text>M</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{seconds1}} <ion-text>S</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          From hours to minutes
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet7}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{hours1}} <ion-text>H</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{minutes1}} <ion-text>M</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          From minutes to seconds
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet8}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{minutes3}} <ion-text>M</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{seconds3}} <ion-text>S</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          Just Days
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet9}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{days}} <ion-text>D</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          Just hours
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet10}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{hours1}} <ion-text>H</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          Just minutes
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet11}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{minutes3}} <ion-text>M</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">
+          Just seconds
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet12}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{seconds4}} <ion-text>S</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  
+
+  
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">Styling</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label>
+          You can change different properties to adjust the look and feel of the component.
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">Fill</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet13}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="8">
+        <ion-label>
+          {{minutes1}} <ion-text>M</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{seconds1}} <ion-text>S</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label class="heading">
+          Color
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">Fill</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet14}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col id="black-timer" class="timer ion-padding" size="8">
+        <ion-label>
+          {{hours}} <ion-text>H</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{minutes1}} <ion-text>M</ion-text> 
+        </ion-label>
+        <ion-label>
+          {{seconds1}} <ion-text>S</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label class="heading">
+          Margins & Paddings
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label class="heading">Fill</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet15}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label class="heading">
+          Time unit positioning
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label>
+          Time units to the right (default)
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet16}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="8">
+        <ion-label>
+          {{hours1}} <ion-text>H</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label>
+          Time units to the left
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet17}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="8">
+        <ion-text>H</ion-text> 
+        <ion-label>
+          {{hours1}} 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label>
+          Time units above
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet18}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-text>H</ion-text>  <br>
+        <ion-label>
+          {{hours1}} 
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label>
+          Time units below
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet19}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="timer ion-padding" size="8">
+        <ion-label>
+          {{hours1}} 
+        </ion-label><br>
+        <ion-text>H</ion-text>  
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label>
+          This component can be configured with different fill modes (by default, no fill will be applied).
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label class="heading">
+          Fill: Entire Countdown
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet20}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="flex-row-col">
+      <ion-col id="fill-timer" class="timer  ion-padding" size="3">
+        <ion-label>
+          {{hours1}}  <ion-text>H</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="3">
+        <ion-label>
+          {{minutes1}} <ion-text>M</ion-text> 
+        </ion-label> 
+      </ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="3">
+        <ion-label>
+          {{seconds1}} <ion-text>S</ion-text>          
+        </ion-label> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label class="heading">
+          Fill: Time wrapper
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet22}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="flex-row-col">
+      <ion-col id="fill-timer" class="timer  ion-padding" size="3">
+        <ion-label>
+          {{hours1}}  <ion-text>H</ion-text> 
+        </ion-label>
+      </ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="3">
+        <ion-label>
+          {{minutes1}} <ion-text>M</ion-text> 
+        </ion-label> 
+      </ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="3">
+        <ion-label>
+          {{seconds1}} <ion-text>S</ion-text>          
+        </ion-label> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left">
+        <ion-label class="heading">
+          Fill: Inner Time Value
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="scrollable-gray-card">
+        <ion-label>
+          {{codeSnippet23}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="flex-row-col">
+      <ion-col id="fill-timer" class="timer  ion-padding" size="2">
+        <ion-label>
+          {{hours1}}  
+        </ion-label>
+      </ion-col>
+      <ion-col size="1">
+        <ion-text>H</ion-text> 
+      </ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="2">
+        <ion-label>
+          {{minutes1}} 
+        </ion-label> 
+      </ion-col>
+      <ion-col size="1">
+        <ion-text>M</ion-text> 
+      </ion-col>
+      <ion-col id="fill-timer" class="timer ion-padding" size="2">
+        <ion-label>
+          {{seconds1}} 
+        </ion-label>
+      </ion-col>
+      <ion-col size="1">
+        <ion-text>S</ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

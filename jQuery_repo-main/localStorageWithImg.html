@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body">
+    <form action="" name="myForm" id="myForm" enctype="multipart/form-data">
+        Name : <input type="text" name="name" id="name">
+        Email : <input type="text" name="email" id="email">
+        Image : <input type="file" name="file" id="files">
+        <input type="button" value="Save" id="btnSave">
+        <div id="showData">
+            <p id="stName"></p>
+            <p id="stEmail"></p>
+            <img alt="Preview" id="imgPreview" style="width: 200px;height: 200px;">
+        </div>
+    </form>
+
+
+    </body>
+    <script>
+        var file = '';
+        var setdata = {};
+        // $('#imgPreview').hide();
+        document.querySelector("#btnSave").addEventListener("click", function () {
+            var name = $('#name').val();
+            var email = $('#email').val();
+            setdata['name'] = name;
+            setdata['email'] = email;
+            setdata['file'] = file;
+
+            console.log('formvalue', name, email, file, 'setdata', setdata)
+            localStorage.setItem('data', JSON.stringify(setdata));
+            getFormData();
+        });
+        document.querySelector("#files").addEventListener("change", function () {
+            console.log('this.files[0]', this.files[0])
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                file = reader.result;
+                console.log('load', reader.result);
+                //  localStorage.setItem("recent-image",reader.result)
+            });
+            reader.readAsDataURL(this.files[0]);
+        });
+
+        $(document).ready(function () {
+            $('#imgPreview').hide();
+            $('#btnSave').click(function () {
+                $('#imgPreview').show()
+                var storedData = JSON.parse(localStorage.getItem('data'));
+                var name = storedData.name;
+                var email = storedData.email;
+                var img = storedData.file;
+
+                jQuery('#imgPreview').attr('src', img);
+                document.getElementById('stName').innerHTML = name;
+                document.getElementById('stEmail').innerHTML = email;
+                document.getElementById('myForm').reset();
+            })
+
+        })
+
+    </script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .zebra{
+            background-color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('tr:even').addClass("zebra");
+            $('.printPage').click(function(){
+                window.print();
+                return true;
+            })
+        });
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Name : </td>
+                <td>Class : </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ayush </td>
+                <td>Highschool </td>
+            </tr>
+            <tr>
+                <td>Kushagra </td>
+                <td>B.Tech </td>
+            </tr>
+            <tr>
+                <td>Harsh </td>
+                <td>BCA </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="" class="printPage">Print</a>
+
+</body>
+
+</html>

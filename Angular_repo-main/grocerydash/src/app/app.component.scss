@@ -1,0 +1,52 @@
+ion-menu{
+  --background: black;
+  transition: background-color 0.3s ease; /* Set transition property */
+  width: 200px;
+}
+
+
+.menu-list{
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  background: lightgray;
+  height: 100px;
+}
+
+.menu-list ion-item ion-icon{
+  font-size: 20px;
+  color: white;
+}
+.menu-list{
+  background: transparent;
+  margin-top: 80px;
+}
+.menu-list ion-item{
+  --background: transparent;
+}
+.menu-list ion-item ion-label{
+  color: white;
+}
+.active{
+  background: rgb(91, 90, 90);
+  border-right: 3px solid orange;
+}
+ion-item:hover{
+  background: rgb(91, 90, 90);
+  cursor: pointer;
+}
+ion-icon[name="chevron-down"],
+ion-icon[name="chevron-forward"]{
+  font-size: 20px;
+}
+#menu2 ion-list ion-item ion-label{
+  display: none;
+}
+#menu2{
+  max-width: 50px;
+
+}
+ion-text{
+  color: white;
+}

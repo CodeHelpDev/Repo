@@ -1,0 +1,19 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button color="dark" slot="start" text="" defaultHref="/profile"></ion-back-button>
+    <ion-title>Completed Rides</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col size="2">Sr. No </ion-col>
+    <ion-col size="5">Pick Up Location</ion-col>
+    <ion-col size="5">Drop Location</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let value of ridesDetails; let i = index">
+    <ion-col size="2" >{{i+1}}</ion-col>
+    <ion-col size="5" >{{value.currentLocation}}</ion-col>
+    <ion-col size="5" >{{value.destination}}</ion-col>
+  </ion-row>
+</ion-content>

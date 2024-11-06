@@ -1,0 +1,90 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu (mouseout)="closeMenu()" (mouseover)="openMenu($event)" menuId="menu1" id="menu1" contentId="main-content" type="overlay" [ngClass]="{'small' : !isHide ,'medium':isHidden}">
+      <ion-list lines="none" class="menu-list">
+        <ion-item>
+          <ion-toggle slot="end" (ionChange)="toggleMenu()"></ion-toggle>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='dashboard'}" (click)="routeTo('dashboard')">
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Dashboard</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='products'}" (click)="routeTo('products')">
+          <ion-icon slot="start" name="cellular-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Products</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='categories'}"  (click)="routeTo('categories')" >
+          <ion-icon slot="start" name="reorder-three-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Categories</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='subcategories'}" (click)="routeTo('subcategories')">
+          <ion-icon slot="start" name="reorder-three-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Sub Categories</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='outofstock'}"  (click)="routeTo('outofstock')">
+          <ion-icon slot="start" name="reorder-three-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Out of Stock</ion-label>
+        </ion-item>
+        <ion-item (click)="orderToggle()">
+          <ion-icon slot="start" name="create-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Orders</ion-label>
+          <ion-icon *ngIf="!isOrderVisible" slot="end" name="chevron-forward"></ion-icon>
+          <ion-icon *ngIf="isOrderVisible" slot="end" name="chevron-down"></ion-icon>
+        </ion-item>
+
+        <ion-item *ngIf="isOrderVisible" [ngClass]="{'active': urlValue==='orders'}" (click)="routeTo('orders')">
+          <ion-icon slot="start" name="checkbox-outline" color="light"></ion-icon>
+          <ion-label *ngIf="isHidden">POS Orders</ion-label>
+        </ion-item>
+
+
+        <ion-item [ngClass]="{'active': urlValue==='banner'}" (click)="routeTo('banner')">
+          <ion-icon slot="start" name="reorder-three-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Banner</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='deals'}" (click)="routeTo('deals')">
+          <ion-icon slot="start" name="newspaper-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Deals</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='coupans'}" (click)="routeTo('coupans')">
+          <ion-icon slot="start" name="pricetags-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Coupons</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='users'}" (click)="routeTo('users')">
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Users</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='notifications'}" (click)="routeTo('notifications')">
+          <ion-icon slot="start" name="mail-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Push notifications</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='chat'}" (click)="routeTo('chat')">
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Chat</ion-label>
+        </ion-item>
+        <ion-item  id="click-trigger" (click)="toggleReport()">
+          <ion-icon slot="start" name="settings-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Reports</ion-label>
+          <ion-icon *ngIf="!isVisible" slot="end" name="chevron-forward"></ion-icon>
+          <ion-icon *ngIf="isVisible" slot="end" name="chevron-down"></ion-icon>
+        </ion-item>
+
+        <ion-item *ngIf="isVisible" id="click-trigger" [ngClass]="{'active': urlValue==='report'}" (click)="routeTo('report')">
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Product Reports</ion-label>
+        </ion-item>
+
+        <ion-item [ngClass]="{'active': urlValue==='settings'}" (click)="routeTo('settings')">
+          <ion-icon slot="start" name="settings-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Settings</ion-label>
+        </ion-item>
+        <ion-item [ngClass]="{'active': urlValue==='admin'}" (click)="routeTo('admin')">
+          <ion-icon slot="start" name="cellular-outline"></ion-icon>
+          <ion-label *ngIf="isHidden">Admin</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

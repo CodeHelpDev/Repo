@@ -1,0 +1,87 @@
+ion-icon[name="funnel-outline"] {
+  margin: 10px;
+}
+
+ion-searchbar {
+  --box-shadow: none;
+  filter: drop-shadow(0 0 0.15rem black);
+  --border-radius: 15px;
+}
+
+.see-all-text {
+  font-size: 18px;
+  font-weight: 300;
+  color: gray;
+}
+
+.left-heading {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+// swiper-slide{
+//   border: 1px solid black;
+// }
+
+.slide1 {
+  background: url('../../assets/mens.png');
+  background-size: cover;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.slide2 {
+  background: url('../../assets/women.png');
+  background-size: cover;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.slide3 {
+  background: url('../../assets/kids.png');
+  background-size: cover;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.flex-slide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+.second-swipper ion-img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  --border-radius: 20px;
+}
+.second-swipper swiper-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.second-swipper ion-img::part(image) {
+  border-radius: 20px;
+}
+.third-swiper swiper-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.third-swiper ion-img{
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  --border-radius: 20px;
+}
+.third-swiper ion-img::part(image){
+  border-radius: 20px;
+}

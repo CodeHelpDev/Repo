@@ -1,0 +1,30 @@
+.content{
+    --background: rgb(0, 15, 99);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.designer-card{
+    --background: #004687;
+    height: 45%;
+    width: 120%;
+    rotate: -25deg;
+    border-radius: 10px 79px 10px 50px;
+    position: relative;
+    top: 22%;
+    left: -53px;
+}
+.heading{
+    position: absolute;
+    top: 32%;
+    z-index: 10;
+    color: white;
+    font-size: 56px;
+    font-weight: bolder;
+    left: 36%;
+    rotate: 25deg;
+    letter-spacing: 4px;
+}

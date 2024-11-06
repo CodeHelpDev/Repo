@@ -1,0 +1,50 @@
+ion-toolbar,
+ion-content{
+    --background: black;
+}
+ion-toolbar ion-label{
+    color: white;
+    font-size: 24px;
+}
+.heading{    
+    color: white;
+    font-size: 25px;
+    width: 268px;
+    display: flex;
+    text-align: center;
+    margin: auto;
+}
+ion-button{
+    width: 250px;
+    display: flex;
+    margin: 0 auto;
+    --background: white;
+    --color: black;
+    text-transform: capitalize;
+    font-size: large;
+    height: 55px;
+}
+ion-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: transparent;   
+}
+ion-item{
+    --background: transparent;
+}
+ion-item ion-card{
+    width: 20px;
+    --border-radius: 70%;
+    --background: white;
+    padding: 10px;
+}
+ion-item ion-card:nth-child(2){
+    --background: rgb(152, 152, 152);   
+}
+.selected{
+    --background-activated:rgb(247, 0, 255);
+    --background:rgb(247, 0, 255) ;
+    --color:white;
+}

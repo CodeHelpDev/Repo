@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/tabs/home" text="" color="dark" slot="start"></ion-back-button>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="first-card">
+    <ion-card class="main-card">
+      <ion-label>PIN For Your Current Ride </ion-label>
+      <ion-label>{{pin}}</ion-label>
+    </ion-card>
+    <ion-card class="ride-details">
+      <ion-label>Ride Booked From {{rideDetils?.currentLocation}}</ion-label>
+      <ion-label>Booked To {{rideDetils?.destination}}</ion-label> 
+      <ion-text routerLink="/tabs/home" class="text-blue">Go to Home Page</ion-text> 
+    </ion-card>
+  </ion-card> 
+</ion-content>

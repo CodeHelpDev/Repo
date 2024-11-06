@@ -1,0 +1,73 @@
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+    <ion-card class="main-card">
+      <ion-grid>
+        <ion-row class="ion-padding">
+          <ion-col class="ion-text-center" size="12">
+            <ion-label class="up-heading">Add Admin</ion-label>            
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3"></ion-col>
+          <ion-col class="ion-padding" size="6">
+            <form (ngSubmit)="onFormSubmit(addNewAdminForm.value)" [formGroup]="addNewAdminForm">
+              <ion-grid class="inner-grid ion-padding">
+                <ion-row class="input-row">
+                  <ion-col class="ion-padding">
+                    <ion-label>
+                      First Name*
+                    </ion-label>
+                    <ion-input formControlName="fname"></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="input-row" >
+                  <ion-col class="ion-padding">
+                    <ion-label>
+                      Last Name*
+                    </ion-label>
+                    <ion-input formControlName="lname"></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="input-row" >
+                  <ion-col class="ion-padding">
+                    <ion-label>
+                      Email*
+                    </ion-label>
+                   <ion-input formControlName="email"></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="input-row">
+                  <ion-col class="ion-padding">
+                    <ion-label>
+                      Mobile Number*
+                    </ion-label>
+                    <ion-input errorText="This field is required*" formControlName="mobileNo"></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="input-row">
+                  <ion-col class="ion-padding">
+                    <ion-label>
+                      Password*
+                    </ion-label>
+                    <ion-input type="password" errorText="This field is required*" formControlName="password"></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="ion-padding">
+                  <ion-col size="6">
+                    <ion-button [disabled]="!addNewAdminForm.valid" type="submit" class="submit-btn">
+                      Submit
+                    </ion-button>
+                    <ion-button (click)="onCancelButton()" class="danger-btn">
+                      Cancel
+                    </ion-button>
+                  </ion-col>
+                </ion-row>           
+              </ion-grid>
+            </form>
+          </ion-col>
+          <ion-col size="3"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  <app-footer></app-footer>
+</ion-content>

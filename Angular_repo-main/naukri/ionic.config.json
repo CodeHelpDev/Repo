@@ -1,0 +1,7 @@
+{
+  "name": "naukri",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

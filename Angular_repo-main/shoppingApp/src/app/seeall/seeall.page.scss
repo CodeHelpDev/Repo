@@ -1,0 +1,37 @@
+ion-toolbar{
+    --background: rgb(238, 233, 233); 
+}
+ion-segment-button{
+    --background-focused:black;
+    --background-checked:black;
+    --color-checked:white;   
+    border-radius: 5px;
+    font-size: small;
+    width: fit-content;
+}
+ion-segment{
+    padding: 5px;
+}
+ion-searchbar{
+    text-align: center;
+    box-shadow: none;
+}
+ion-button{
+    width: 94px;
+    font-size: 12px;
+}
+.follow{
+    --background:rgb(255, 255, 255);
+    --background-activated:rgb(255, 255, 255) ;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.following{
+    --background:black;
+    --background-activated:black ;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize;
+}

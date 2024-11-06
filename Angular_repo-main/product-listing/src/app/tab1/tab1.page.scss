@@ -1,0 +1,71 @@
+/* Scoped components require higher specificity to customize */
+* {
+
+    color: black;
+    box-sizing: border-box;
+    background-color: white;
+    overflow: hidden;
+    --background: white
+}
+ion-searchbar.custom {
+    --background: #ffffff;
+    --color: #000000;
+    --placeholder-color: #000000;
+    --icon-color: #000000;
+    --clear-button-color: #000000;
+
+    --border-radius: 4px;
+}
+
+ion-searchbar.ios.custom {
+    --cancel-button-color: #a4b9ae;
+}
+
+ion-searchbar.md.custom {
+    --cancel-button-color: #000000;
+}
+
+#fir {
+    height: 70px;
+    background-color: blueviolet;
+    padding: 2px;
+    border-radius: 5px;
+    margin: 2%;
+}
+
+ion-row {
+    text-align: center;
+}
+
+ion-searchbar {
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px black;
+
+}
+
+#main-content {
+    background-color: white;
+}
+ion-title{
+    padding: 5%;
+    margin-top: 3%;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.products{
+    border: 1px solid;
+    color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    ion-img{
+        height: 100px;
+        width: 100%;
+    }
+}
+a{
+    text-decoration: none;
+}
+ion-menu{
+    z-index: 99999;
+}

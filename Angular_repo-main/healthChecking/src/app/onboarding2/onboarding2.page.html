@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-range [value]="50" class="range"></ion-range>
+  <ion-text class="skip-text">Skip</ion-text>
+  <ion-card class="main-card">
+    <ion-label class="heading">Do you experience <br> any of following symptoms <br> during period your period ? </ion-label>
+    <ion-list lines="none"> 
+      <ion-item>
+        <ion-checkbox justify="space-between">Painful cramps</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox justify="space-between">Apetire changes</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox justify="space-between">Acne</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox justify="space-between">Lower back pain</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox justify="space-between">Mood changes</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox justify="space-between">Migrane</ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-label routerLink="/onboarding3" class="nxt-lbl">
+      Next <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-label>
+    
+  </ion-card>
+  
+</ion-content>

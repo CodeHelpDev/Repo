@@ -1,0 +1,82 @@
+.content{
+    --background: rgb(0, 15, 99);
+}
+.designer-card{
+    background: url(../../assets/imgpsh_fullsize_anim.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0;
+    margin-top: -5%
+}
+.heading{
+    background: transparent;
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+
+ion-input{
+    --color: black;
+    background: white;
+    --font-size:19px;
+}
+.welcome{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+}
+ion-item{
+    --border-radius: 50px;
+    height: 58px;
+    display: flex;
+    --padding-top: 0px;
+}
+ion-checkbox{
+    --border-color-checked:blue;
+    --border-color:blue;
+}
+ion-checkbox::part(label){
+    color: white;
+    letter-spacing: 1px;
+}
+ion-button{
+    width: 50%;
+    margin: 0 auto;
+    --border-radius: 25px;
+    --padding-top:20px;
+    --padding-bottom:20px;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+ion-list{
+    background:transparent;
+    width: 100%;
+    text-align: center;
+}
+.item-text{
+    --background: transparent;
+    color: white;
+    width: 50%;
+    text-align: center;
+    font-size: small;
+}
+.qwik-heading{
+    color: white;
+    font-size: larger;
+    margin: 0 auto;
+    display: flex;
+    width: fit-content;
+    margin-top: 100px;
+    letter-spacing: 1px;
+    font-size: 45px;
+    font-weight: bolder;
+}
+ion-card{
+    box-shadow: none;
+}

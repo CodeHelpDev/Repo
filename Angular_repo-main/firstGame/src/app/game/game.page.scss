@@ -1,0 +1,39 @@
+app-board{
+    width: 60px;
+    height: 40px;
+
+}
+.game-card{
+    justify-content: space-around;   
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 98%;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-shadow: none
+}
+.main-card{
+    box-shadow: none;
+    margin: 0;
+    padding: 10px;
+}
+.winner-msg,
+.play-game,
+.current-player{
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+
+.reload{
+    color: black;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}

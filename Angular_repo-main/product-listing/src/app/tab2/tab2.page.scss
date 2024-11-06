@@ -1,0 +1,43 @@
+.min {
+    position: absolute;
+    left: 240px;
+        
+}
+.plus{
+    position: absolute;
+    left: 160px;
+    
+}
+ion-title{
+    padding: 5%;
+    margin-top: 3%;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+ion-text{
+    font-size: 15px;
+    padding:10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top:10px;
+    margin-bottom: 10px;;
+}
+
+ion-img{
+    width: 100%;
+    object-fit: contain;
+    height: 200px;
+    margin-top: 20px;
+}
+ion-button{
+    text-align: center;
+    display: flex;
+}
+ion-icon[name="heart"]{
+    position: absolute;
+    top: 97px;
+    right: 14px;
+    color: white !important;
+}
+#qua{
+    margin-right: 50px;
+}

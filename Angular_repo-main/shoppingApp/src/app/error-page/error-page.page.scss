@@ -1,0 +1,25 @@
+ion-button{
+    --color: black;
+    --border-radius: 25px;
+    --border-color: black;
+    text-transform: capitalize;
+}
+ion-card{
+    height: 500px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: none;
+
+}
+ion-img{
+    width: 90%;
+    height: 300px;
+}
+ion-title{
+    color: white;
+}

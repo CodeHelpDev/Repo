@@ -1,0 +1,117 @@
+.up-heading {
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.main-grid {
+    background: aliceblue;
+}
+
+.inner-grid {
+    background: white;
+}
+
+ion-select,
+ion-input {
+    border: 1px solid lightgray;
+    --padding-start: 10px;
+    border-radius: 5px;
+}
+
+// .frm-control{
+//     box-shadow: 3px 3px lightblue, -.19em 0 .19em lightblue;
+// }
+.input-row ion-col ion-label {
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(103, 101, 101);
+
+}
+
+.input-row ion-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-card {
+    background: black;
+    margin: 0;
+    height: 65px;
+    width: 69px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px
+}
+.remove-card{
+    background: red;
+    margin: 0;
+    height: 65px;
+    width: 69px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+ion-icon[name="add"] {
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+}
+
+.add-col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-btn {
+    --background: black;
+    --background-activated: black;
+    color: white;
+    --padding-start: 10px;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-top: 10px;
+}
+
+.danger-btn {
+    --background: red;
+    --background-activated: red;
+    --background-focused: red;
+}
+
+.array-card,
+.loop-card {
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+    width: 90%;
+}
+.formGroupCard{
+    box-shadow: none;
+}
+ion-icon[name="trash"]{
+    font-size: 20px;
+    color: white;
+}
+.details-card{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+}
+ion-icon[name="link"]{
+    font-size: 20px;
+    cursor: pointer;
+}

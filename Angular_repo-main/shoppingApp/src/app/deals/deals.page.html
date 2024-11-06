@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-back-button defaultHref="/tabs/categories" color="light" slot="start" default></ion-back-button>
+    <ion-title>Deals</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-card class="ion-padding" *ngFor="let val of finalData">
+      <ion-row>
+        <ion-col size="8"></ion-col>
+        <ion-col class="ion-padding" size="4">
+          <ion-img [src]="val.image"></ion-img>          
+        </ion-col>
+      </ion-row>
+      <ion-row size="4">
+        <ion-col>
+          <ion-button class="claim-btn">Claim
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="routeWithData(val)">
+        <ion-col size="6">
+          <ion-label  class="title">
+            {{val?.title}}
+          </ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-icon name="pricetag"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding">
+        <ion-col size="10" class="ion-text-justify">
+          <ion-label class="description">
+            {{val?.description}}
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>
+            Brand Name
+          </ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end" size="7">
+          <ion-label class="ion-text-uppercase ion-text-bold">
+            Deal <br> Expires in : 
+          </ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="5">
+          <ion-label class="ion-text-capitalize">
+            {{val?.brand}}
+          </ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end" size="7">
+          <ion-label class="ion-text-uppercase">
+            {{time }} 
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+
+</ion-content>

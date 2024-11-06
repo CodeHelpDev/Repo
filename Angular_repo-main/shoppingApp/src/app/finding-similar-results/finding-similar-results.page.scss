@@ -1,0 +1,22 @@
+.heading{
+    color: black;
+    font-size: 31px;
+    font-weight: 700;
+}
+ion-img{
+    width: 70px;
+    display: flex;
+    margin: 0 auto;
+}
+ion-card{
+    display: flex;
+    flex-direction: column;
+    height: 381px;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: none;
+    text-align: center;
+}

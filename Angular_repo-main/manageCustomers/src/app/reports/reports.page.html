@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button slot="start" ></ion-menu-button>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <!-- <ion-back-button text="" class="backBtn" defaultHref="" color="dark"></ion-back-button> -->
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-card class="first-card">
+  <ion-label class="main-heading">Reports</ion-label>
+
+  <ion-img src="../../assets/sales-performance.png" class="sales-performance"></ion-img>
+    <ion-row>
+      <ion-col size="4">Current Week</ion-col>
+      <ion-col size="4">Last Week</ion-col>
+      <ion-col size="4">Last Month</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-img src="../../assets/DataImage.png"></ion-img>       
+      </ion-col>
+    </ion-row>
+ </ion-card>
+ <ion-img class="optimization-image" src="../../assets/Optimization.png"></ion-img>
+ <ion-list>
+  <ion-item>
+    <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+    <ion-label>Ada Lovelace</ion-label>
+    <ion-label slot="end">$1300.50</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+    <ion-label>Mark Hopper</ion-label>
+    <ion-label slot="end">$720.25</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+    <ion-label>Margaret Hamilton </ion-label>
+    <ion-label slot="end">$420.83</ion-label>
+  </ion-item>
+ </ion-list>
+ 
+</ion-content>

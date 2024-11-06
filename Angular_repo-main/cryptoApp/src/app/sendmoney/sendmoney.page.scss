@@ -1,0 +1,83 @@
+ion-toolbar{
+    --background:rgb(0, 15, 99);
+    // height: 50px;
+}
+ion-content{
+    --background: rgb(0, 15, 99);
+}
+ion-title{
+    color: white;
+}
+.amount-list{
+    width: 90%;
+    margin: 0 auto;
+    background: transparent;
+    
+}
+.amount-list ion-item{
+    --background: transparent;
+    color: white;
+    font-size: small;
+    text-align: center;    
+    width: 100%;
+}
+.amount-list ion-item:nth-child(2){
+    font-size: 40px;
+    font-weight: bold;
+}
+ion-row{
+    padding: 0px;
+    margin: 0 auto;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+ion-col ion-button{
+    --background: rgb(44, 43, 43);
+    --background-activated: rgb(44, 43, 43);
+    width: 80px;
+    height: 50px;
+}
+.bottom-card{
+    background:transparent;
+
+}
+.bottom-card ion-list{
+    background: transparent;
+    margin-block: 10px;
+}
+ion-item:first-child ion-label{
+    color:black;
+    font-size: small;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+ion-item{
+    --background: transparent;
+    margin-block: 10px;
+
+}
+ion-item:nth-child(2){
+    --background:white;
+    border-radius: 25px;
+
+}
+ion-input{
+    --padding-start:15px;
+}
+ion-item:nth-child(3) ion-button{
+    width: 150px;
+    --border-radius: 25px;
+}
+ion-item:nth-child(3) ion-button:first-child{
+    --background:skyblue;
+    --background-activated: skyblue;
+}
+ion-item:nth-child(3) ion-button:nth-child(2){
+    --background: transparent;
+    --background-activated: transparent;
+    color: white;
+}

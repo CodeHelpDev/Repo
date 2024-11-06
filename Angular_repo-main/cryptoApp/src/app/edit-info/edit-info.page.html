@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border" [translucent]="false">
+  <ion-toolbar >
+    <ion-title>
+      Profile
+    </ion-title>
+    <ion-icon class="ion-padding" slot="end" color="light" size="large" name="notifications-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content no-scroll" [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-row>
+      <ion-col size="4">
+        <ion-icon class="user" name="person-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="7">
+        <ion-list class="fir-list" lines="none">
+          <ion-item>
+            Archie Walden
+          </ion-item>
+          <ion-item>
+            GW845
+          </ion-item>
+          <ion-item>
+            Member Since 2013
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-card class="blue-card">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon color="primary" size="large" name="person-outline"></ion-icon>
+          <ion-input placeHolder="Your Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon color="primary" size="large" name="mail-outline"></ion-icon>
+          <ion-input placeHolder="Example@gmail.com"></ion-input>
+        </ion-item>
+        <ion-button id="editBtn" size="medium">Edit Password</ion-button>
+        <ion-card (click)="onClick()" class="fileUploadCard">
+          <ion-icon name="camera" *ngIf="!image"></ion-icon>
+          <img [src]="image" *ngIf="image"/>
+        </ion-card>
+        <input (change)="imageValue($event)" accept="image/*" type="file" id="file-input" #fileInp>
+
+      </ion-list>
+      <ion-button id="saveBtn">Save</ion-button>
+      <ion-button fill="clear">Delete</ion-button>
+    </ion-card>
+
+  </ion-card>
+
+</ion-content>

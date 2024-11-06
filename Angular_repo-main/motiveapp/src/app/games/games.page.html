@@ -1,0 +1,111 @@
+<app-common></app-common>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="gamesForm">
+  <ion-grid>
+    <ion-row class="navrow">
+      <ion-col size="0.5"></ion-col>
+      <ion-col class="event-nav" size="11">
+        <ion-label class="ev-text">
+          <ion-icon routerLink="/home" class="ion-padding" size="large" name="arrow-back"></ion-icon>
+          <ion-label>New Games</ion-label>
+        </ion-label>
+      </ion-col>
+      <ion-col size="0.5"></ion-col>
+    </ion-row>
+    <ion-row class="seg-row">
+      <ion-col size="12">
+        <ion-segment value="games">
+          <ion-segment-button (click)="segValue($event)" value="games">Games</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="live">Teams</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="participant">Participants</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="staff">Staff</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="chat">Chat</ion-segment-button>
+          <ion-segment-button (click)="segValue($event)" value="polls">Polls</ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <ion-row class="event-row">
+      <ion-col size="3">
+        <ion-img class="game-ev-image" src="../../assets/HomegameImage.png"></ion-img>
+      </ion-col>
+      <ion-col size="3">
+        <ion-list lines="none">
+          <ion-item>Event Name</ion-item>
+          <ion-item>Country, City, State</ion-item>
+          <ion-item>20/Jul/2023, 4:00 PM</ion-item>
+          <ion-item>Team Building Workshop</ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+      <ion-col class="pt-btn-col" size="2">
+        <ion-button id="participants-btn">
+          <ion-icon name="people"></ion-icon>
+          53 Participants
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="game-heading-row">
+      <ion-col size="1">Game</ion-col>
+      <ion-col size="11"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding new-game-row" >
+      <ion-col size="5">
+        <ion-label class="input-heading">Game Name</ion-label>
+        <ion-input formControlName="gameName" placeHolder="Enter Game Name"></ion-input>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="5">
+        <ion-label class="input-heading">What Teams are assigned this Game?</ion-label>
+        <ion-select [multiple]="true" formControlName="teams" placeHolder="Select an Team">
+          <ion-select-option value="India">India</ion-select-option>
+          <ion-select-option value="Sri Lanka">Sri Lanka</ion-select-option>
+          <ion-select-option value="Australia">Australia</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="3">
+          <ion-label class="input-heading">Description</ion-label>
+      </ion-col>
+      <ion-col size="9">
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="12">
+        <ion-textarea formControlName="description" placeHolder="Type here..."></ion-textarea>
+      </ion-col>    
+    </ion-row>
+    <ion-row class="capabilities-row">  
+      <ion-col size="12">
+        <ion-label class="text-bold">Capabilities - </ion-label>
+        <ion-label> &nbsp; {{selctedCap?.length}} Total</ion-label>
+      </ion-col>      
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col>
+        <select2 placeholder="Capabilities" formControlName="capabilities" (update)="capValues($event)" [data]="data" [multiple]="true" >
+          <ng-template><strong>{{data?.color}}</strong>: {{data?.name}}</ng-template>
+      </select2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="game-scenarios-grid">
+    <ion-row class="ion-padding">
+      <ion-col size="4">
+        <ion-label class="text-bold">Game Scenarios - </ion-label>
+        <ion-label> &nbsp; 0 Total</ion-label>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-button fill="outline" id="edit-btn">Edit Time</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-input [disabled]="!gamesForm.valid" (click)="formData(gamesForm.value)"  placeHolder=" + Add Scenarios" >          
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+
+</ion-content>

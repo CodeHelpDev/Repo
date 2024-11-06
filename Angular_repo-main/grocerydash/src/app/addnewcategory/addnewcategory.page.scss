@@ -1,0 +1,68 @@
+.main-card{
+    min-height: 600px;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: aliceblue;
+}
+.heading {
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+.inner-grid{
+    background: white;
+}
+ion-input {
+    border: 1px solid lightgray;
+    --padding-start: 10px;
+    border-radius: 5px;
+}
+ion-row{
+    margin-block: 10px;
+}
+.input-label{
+    text-transform: uppercase;
+}
+.inner-grid ion-row ion-col{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    gap: 10px;
+}
+.image-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+ion-icon[name="cloud-upload"]{
+    color: white;
+ 
+}
+.upload-button{
+    text-transform: capitalize;
+    font-size: medium;
+    display: flex;   
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 170px;
+}
+ion-img{
+    width: 200px;
+    height: 200px;
+}
+.cancel-btn{
+    width: 100px;
+    --background: red;
+    --background-activated:red;
+
+}
+.submit-btn{
+    width: 100px;
+    --background: black;
+    --background-activated:black;
+
+}

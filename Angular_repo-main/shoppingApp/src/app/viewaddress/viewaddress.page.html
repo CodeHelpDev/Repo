@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-icon routerLink="/tabs/profile" slot="start" class="ion-padding" name="chevron-back"></ion-icon>
+    <ion-title>User Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-padding main-grid">
+    <ion-row *ngFor="let val of address;let i = index">
+      <ion-col size="9">
+        <ion-label>
+          {{val?.address}}
+        </ion-label>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button id="open-modal" (click)="editAddress(val,i)" fill="clear">
+          Edit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-modal (didDismiss)="modalClose()" [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-content class="modal-content">
+          <form (ngSubmit)="submitForm(changeAddressForm.value)" [formGroup]="changeAddressForm">
+            <ion-grid class="ion-padding">
+              <ion-row>
+                <ion-col size="10"></ion-col>
+                <ion-col class="ion-text-center" size="2">
+                  <ion-icon (click)="modalClose()" name="close"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-input formControlName="address" label="Address" labelPlacement="floating"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-button [disabled]="!changeAddressForm.valid" id="formBtn" type="submit">
+                    Update
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-grid>
+</ion-content>

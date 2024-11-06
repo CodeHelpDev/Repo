@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-range [value]="80" class="range"></ion-range>
+  <ion-text class="skip-text">Skip</ion-text>
+  <ion-card class="main-card">
+    <ion-label class="heading">
+      Do you have any <br> reproductive health <br> disorders?
+    </ion-label>
+
+    <ion-card class="btn-card">
+      <ion-button>Yes</ion-button>
+      <ion-button>No</ion-button>
+      <ion-button>I am not sure</ion-button>
+    </ion-card>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>Select your disorders</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label slot="start">Endometriosis</ion-label>
+        <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label routerLink="/onboarding4" slot="end">
+          Next <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

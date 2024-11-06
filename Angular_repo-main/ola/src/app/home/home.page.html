@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-menu-button slot="start" id="main-content" color="dark"></ion-menu-button>
+    <ion-icon slot="end" name="heart-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-card class="menu-flex">
+        <ion-label class="menu-item" routerLink="/profile">Profile</ion-label>
+        <ion-label class="menu-item" routerLink="/ridehistory">Ride History</ion-label>
+      </ion-card>
+    </ion-content>
+  </ion-menu>
+
+  <ion-searchbar id="current-location" (keyup.enter)="searchLocation()"
+    placeHolder="Your Current Loaction"></ion-searchbar>
+  <ion-button id="searchBtn" (click)="searchLocation()">Search</ion-button>
+
+  <ion-grid id="map">
+  </ion-grid>
+  <ion-card class="botton-card">
+    <ion-img class="main-img" src="../../assets/Home Page Image.svg"></ion-img>
+  </ion-card>
+</ion-content>

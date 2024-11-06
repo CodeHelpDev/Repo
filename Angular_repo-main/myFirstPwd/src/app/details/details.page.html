@@ -1,0 +1,31 @@
+<app-header></app-header> 
+
+<ion-content [fullscreen]="true">
+    <ion-card class="main">
+        <ion-card class="left-card">
+            <ion-img class="car-image" [src]="car.image"></ion-img>
+        </ion-card>
+        <ion-card class="right-card">
+            
+           <ion-list lines="none" class="details">
+            <ion-item>{{car.id}}</ion-item>
+            <ion-item>{{car.title}}</ion-item>
+            <ion-item>{{car.class}}</ion-item>
+            <ion-item>{{car.start_production}}</ion-item>
+           </ion-list>
+           
+           <ion-icon size="large" class="details-share" name="share-social-outline"></ion-icon>
+           <ion-button *ngIf="!storedInCart"  color="warning" (click)="addToCart(car)">
+            <ion-icon class="cart-icon" name="cart-outline"></ion-icon>
+            Add to Cart
+           </ion-button>
+
+           <ion-button routerLink="/ordersx" *ngIf="storedInCart" color="warning" (click)="addToCart(car)">
+            <ion-icon class="cart-icon" name="cart-outline"></ion-icon>
+            View To Cart
+           </ion-button>
+         
+        </ion-card>
+    </ion-card>
+ <app-footer></app-footer>
+</ion-content>

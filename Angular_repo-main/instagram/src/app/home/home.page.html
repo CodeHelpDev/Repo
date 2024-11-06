@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar lines="none">
+    <ion-title>
+    </ion-title>
+    <ion-row>
+      <ion-col size="8">
+        <ion-img class="instalogo" src="../../assets/instaTextLogo.png"></ion-img>
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon size="large" routerLink="/likes" name="heart-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon size="large" routerLink="/chats" name="chatbubble-ellipses-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-row *ngIf="!products">
+    <ion-col id="spinner" size="12">
+      <ion-spinner name="circles"></ion-spinner>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let product of products" class="post">
+    <ion-col>
+      <ion-text color="primary">Title : </ion-text>
+      {{product.title}}
+
+      <ion-img class="productImg" [src]="product.thumbnailUrl"></ion-img>
+
+      <ion-icon name="heart" size="large" (click)="refreshPage()" (click)="likeBtn(product)"
+        [ngStyle]="{'color': product.isLiked ? 'red' : '' }"></ion-icon> <br>
+      <ion-text color="primary">Description:</ion-text>
+      {{product.description}} <br><br>
+      Posted at : {{product.uploadTime}} <br>
+      <b>Views : {{product.views}}</b>
+    </ion-col>
+  </ion-row>
+</ion-content>

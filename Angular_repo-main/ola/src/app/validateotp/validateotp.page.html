@@ -1,0 +1,16 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button color="dark" slot="start" text="" defaultHref="/mobileno"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-label class="heading">
+      Please wait. <br> We will auto verify the OTP sent to 
+    </ion-label>
+    <ion-input type="number" placeHolder="Enter Your OTP" id="userOtp" class="otp-input"></ion-input>
+  </ion-card>
+  <ion-button class="verify-otp" (click)="verifyOtp()" >Verify</ion-button>
+ 
+</ion-content>

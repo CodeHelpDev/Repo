@@ -1,0 +1,49 @@
+.naukriLogo {
+    width: 150px;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.title,
+.title-card-left,
+.title-card-right {
+    box-shadow: none;
+}
+
+.title-card-left {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-weight: 500;
+}
+
+.title-card-right {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ion-title {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.loginBtn {
+    border: 2px solid blue;
+    border-radius: 18px;
+    --color: blue;
+}
+.registerBtn {
+    color: white;
+}

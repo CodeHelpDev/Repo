@@ -1,0 +1,90 @@
+ion-toolbar{
+    --background: white;
+}
+ion-title{
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: large;
+}
+.main-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    box-shadow: none;
+}
+.profile{
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.heading{
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
+.row-card{
+    background-color: lightgray;
+    border-radius: 25px;
+    width: 90%;
+    height: auto;
+    padding: 10px;
+
+}
+.flex-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+}
+.flex-card ion-card{
+    height: 100px;    
+}
+.flex-card ion-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: black;
+    font-size: medium;
+    padding: 1px;    
+}
+.rounded-card{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin: 0px;
+}
+ion-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px;
+    text-align: center;
+}
+.big-text{
+    color:black;
+    font-size: xx-large;
+    font-weight: 700;
+}
+.big{
+    font-size: xx-large;
+    font-weight: 700;
+}

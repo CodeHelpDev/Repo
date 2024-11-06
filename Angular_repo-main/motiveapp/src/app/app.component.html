@@ -1,0 +1,27 @@
+<ion-app>
+  <ion-split-pane  class="ion-no-border" when="xs" contentId="main-content">      
+    <ion-menu class="ion-no-border" content-id="main-content" menuId="mainMenu">
+      <ion-header class="ion-no-border" >
+        <ion-toolbar>
+          <ion-img class="motive-logo" src="../../assets/motiveLogo.png"></ion-img>
+          <ion-title>Menu Content</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding menu-content">
+        <ion-list lines="none">
+          <ion-item (click)="changeRoute('ourevent')" [ngClass]="{activeTab :currentUrl==='/ourevent'}" [button]="true">Events</ion-item>
+          <ion-item (click)="changeRoute('games')" [ngClass]="{activeTab :currentUrl==='/games'}" [button]="true">Games</ion-item>
+          <ion-item (click)="changeRoute('participants')" [ngClass]="{activeTab :currentUrl==='/participants'}" [button]="true">Participants</ion-item>
+          <ion-item (click)="changeRoute('staff')" [ngClass]="{activeTab :currentUrl==='/staff'}" [button]="true">Staff</ion-item>
+          <ion-item (click)="changeRoute('reports')" [ngClass]="{activeTab :currentUrl==='/reports'}" [button]="true">Reports</ion-item>
+          <ion-item (click)="changeRoute('polls')" [ngClass]="{activeTab :currentUrl==='/polls'}" [button]="true">Polls</ion-item>
+          <ion-item (click)="changeRoute('checkin')" [ngClass]="{activeTab :currentUrl==='/checkin'}" [button]="true">Check In </ion-item>
+        </ion-list>
+      </ion-content>
+      
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+  
+
+</ion-app>

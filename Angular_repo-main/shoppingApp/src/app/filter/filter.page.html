@@ -1,0 +1,235 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-menu-button slot="start" color="light"></ion-menu-button>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="main-grid">
+    <ion-row class="heading-row">
+      <ion-col>
+        <ion-label class="heading ion-padding">Range</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center text-gray" size="3">
+        <ion-label>{{lowerValue}}</ion-label>
+      </ion-col>
+      <ion-col class="ion-text-center text-gray" size="6">
+        <ion-label>Quantity</ion-label>
+      </ion-col>
+      <ion-col class="ion-text-center text-gray" size="3">
+        <ion-label>{{upperValue}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-range (ionChange)="knobValues($event)" [dualKnobs]="true" [value]="{ lower: 20, upper: 80 }"></ion-range>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-text-center text-gray" size="6">
+        <ion-label>
+          Amount
+        </ion-label>
+      </ion-col>
+      <!-- <ion-col size=""></ion-col> -->
+      <ion-col class="ion-text-center text-gray" size="6">
+        <ion-label>
+          {{amountValue}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-range (ionChange)="amountValues($event)" [value]="25"></ion-range>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">Multiple Items</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="check-col gray-text">
+        <ion-checkbox labelPlacement="start">Sophia Martin</ion-checkbox>
+        <ion-checkbox labelPlacement="start">Mattie Abbott</ion-checkbox>
+        <ion-checkbox labelPlacement="start">Marguerite Alvarez</ion-checkbox>
+        <ion-checkbox labelPlacement="start">Lewis Padilla</ion-checkbox>
+        <ion-checkbox labelPlacement="start">Nannie Willis</ion-checkbox>
+      </ion-col>
+    </ion-row>
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading ion-padding">Pick One</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-select  interface="popover" placeHolder="Select Fruits" #countryList>
+          <ion-select-option>Apple</ion-select-option>
+          <ion-select-option>Banana</ion-select-option>
+          <ion-select-option>Orange</ion-select-option>
+          <ion-select-option>Kiwi</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+
+    <ion-row class="heading-row">
+      <ion-col size="1">
+      </ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">
+          Multiple Tags
+        </ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding" *ngFor="let val of multiTags; let i =index">
+      <ion-col>
+        <ion-button *ngIf="i!==4" (click)="activateBtn(val,i)" id="btn-{{i}}" class="multi-tag-btn">{{val}}</ion-button>
+        <ion-button *ngIf="i===4" [disabled]="true" (click)="activateBtn(val,i)" id="btn-{{i}}" class="multi-tag-btn">{{val}}</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">Multiple Tags (rounded)</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding" *ngFor="let value of multiTags;let i = index">
+      <ion-col size="12">
+        <ion-button *ngIf="i!==4" shape="round" (click)="roundedTags(i)" id="btn1-{{i}}" class="rounded-btn">{{value}}</ion-button>
+        <ion-button *ngIf="i==4" [disabled]="true" shape="round" (click)="roundedTags(i)" id="btn1-{{i}}" class="rounded-btn">{{value}}</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">
+          Budget (Radio Tags)
+        </ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="radion-row ion-padding">
+      <ion-col size="3" *ngFor="let btnVal of radioArray;let i = index">
+        <ion-button id="radio-{{i}}" (click)="radioTags(i)" *ngIf="i!==2" fill="outline" class="radion_btn">{{btnVal}}</ion-button>
+        <ion-button id="radio-{{i}}" *ngIf="i===2" [disabled]="true" fill="outline" class="radion_btn">{{btnVal}}</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">
+          Toggle
+        </ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="8">
+        <ion-label class="gray-text">Notifications</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="3">
+        <ion-toggle [checked]="true"></ion-toggle>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="8">
+        <ion-label class="gray-text">Email notifications</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="3">
+        <ion-toggle></ion-toggle>
+      </ion-col>
+    </ion-row>
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">Add & Subtract</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding flex-row">
+      <ion-col size="3">
+        <ion-label class="gray-text">
+          Amount          
+        </ion-label>
+      </ion-col>
+      <ion-col class="amount-col" size="9">
+        <ion-button (click)="amountToggle('-','amount')" fill="outline">-</ion-button>
+        <ion-label class="ion-padding pink-text">{{amtValue}}</ion-label>
+        <ion-button (click)="amountToggle('+','amount')" fill="outline">+</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding flex-row">
+      <ion-col size="5">
+        <ion-label class="gray-text">
+          Bedroom          
+        </ion-label>
+      </ion-col>
+      <ion-col class="bedroom-col flex-row" size="7">
+        <ion-label class="pink-text ion-padding">{{bedValue}}</ion-label>
+        <ion-button (click)="amountToggle('-','bedroom')" >-</ion-button>
+        <ion-button (click)="amountToggle('+','bedroom')" >+</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">Rating Component</ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="4">
+        <ion-label class="gray-text">Rate</ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+      <ion-col *ngFor="let val of ratingIconNameArry;let i = index" size="1">
+        <ion-icon (click)="fillRating(val,i)" [name]="val"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding flex-row">
+      <ion-col size="6">
+        <ion-label class="gray-text">Raad Only</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half-outline"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="heading-row">
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-label class="heading">
+          Color Chooser
+        </ion-label>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="2" class="color-col" *ngFor="let value of colourArray; let j = index">
+        <ion-button id="pic-btn-{{j}}" (click)="switchColor(value,j,$event)" [ngStyle]="{'--background':value}" class="color-btn"></ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

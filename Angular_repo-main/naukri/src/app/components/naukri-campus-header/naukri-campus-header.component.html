@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-card class="main-card">
+        <ion-card class="main-left">
+          <ion-img src="../../assets/NaukriComstate.svg"></ion-img>
+        </ion-card>
+        <ion-card class="main-center">
+          <ion-list lines="none" class="nav-list">
+            <ion-item>Prepare</ion-item>
+            <ion-item>Participate</ion-item>
+            <ion-item>Opportunities</ion-item>
+            <ion-item>
+              <ion-searchbar placeHolder="Search jobs here">
+                <ion-button shape="round" class="ion-mag-btn">
+                  <ion-icon name="search"></ion-icon>
+                </ion-button>
+              </ion-searchbar>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+        <ion-card class="main-right">
+
+          <ion-icon size="large" name="notifications-outline"></ion-icon>
+          <ion-card class="ham-ion-card">
+            <ion-icon size="large" name="menu-outline"></ion-icon>
+            <ion-icon routerLink="/profile" size="large" name="person-circle-outline"></ion-icon>
+          </ion-card>
+        </ion-card>
+      </ion-card>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

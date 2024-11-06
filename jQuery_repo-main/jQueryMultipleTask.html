@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        #parentDiv {
+            width: 600px;
+            height: 250px;
+            z-index: 10;
+        }
+
+        #targetDiv {
+            width: 400px;
+            height: 180px;
+            z-index: 20;
+        }
+
+        #childNode {
+            width: 300px;
+            height: 100px;
+            z-index: 30;
+        }
+
+        div {
+            border: 1px solid black;
+            color: black;
+            background-color: lime;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv">
+        <!-- Ajax Content Will Load Here  -->
+    </div>
+
+    <p class="addText"> Click Me!! To Add Some Text </p>
+
+    <input type="button" value="Slide Up" id="slideUp">
+    <input type="button" value="Slide Down" id="slideDown">
+    <input type="button" value="Slide Toggle" id="slideToggle">
+
+    <input type="button" value="Fade Out" id="fadeOut">
+    <input type="button" value="Fade In" id="fadeIn">
+    <input type="button" value="Fade Toggle " id="fadeToggle">
+
+    <input type="button" value="Animate" id="animate">
+    <input type="button" value="Animate Back" id="animateBack">
+
+    <div id="parentNode" >
+        Parent node's text.
+    
+        <div id="mainNode" >
+            The target node
+    
+            <div id="childNode" >
+                The main node's child node
+            </div>
+    
+        </div>
+    </div>
+
+    <input type="button" value="Copy Parent Text" id="CopyParent">
+    <input type="button" value="Copy Child Text" id="CopyChild">
+
+    <script>
+        $(document).ready(function () {
+            $("#myDiv").css({ "font-size": "1rem", "border": "2px solid black", "height": "200px", "background-color": "cyan", "margin": "3%", "width": "80%" })
+            $("#myDiv").load("ayush.txt");               // For view Data On Browser 
+            // $.get('ayush.txt',function(data){         // For view Data On Alert 
+            //     alert(data);
+            // })
+            $("#slideUp").click(function () {
+                $("#myDiv").slideUp('slow');
+            });
+            $("#slideDown").click(function () {
+                $("#myDiv").slideDown();
+            });
+            $("#slideToggle").click(function () {
+                $("#myDiv").slideToggle('fast');
+            });
+            $("#fadeOut").click(function () {
+                $("#myDiv").fadeOut('slow');
+            });
+            $("#fadeIn").click(function () {
+                $("#myDiv").fadeIn();
+            });
+            $("#fadeToggle").click(function () {
+                $("#myDiv").fadeToggle('fast');
+            });
+            $("#animate").click(function () {
+                $("#myDiv").css({
+                    "transition": " ease-in 5s",
+                    "border-radius": "50%",
+                    "background-color": "red",
+                    "width": "300px",
+                })
+            });
+            $("#animateBack").click(function () {
+                $("#myDiv").css({
+                    "transition": " ease-out 5s",
+                    "border-radius": "0",
+                    "background-color": "cyan",
+                    "width": "80%"
+                })
+            });
+            //  Code Is Working 1 Method 
+            // $(".addText").click(function(){
+            //     var oldText = $(".addText").text();
+            //         $(".addText").text(oldText+` This Is New text`);                
+            // })
+
+
+            // 2 Method
+            $(".addText").click(function () {
+                var oldText = $(this).text();
+                $(this).text(oldText + ` This is New Text `);
+            })
+            $("#myDiv").hover(function () {
+                $("#myDiv").css({
+                    "background-color": "yellow",
+                    "font-size": "2rem",
+                })
+            }, function () {
+                $("#myDiv").css({
+                    "background-color": "cyan",
+                    "font-size": "1rem"
+                })
+            })
+            $("#CopyParent").click(function () {
+                var currentNodeHTML = $('#mainNode').html()
+                var parentText = $('#mainNode').parent('div').text();
+                $('#mainNode').html(parentText + currentNodeHTML);
+            })
+            $("#CopyChild").click(function () {
+                var currentNodeHTML = $('#mainNode').html()
+                var childText = $('#mainNode').children('div').text();
+                $('#mainNode').html(childText + currentNodeHTML);
+            })
+
+
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+.main-card {
+    background: aliceblue;
+    margin: 0;
+    min-height: 600px;
+}
+
+.up-heading {
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.inner-grid {
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+
+}
+
+ion-select,
+ion-input {
+    border: 1px solid lightgray;
+    border-radius: 9px;
+    --padding-start: 10px;
+    --highlight-height: 0px;
+}
+
+.tbl-header ion-col ion-label {
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}
+.rep-row{
+    border-top: 1px solid lightgray;
+    margin-block: 25px;
+}

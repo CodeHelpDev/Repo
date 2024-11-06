@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true">
+  <ion-card class="main-card">
+    <ion-card class="inner-card">
+      <ion-label>
+        Fashion <br> Sale
+      </ion-label> <br>
+      <ion-button (click)="routeTo()" >Check</ion-button>
+    </ion-card>
+  </ion-card>
+  <ion-grid>
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-left" size="8">
+        <ion-label>
+          New
+        </ion-label> <br>
+        <ion-text id="never-text">
+          You've never seen it before
+        </ion-text>
+      </ion-col>
+      <ion-col class="ion-text-right" size="4">
+        <ion-label>
+          View all
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="flex" size="10">
+        <ion-card class="repeated-card" *ngFor="let item of [1,2,3,4,5,6,7,8]">
+          <ion-card-header>
+            <ion-card-title>Card {{ item }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

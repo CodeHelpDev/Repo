@@ -1,0 +1,11 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+:root{
+    --swiper-navigation-size: 20px;
+
+    
+}
+swiper-container{
+    --swiper-navigation-size: 20px;
+    --swiper-navigation-color:rgb(0, 0, 0);
+}

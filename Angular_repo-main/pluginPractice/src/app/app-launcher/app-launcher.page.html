@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>App Launcher</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="canOpenUrl()">Can Open Url</ion-button>
+  <ion-button (click)="openUrl()">Open Url</ion-button>
+ <ion-button (click)="browser()">Browser Open</ion-button>
+ <ion-button (click)="writeToClipBoard()">Write to Clip Board</ion-button>
+ <ion-button (click)="copyFromClipBoard()">Copy To Clip Board</ion-button>
+ <ion-button (click)="showAlert()">Show Alert </ion-button>
+ <ion-button (click)="showConfirm()">Show Confirm</ion-button>
+ <ion-button (click)="showPrompt()">Show Prompt</ion-button>
+ <ion-button (click)="doGet()">Get Data Using Http API</ion-button>
+ <ion-button (click)="doPost()">Post Data Using Http Api</ion-button>
+ <ion-button (click)="checkNetwork()">Check Network</ion-button>
+ <ion-button (click)="screenReader()">screenReaderEnables</ion-button>
+ <ion-button (click)="shareFun()">Share Button</ion-button>
+<ion-button (click)="showHelloToast()"> Show Toast </ion-button>
+</ion-content>

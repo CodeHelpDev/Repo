@@ -1,0 +1,7 @@
+{
+  "name": "grocerydash",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

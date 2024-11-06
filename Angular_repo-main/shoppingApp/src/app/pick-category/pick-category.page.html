@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-label routerLink="/login" class="ion-padding" slot="end">SKIP</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="ion-text-center" size="8">
+        <ion-label class="heading">
+          Pick categories to follow
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="ion-text-center" size="8">
+        <ion-label class="small-heading">
+          You can add or change them later
+        </ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="scroll-grid ion-padding">
+    <ion-row class="flex-row">
+      <ion-col [ngClass]="val.isVisible ? '':'pink-shadow'" id="col-id-{{i}}" (click)="checkImage(val,i)" *ngFor="let val of newArray; let i =index" class="img1 image-text" size="5">
+        <ion-label *ngIf="val.isVisible">{{val.name}}</ion-label>
+        <ion-icon *ngIf="!val.isVisible" name="checkmark"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-button>
+          Sign up 
+        </ion-button>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

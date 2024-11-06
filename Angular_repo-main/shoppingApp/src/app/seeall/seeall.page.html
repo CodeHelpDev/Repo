@@ -1,0 +1,88 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/tabs/profile" color="dark" slot="start" text="back"></ion-back-button>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment value="friends">
+    <ion-segment-button (click)="switchSegment($event)" value="friends">Friends</ion-segment-button>
+    <ion-segment-button (click)="switchSegment($event)" value="followers">Followers</ion-segment-button>
+    <ion-segment-button (click)="switchSegment($event)" value="following">Following</ion-segment-button>
+  </ion-segment>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-searchbar (ionInput)="searchData($event)" placeHolder="Search"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="segmentValue==='friends'">
+    <ion-row *ngFor="let val of (finalDataArray)?.slice(0,10)">
+      <ion-col size="3">
+        <ion-img [src]="val.image"></ion-img>
+      </ion-col>
+      <ion-col class="ion-padding ion-text-center" size="5">
+        <ion-label>
+          {{val?.firstName}}
+        </ion-label>
+        <ion-text>
+          {{val?.lastName}}
+        </ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button class="following" *ngIf="val?.isFollow==true" (click)="followUser(val)">
+          Following
+        </ion-button>
+        <ion-button class="follow" *ngIf="!val?.isFollow==true" (click)="followUser(val)">Follow</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="segmentValue==='followers'">
+    <ion-row *ngFor="let val of (finalDataArray)?.slice(10,20)">
+      <ion-col size="3">
+        <ion-img [src]="val.image"></ion-img>
+      </ion-col>
+      <ion-col class="ion-padding ion-text-center" size="5">
+        <ion-label>
+          {{val?.firstName}}
+        </ion-label>
+        <ion-text>
+          {{val?.lastName}}
+        </ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button class="following" *ngIf="val?.isFollow==true" (click)="followUser(val)">
+          Following
+        </ion-button>
+        <ion-button class="follow" *ngIf="!val?.isFollow==true" (click)="followUser(val)">Follow</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="segmentValue==='following'">
+    <ion-row *ngFor="let val of (finalDataArray)?.slice(20,30)">
+      <ion-col size="3">
+        <ion-img [src]="val.image"></ion-img>
+      </ion-col>
+      <ion-col class="ion-padding ion-text-center" size="5">
+        <ion-label>
+          {{val?.firstName}}
+        </ion-label>
+        <ion-text>
+          {{val?.lastName}}
+        </ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button class="following" *ngIf="val?.isFollow==true" (click)="followUser(val)">
+          Following
+        </ion-button>
+        <ion-button class="follow" *ngIf="!val?.isFollow==true" (click)="followUser(val)">Follow</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

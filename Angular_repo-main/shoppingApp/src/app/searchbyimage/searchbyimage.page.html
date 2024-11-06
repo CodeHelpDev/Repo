@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" color="dark" slot="start"></ion-back-button>
+    <ion-title>Search by taking a photo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="content" >
+
+    <!-- <input type="file" (change)="fileChangeEvent($event)" /> -->
+  
+    <image-cropper *ngIf="imageBase64"
+      #cropper
+      [imageBase64]="imageBase64"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 3"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded($event)"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed()"
+      [allowMoveImage]="true"
+    ></image-cropper>
+    
+    <!-- <img [src]="croppedImage" /> -->
+
+    <ion-grid *ngIf="isSearching===false">
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <ion-icon (click)="cropperReady()" (click)="onClickStartSearching()" name="checkmark-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card class="bottom-card">
+      <ion-grid>
+        
+        <ion-row *ngIf="isSearching===false" class="ion-text-center">
+          <ion-col size="3">
+
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon name="flash" ></ion-icon>
+
+          </ion-col>
+          <ion-col class="red-circle" size="2">
+            <ion-img (click)="cropperReady()" src="../../assets/Big.png"></ion-img>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon name="sync"></ion-icon>
+          </ion-col>
+          <ion-col size="3"></ion-col>
+        </ion-row>
+        
+        <ion-row *ngIf="isSearching==true">
+          <ion-col class="ion-text-center" size="12">
+            <ion-img class="searchIcon" src="../../assets/BigGlass.png"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-card>
+</ion-content>

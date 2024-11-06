@@ -1,0 +1,96 @@
+ion-toolbar{
+    --background: white;
+}
+.title{
+    
+    text-align: left;
+    padding: 20px;
+}
+.weekdays,
+.dates{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: medium;
+    box-shadow: none;   
+}
+.main-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+}
+.weekdays ion-label{
+    color: black;
+    font-weight: bolder;
+}
+.dotted-circle{
+    border: 2px dotted black;    
+    width: 215px;
+    height: 215px;
+    border-radius: 50%;
+    box-sizing: border-box;    
+}
+.black-circle{
+    --background: rgb(112, 112, 112);
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    top: -5px;
+    left: 3px;
+    color: white;
+    font-size: small;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.heading{
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.flex-card{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    gap: 5px;
+    box-shadow: none;
+
+}
+.flex-card ion-card{
+    width: 90px;
+    height: 110px;
+}
+.fir-card,
+.sec-card,
+.thi-card,
+.for-card{
+    box-shadow: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.card-text{
+    font-size: large;
+    color: black;
+}
+.card-number{
+    font-size: 28px;
+}

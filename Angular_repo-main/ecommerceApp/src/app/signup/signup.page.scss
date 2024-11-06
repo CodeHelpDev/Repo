@@ -1,0 +1,27 @@
+ion-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+.form-grid ion-row{
+    display: flex;
+    align-items: baseline;
+}
+.form-grid{
+    font-size: medium;
+}
+
+ion-button{
+    display: flex;
+    width: 200px;
+    margin: 0 auto;
+    --background-actived: rgb(153, 255, 0);
+    --background: rgb(153, 255, 0);
+    color: black;
+    text-transform: capitalize;
+}
+ion-input{
+    --highlight-height:0px;
+}
+.blue-text{
+    color: blue;
+}

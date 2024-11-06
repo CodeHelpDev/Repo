@@ -1,0 +1,349 @@
+<app-common></app-common>
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="onformSubmit(scenarioForm.value)" [formGroup]="scenarioForm">
+    <ion-segment value="games">
+      <ion-segment-button value="games">Games</ion-segment-button>
+      <ion-segment-button value="chat">Chat</ion-segment-button>
+      <ion-segment-button value="Polls">Polls</ion-segment-button>
+    </ion-segment>
+
+
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col>
+          <ion-breadcrumbs>
+            <ion-breadcrumb routerLink="/games">Games</ion-breadcrumb>
+            <ion-breadcrumb routerLink="/scenario">Scenario</ion-breadcrumb>
+          </ion-breadcrumbs>
+        </ion-col>
+      </ion-row>
+      <ion-row class="fir-row">
+        <ion-col size="6">
+          <ion-label class="heading">Scenario Info</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="input-heading">Scenario Title</ion-label>
+          <ion-input formControlName="scenarioTitle" placeHolder="Enter Scenario Title"></ion-input>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="input-heading">Time to Complete Scenario Information</ion-label>
+          <ion-input formControlName="scenarioTime" placeHolder="Enter or Select"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="input-heading">Scenario Description</ion-label>
+          <ion-textarea formControlName="description" placeholder="Type the Description here..."></ion-textarea>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="input-heading">Upload Starting Scenario Inject(s)</ion-label>
+          <ion-card (click)="onClick('scenarioImage')" class="file-upload-card">
+            <ion-icon name="document"></ion-icon>
+            <ion-text style="color: black; font-size: 15px;" id="scenarioImage"></ion-text>
+            <ion-text>Upload Media or Documents</ion-text>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="ion-padding vignette-info-grid">
+      <ion-row>
+        <ion-col>
+          <ion-label class="heading">Vignette Info</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row class="fir-row">
+        <ion-col size="6">
+          <ion-label class="input-heading">Vignette Title</ion-label>
+          <ion-input formControlName="vignetteName" placeholder="Enter Name of Vignette"></ion-input>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="input-heading">Time to Complete Vignette </ion-label>
+          <ion-input formControlName="timeVignette" placeholder="Enter Number of Minutes"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="input-heading">Brief</ion-label>
+          <ion-textarea formControlName="brief" placeholder="Type the brief here"> </ion-textarea>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label>Upload Starting Vignette Inject</ion-label>
+          <ion-card (click)="onClick('vignetteImage')" class="file-upload-card">
+            <ion-icon name="document"></ion-icon>
+            <ion-text style="color: black; font-size: 15px;" id="vignetteImage"></ion-text>
+            <ion-text>Upload Media or Documents</ion-text>
+          </ion-card>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- //FormArray -->
+    <ion-card formArrayName="nestItemsArray">
+      <ion-card *ngFor="let item of nestItemsArray.controls; let i = index" [formGroupName]="i">
+        <ion-grid class="question-grid">
+          <ion-row>
+            <ion-col>
+              Question {{questionNo}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="answer-grid ion-padding">
+          <ion-row>
+            <ion-col size="4">
+              <ion-label class="input-heading">Answer Format</ion-label>
+              <ion-select formControlName="answerFormat" placeholder="Select an Option">
+                <ion-select-option value="audio">Audio</ion-select-option>
+                <ion-select-option value="video">Video</ion-select-option>
+                <ion-select-option value="text">Text</ion-select-option>
+                <ion-select-option value="voice">Voice</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label class="input-heading">Data Visualization Type</ion-label>
+              <ion-select formControlName="visualizationType" placeholder="Select an Option">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+                <ion-select-option value="D">D</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label class="input-heading">Scoring Rubric</ion-label>
+              <ion-select formControlName="scoringRubric" [multiple]="true" placeholder="Select All that Apply">
+                <ion-select-option value="90%">90%</ion-select-option>
+                <ion-select-option value="40%">40%</ion-select-option>
+                <ion-select-option value="30%">30%</ion-select-option>
+                <ion-select-option value="50%">50%</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="4">
+              <ion-label class="input-heading">Does this question score for Points?</ion-label>
+              <ion-select formControlName="scorePoints" placeholder="Select an Option">
+                <ion-select-option value="audio">Audio</ion-select-option>
+                <ion-select-option value="video">Video</ion-select-option>
+                <ion-select-option value="text">Text</ion-select-option>
+                <ion-select-option value="voice">Voice</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label class="input-heading">Does this question score for Money?</ion-label>
+              <ion-select formControlNAme="scoreMoney" placeholder="Select an Option">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+                <ion-select-option value="D">D</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label class="input-heading">Select Capabilities this question is testing for</ion-label>
+              <ion-select formControlName="capabilitiesTest" [multiple]="true" placeholder="Select All that Apply">
+                <ion-select-option value="90%">90%</ion-select-option>
+                <ion-select-option value="40%">40%</ion-select-option>
+                <ion-select-option value="30%">30%</ion-select-option>
+                <ion-select-option value="50%">50%</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-label class="input-heading">Question</ion-label>
+              <ion-textarea formControlName="question" placeholder="Type question here..."></ion-textarea>
+            </ion-col>
+            <input (change)="fileUploadEvent1($event)" multiple style="display: none;" name="text_{{i}}" type="file">
+            <ion-col size="6">
+              <ion-label class="input-heading">Question Inject</ion-label>
+              <ion-card (click)="onClick1(i)" class="file-upload-card">
+                <ion-icon name="document"></ion-icon>
+                <ion-text style="color: black; font-size: 15px;" id="mediaImage"></ion-text>
+                <ion-text>Upload Media or Documents</ion-text>
+              </ion-card>
+              <!-- <ion-image src="imgVal"></ion-image> -->
+             
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid class="multiple-choice vignette-info-grid ion-padding">
+          <ion-row>
+            <ion-col size="12" class="heading">Multiple Choice Options</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1" class="input-heading"></ion-col>
+            <ion-col size="1" class="input-heading">Answer</ion-col>
+            <ion-col size="2" class="input-heading">Point Values</ion-col>
+            <ion-col size="2" class="input-heading">Money Values</ion-col>
+            <ion-col size="2" class="input-heading">Capability Example 1</ion-col>
+            <ion-col size="2" class="input-heading">Capability Example 2</ion-col>
+            <ion-col size="2" class="input-heading">Next Vignette</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1" class="option-col">
+              <ion-label class="ion-padding heading">A</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-input formControlName="ansA" placeholder="Answer A"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="pointA" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="moneyA" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capA1" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capA2" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-select formControlName="vignettePointsA" placeholder="Enter Points">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+                <ion-select-option value="D">D</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1" class="option-col">
+              <ion-label class="ion-padding heading">B</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-input formControlName="ansB" placeholder="Answer B"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="pointB" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="moneyB" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capB1" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capB2" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-select formControlName="vignettePointsB" placeholder="Enter Points">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+                <ion-select-option value="D">D</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1" class="option-col">
+              <ion-label class="ion-padding heading">C</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-input formControlName="ansC" placeholder="Answer C"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="pointC" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="moneyC" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capC1" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capC2" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-select formControlName="vignettePointsC" placeholder="Enter Points">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+                <ion-select-option value="D">D</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1" class="option-col">
+              <ion-label class="ion-padding heading">D</ion-label>
+            </ion-col>
+            <ion-col size="1">
+              <ion-input formControlName="ansD" placeholder="Answer D"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="pointD" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="moneyD" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capD1" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-input formControlName="capD2" placeholder="Enter Points"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-select formControlName="vignettePointsD" placeholder="Enter Points">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+                <ion-select-option value="D">D</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid class="hidden-question-grid ion-padding">
+          <ion-row>
+            <ion-col size="12">
+              <ion-label class="heading">Hidden Question</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row class="fir-hidden-row">
+            <ion-col size="4">
+              <ion-label class="input-heading">
+                Is this a hidden question?
+              </ion-label> <br>
+              <ion-radio-group formControlName="ishideQuestion" value="yes">
+                <ion-radio aria-label="Custom checkbox" (click)="hideQuestion($event,i)" value="yes">Yes</ion-radio>
+                <ion-radio aria-label="Custom checkbox" (click)="hideQuestion($event,i)" value="no">No</ion-radio>
+              </ion-radio-group>
+            </ion-col>
+            <ion-col  size="4" *ngIf="checkValue(i)=='yes'">
+              <ion-label class="input-heading">Select Revealing Question</ion-label>
+              <ion-select  formControlName="revealingQuestion" placeholder="Select an Option">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col  size="4" *ngIf="checkValue(i)=='yes'">
+              <ion-label class="input-heading">Select Revealing Answer</ion-label>
+              <ion-select  formControlName="revealingAnswer" placeholder="Select an Option">
+                <ion-select-option value="Answer 1">Answer 1</ion-select-option>
+                <ion-select-option value="Answer 2">Answer 2</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1"></ion-col>
+            <ion-col size="6">
+              
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-card>
+    <input (change)="fileUploadEvent($event)" multiple style="display: none;" name="text" type="file">
+    <ion-row class="ion-padding" class="submit-btn-row">
+      <ion-col class="ion-padding" size="8"> 
+        <ion-button (click)="addNestedItems()" id="addQuestion">Add New Question</ion-button>  
+      </ion-col>
+      <ion-col  class="ion-padding" size="3">
+        <ion-button [disabled]="!scenarioForm.valid" type="submit">Submit</ion-button>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </form>
+</ion-content>

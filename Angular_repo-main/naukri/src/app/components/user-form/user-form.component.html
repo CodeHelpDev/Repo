@@ -1,0 +1,9 @@
+<ion-card class="form-card">
+  <form [formGroup]="userForm" (ngSubmit)="formSubmit(userForm.value)">
+    <ion-input label="Email" readOnly placeHolder="Email" formControlName="email"></ion-input>
+    <ion-input label="Name : " placeHolder="Your Name" formControlName="name"></ion-input>
+    <ion-input label="Mobile No : " placeHolder="Mobile No" formControlName="mobileno"></ion-input>
+    <ion-input label="Work Status : " placeHolder="Experience in Years" formControlName="workStatus"></ion-input>
+    <ion-button type="submit">Submit</ion-button>
+  </form>
+</ion-card> 

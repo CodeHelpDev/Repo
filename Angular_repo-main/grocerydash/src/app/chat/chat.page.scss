@@ -1,0 +1,79 @@
+.msg-section{
+    background: lightgray;
+    margin: 0;
+}
+.contact-section{
+    background: black;
+}
+#chat-list{
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    align-items: center;
+    gap: 20px;
+} 
+#chat-list ion-item{
+    background: lightgray;
+    border-radius: 12px;
+    width: 350px;
+    
+}
+ion-icon[name="person-circle-outline"]{
+    font-size: 40px;
+    color: black;
+}
+ion-icon[name="eyedrop-outline"]{
+    font-size: 20px;
+    color: black;
+}
+ion-icon[name="person-circle"]{
+    font-size: 20px;
+    color: gray;
+}
+
+.main-grid{
+    margin: 0px;
+}
+.chat-grid{
+    background: white;
+    margin: 0;
+}
+.profile-row{
+    background: black;
+    margin: 0px;
+}
+.profile-row ion-col{
+    color: white;
+}
+.profile-row ion-col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 15px;
+}
+.chat-input{
+    border: 1px solid black;
+    border-radius: 25px;
+    --padding-start:20px;
+    --padding-end:20px;
+}
+.send-btn{
+    --background: black;
+    --background-activated:black;
+    --border-radius: 12px;
+}
+.display-chat{
+    height: 400px;
+    max-height: 400px;
+    margin: 0px;
+    box-shadow: none;
+    overflow-y: auto;
+}
+.msg-lbl{
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}

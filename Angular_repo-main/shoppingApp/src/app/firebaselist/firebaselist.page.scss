@@ -1,0 +1,20 @@
+ion-title{
+    color: white;
+}
+ion-icon[name="options-outline"]{
+    color:#ff1a72;
+    font-size: 25px;
+}
+.fix-grid{
+    position: sticky;
+}
+.scroll-grid{
+    max-height: 494px;
+    overflow-y: auto;
+}
+.no-users-grid{
+    color: gray;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+}

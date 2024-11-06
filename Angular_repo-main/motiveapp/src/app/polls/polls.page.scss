@@ -1,0 +1,68 @@
+.heading{
+    color: #000000;
+    font-size: larger;
+    font-weight: 600;
+}
+sub{
+    margin: 10px;
+    font-size: 12px;
+}
+.chat-container{
+    max-height: 330px;
+    overflow-y: auto;
+}
+.chat-container ion-item{
+    height: 33px;
+}
+ion-icon[name="person-circle"]{
+    font-size: 50px;
+    color: black;
+}
+.chat-grid ion-row:first-child{
+    display: flex;    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+ion-input{
+    --highlight-height:0px;
+    width: 90%;
+    margin: 2%;
+    background: lightgray;
+    --padding-start:20px ;
+    border-radius: 5px;
+}
+
+ion-select{
+    --highlight-height:0px;
+    width: 90%;
+    margin: 2%;
+    background: lightgray;
+    --padding-start:20px ;
+    border-radius: 5px;
+}
+ion-textarea{
+    width: 92%;
+    --highlight-height:0px;
+    margin: 2%;
+    background: lightgray;
+    --padding-start:20px ;
+    border-radius: 5px;
+}
+
+.chat-grid ion-row:first-child{
+    padding: 10px;
+    height: 80px;   
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+.tbl-header{
+    background: black;
+    color: white;
+    font-size: 20px;
+}
+#subBtn{
+    display: flex;
+}

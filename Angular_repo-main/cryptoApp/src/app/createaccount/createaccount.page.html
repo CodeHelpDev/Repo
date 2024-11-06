@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border" [translucent]="true">
+
+</ion-header>
+
+<ion-content class="content" [fullscreen]="true">
+  <ion-card class="top-card">
+    <ion-label class="heading">Qwik</ion-label>
+  </ion-card>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm.value)">
+    <ion-card class="main-card"> 
+      <ion-card class="designer-card-content">
+        <ion-label>Create Account </ion-label>
+        <ion-list lines="none">
+          <ion-item>
+            <ion-icon class="ion-padding" color="primary"  name="person-outline"></ion-icon>
+            <ion-input formControlName="fname" placeHolder="First Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon class="ion-padding" color="primary"  name="person-outline"></ion-icon>
+            <ion-input formControlName="lname" placeHolder="Last Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon class="ion-padding" color="primary"  name="mail-outline"></ion-icon>
+            <ion-input (keyup)="validateEmail($event)" formControlName="email" placeHolder="Email Address"></ion-input>
+          </ion-item>
+          <ion-label *ngIf="isEmailValid==false" id="danger-text"> * Invalid Email Id </ion-label>
+  
+          <ion-item>
+            <ion-icon class="ion-padding" color="primary"  name="lock-closed"></ion-icon>
+            <ion-input formControlName="password" placeHolder="Password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon class="ion-padding" color="primary"  name="lock-closed"></ion-icon>
+            <ion-input formControlName="cpassword" placeHolder="Verify Password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-button [disabled]="!signUpForm.valid" type="submit" shape="round">Submit</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </ion-card>
+  </form>
+ 
+ 
+</ion-content>

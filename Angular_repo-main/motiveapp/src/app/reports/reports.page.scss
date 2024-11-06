@@ -1,0 +1,37 @@
+.heading{
+    color: #000000;
+    font-size: larger;
+    font-weight: 600;
+}
+.navbar{
+    background: rgb(94, 94, 94);
+    padding: 10px;
+}
+.navbar ion-label{
+    color: white;
+}
+.reportheading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.data-grid{
+    background: var(--bg-col);
+}
+.data-grid ion-row{
+    margin-block:10px;
+    padding: 10px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.set-bg-colour{
+    background: var(--bg-col);
+}
+.data-grid ion-row:first-child{
+    background: rgb(94, 94, 94);
+    border-radius: 5px;
+}

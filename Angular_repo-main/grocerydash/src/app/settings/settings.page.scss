@@ -1,0 +1,65 @@
+.main-grid{
+    background: aliceblue;
+    min-height: 600px;
+}
+.inner-grid{
+    background: white;
+}
+.heading{
+    color: black;    
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.information{
+    color: black;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 50;
+}
+
+.inner-grid{
+    background: white;
+}
+ion-select,select2,
+ion-input{
+    border: 1px solid lightgray;
+    border-radius: 9px;
+    --padding-start:10px;
+    --highlight-height:0px;
+}
+.cancel-btn{
+    width: 100px;
+    --background: red;
+    --background-activated:red;
+
+}
+.submit-btn{
+    width: 100px;
+    --background: black;
+    --background-activated:black;
+
+}
+.inner-grid ion-row ion-col ion-label {
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(103, 101, 101);
+}
+.tax-grid{
+    background: white;
+}
+#save{
+    --background: black;
+    --background-activated: black ;
+}
+#cancel{
+    --background: red;
+    --background-activated: red;
+}
+#save,
+#cancel{
+    color: white;
+    text-transform: capitalize;
+}

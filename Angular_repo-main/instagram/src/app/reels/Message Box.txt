@@ -1,0 +1,11 @@
+Saturday Task:
+
+1. Implement chat functionality on app, Done
+
+2. Make liked post page, Done 
+
+3. Implement like and share funtion on reels page, Done
+
+4. Fixed file uploading on post page, 
+
+5. Make stock website,
