@@ -1,0 +1,21 @@
+ion-icon[name="person-circle"]{
+    font-size: 70px;
+    display: flex;
+    margin: 0 auto;
+
+}
+ion-grid{
+    margin-block: 20px;
+}
+ion-list{
+    margin-block: 20px;
+}
+ion-button{
+    display: flex;
+    width: 250px;
+    margin: 0 auto;
+    --border-radius: 6px;
+    --background: black;
+    --background-activated: black;
+    text-transform: capitalize;
+}

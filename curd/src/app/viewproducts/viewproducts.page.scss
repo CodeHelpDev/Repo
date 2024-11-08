@@ -1,0 +1,31 @@
+ion-icon[name="trash"],
+ion-icon[name="create"]{
+    font-size: 24px;
+}
+.data-row:nth-child(even){
+    background: rgb(236, 230, 230);
+    border-radius: 12px;
+}
+
+.data-row{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.tbl-header{
+    background: rgb(192, 192, 185);
+    padding: 10px;
+    margin-block: 10px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.link{
+    color: blue;
+    text-decoration: underline;
+    font-size: large;
+    letter-spacing: 1px;
+}
+

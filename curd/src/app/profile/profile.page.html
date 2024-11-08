@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Current User Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="person-circle"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list lines="none" *ngFor="let val of currentUser">
+    <ion-item>
+      <ion-label slot="start">Name :</ion-label>
+      <ion-text >{{val?.name}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label slot="start">Email :</ion-label>
+      <ion-text >{{val?.email}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label slot="start">Mobile No :</ion-label>
+      <ion-text >{{val?.mobileno}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label slot="start">Date of Birth :</ion-label>
+      <ion-text >{{val?.dob}}</ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="editUser(currentUser[0])">Edit Profile</ion-button>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar class="ion-text-center">
+    <ion-back-button defaultHref="/tabs/home" slot="start" color="dark" text=""></ion-back-button>
+    <ion-title>Add Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit(addProductForm.value)">
+    <ion-grid class="main-grid ion-padding">
+      <ion-row>
+        <ion-col class="ion-text-center" size="12">
+          <ion-label>Fill The Products Form</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list lines="none" class="form-list">
+            <ion-item>
+              <ion-input errorText="*Product Name" formControlName="name" placeholder="Product Name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input errorText="*Price" formControlName="price" type="number" placeholder="Price"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input errorText="*Quantity" formControlName="quantity" type="number" placeholder="Quantity"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input errorText="*Description" formControlName="description" type="text" placeholder="Description"></ion-input>
+            </ion-item>
+            <ion-item id="no-border">
+              <input multiple type="file" id="file" style="display: none;" (change)="setImages($event)">
+              <ion-icon slot="start" (click)="openFileUpload()" name="link"></ion-icon>
+              <ion-img *ngFor="let val of imageArray" [src]="val" ></ion-img>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit">Save</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+    <ion-alert
+    [isOpen]="isImageExceeded"
+    header="You Can Upload Maximun 3 Image"
+    subHeader="Please Upload Only three Image"
+    [buttons]="alertButtons"
+    (willDismiss)="isImageExceeded=false"
+  ></ion-alert>
+  </form>
+</ion-content>

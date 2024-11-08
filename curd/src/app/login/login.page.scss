@@ -1,0 +1,61 @@
+ion-title {
+    color: black;
+    font-size: 20px;
+}
+
+.main-grid ion-row:first-child ion-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-grid ion-row:first-child ion-col ion-text {
+    color: gray;
+    font-size: 14px;
+}
+
+.form-list ion-item {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.form-list ion-item {
+    margin-block: 10px;
+}
+
+.form-list ion-icon {
+    color: black;
+}
+
+ion-button {
+    --background: rgb(255, 0, 208);
+    --background-activated: rgb(255, 0, 208);
+    display: flex;
+    margin: 0 auto;
+    color: white;
+    text-transform: uppercase;
+    --border-radius: 12px;
+}
+
+ion-input.ng-touched.ng-invalid {
+    // ion-item{
+    border: none;
+
+    --highlight-height: none;
+    // }
+}
+
+.ion-touched.ion-invalid.sc-ion-input-md-h {
+    --highlight-color: none;
+}
+
+.sc-ion-input-md-h {
+    --border-width: none;
+}
+.pink-text{
+    color: rgb(255, 0, 208);
+    font-weight: bold;
+}
+.main-grid ion-row:last-child{
+    margin-block: 40px;
+}

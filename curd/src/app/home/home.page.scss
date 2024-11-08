@@ -1,0 +1,25 @@
+ion-toolbar{
+    // --background: rgb(0, 250, 209);
+    color: black;
+    font-size: large;
+    font-weight: 500;
+}
+.main-grid ion-row ion-col ion-label{
+    color: black;
+    font-size: 16px;
+
+}
+.main-grid ion-row ion-col{
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-grid ion-row ion-col:first-child,
+.main-grid ion-row ion-col:last-child{
+    background: pink;
+}
+.main-grid ion-row{
+    margin-block: 40px;
+}
